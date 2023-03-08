@@ -23,7 +23,7 @@ const Home: NextPageWithLayout = () => {
         <div className="event-banner">
           <div className="event-banner__item">
             <div className="event-banner__item__img">
-              <img src="../images/banner/banner01.png" width="100%" height="100%" alt="" />
+              <img src="assets/images/banner/banner01.png" width="100%" height="100%" alt="" />
             </div>
           </div>
         </div>
