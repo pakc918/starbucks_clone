@@ -1,8 +1,8 @@
-import { ProductListCardType } from '@/types/fetchDataType'
+import { productListCardType } from '@/types/fetchDataType'
 import React, { useEffect, useState } from 'react'
 
 export default function productListCard(props: { productId: number }) {
-    const [productData, setProductData] = useState<ProductListCardType>()
+    const [productData, setProductData] = useState<productListCardType>()
     useEffect(() => {
         fetch(`http://localhost:3001/products/${props.productId}`)
         .then(res => res.json())

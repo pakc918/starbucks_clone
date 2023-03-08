@@ -44,7 +44,7 @@ const Home: NextPageWithLayout = () => {
           <div className="recommand-product-list3">
             <div className="recommand-product-item2">
               <div className="recommand-product-item__img">
-                <img src="../images/products/05.png" alt="바리스타 춘식" />
+                <img src="assets/images/products/05.png" alt="바리스타 춘식" />
               </div>
               <div className="recommand-product-item__info">
                 <p className="item-title2">바리스타 춘식</p>
@@ -52,7 +52,7 @@ const Home: NextPageWithLayout = () => {
             </div>
             <div className="recommand-product-item2">
               <div className="recommand-product-item__img">
-                <img src="../images/products/08.png" alt="리드" />
+                <img src="assets/images/products/08.png" alt="리드" />
               </div>
               <div className="recommand-product-item__info">
                 <p className="item-title2">리드</p>
@@ -60,7 +60,7 @@ const Home: NextPageWithLayout = () => {
             </div>
             <div className="recommand-product-item2">
               <div className="recommand-product-item__img">
-                <img src="../images/products/09.png" alt="리유저블" />
+                <img src="assets/images/products/09.png" alt="리유저블" />
               </div>
               <div className="recommand-product-item__info">
                 <p className="item-title2">리유저블</p>
@@ -68,7 +68,7 @@ const Home: NextPageWithLayout = () => {
             </div>
             <div className="recommand-product-item2">
               <div className="recommand-product-item__img">
-                <img src="../images/products/10.png" alt="케이스" />
+                <img src="assets/images/products/10.png" alt="케이스" />
               </div>
               <div className="recommand-product-item__info">
                 <p className="item-title2">케이스</p>
@@ -76,7 +76,7 @@ const Home: NextPageWithLayout = () => {
             </div>
             <div className="recommand-product-item2">
               <div className="recommand-product-item__img">
-                <img src="../images/products/11.png" alt="핸디 데스크" />
+                <img src="assets/images/products/11.png" alt="핸디 데스크" />
               </div>
               <div className="recommand-product-item__info">
                 <p className="item-title2">핸디 데스크</p>

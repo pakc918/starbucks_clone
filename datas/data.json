@@ -18,7 +18,7 @@
         {
             "id": 4,
             "name": "마이페이지",
-            "link": "mypage"
+            "link": "/mypage"
         }
     ],
     "main-event-list": [
@@ -79,55 +79,55 @@
             "isNew": true
         }
     ],
-    "event-product-List" : [
+    "event-product-list" : [
         {
             "id": 1,
-            "evnetId": 1,
+            "eventId": 1,
             "productId": 1
         },
         {
             "id": 2,
-            "evnetId": 1,
+            "eventId": 1,
             "productId": 2
         },
         {
             "id": 3,
-            "evnetId": 1,
+            "eventId": 1,
             "productId": 3
         },
         {
             "id": 4,
-            "evnetId": 1,
+            "eventId": 1,
             "productId": 4
         },
         {
             "id": 5,
-            "evnetId": 2,
+            "eventId": 2,
             "productId": 1
         },
         {
             "id": 6,
-            "evnetId": 2,
+            "eventId": 2,
             "productId": 2
         },
         {
             "id": 7,
-            "evnetId": 3,
+            "eventId": 3,
             "productId": 1
         },
         {
             "id": 8,
-            "evnetId": 3,
+            "eventId": 3,
             "productId": 3
         },
         {
             "id": 9,
-            "evnetId": 4,
+            "eventId": 4,
             "productId": 2
         },
         {
             "id": 10,
-            "evnetId": 4,
+            "eventId": 4,
             "productId": 3
         }
     ]

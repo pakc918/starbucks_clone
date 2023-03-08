@@ -7,16 +7,16 @@ export const bottomNavData = [
     {
         id: 2,
         name:'기획전',
-        link: '/event'
+        link: '/event',
     },
     {
         id: 3,
         name: '베스트',
-        link: '/best'
+        link: '/best',
     },
     {
         id: 4,
         name: '마이페이지',
-        link: '/mypage'
+        link: '/mypage',
     }
 ]

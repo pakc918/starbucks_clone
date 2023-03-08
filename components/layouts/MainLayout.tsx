@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import  { useRouter } from 'next/router'
 import React, {useEffect, useState } from 'react'
-//import{ bottomNavData } from '../../datas/navData'
+//import{ bottomNavData } from 'assets/../datas/navData'
 
 export default function MainLayout(props: { children: React.ReactNode}) {
 
@@ -13,7 +13,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
     const [ navBottomData, setNavBottomData ] = useState<bottomNavMenuType[]>()
 
     useEffect( () => {
-        fetch('https://localhost:3001/nav')
+        fetch('http://localhost:3001/nav')
             .then(res => res.json())
             .then(data => setNavBottomData(data))
     },[])
@@ -25,21 +25,21 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                 <meta name="description" content="StarBucks Clone Site" />
                 <meta name="keywords" content="StarBucks, Clone, Site"/>
                 <meta name="author" content="SpaLand"/>
-                <link rel="stylesheet" href="../css/style.css"/>
+                <link rel="stylesheet" href="assets/css/style.css"/>
                 <title>StarBucks Clone Site</title>
             </Head>
             <div className="container">
                 <header>
                     <div className="header-top">
                         <div className="menu-icon">
-                        <a href="menu.html"><img src="../images/icons/menu.svg" alt="" /></a>
+                        <a href="menu.html"><img src="assets/images/icons/menu.svg" alt="" /></a>
                         </div>
                         <h1><a href="index.html">온라인 스토어</a></h1>
                         <nav>
                         <ul>
-                            <li><a href="search.html"><img src="../images/icons/search.svg" /></a></li>
-                            <li><a href="cart.html"><img src="../images/icons/shopping-cart.svg" /></a></li>
-                            <li><a href="mypage.html"><img src="../images/icons/user.svg" /></a></li>
+                            <li><a href="search.html"><img src="assets/images/icons/search.svg" /></a></li>
+                            <li><a href="cart.html"><img src="assets/images/icons/shopping-cart.svg" /></a></li>
+                            <li><a href="mypage.html"><img src="assets/images/icons/user.svg" /></a></li>
                         </ul>
                         </nav>
                     </div>
@@ -64,7 +64,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         <div className="event-banner">
                             <div className="event-banner__item">
                                 <div className="event-banner__item__img">
-                                    <img src="../images/banner/banner01.png" width="100%" height="100%" alt="" />
+                                    <img src="assets/images/banner/banner01.png" width="100%" height="100%" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         <div className="recommand-product-list3">
                         <div className="recommand-product-item2">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/05.png" alt="바리스타 춘식" />
+                            <img src="assets/images/products/05.png" alt="바리스타 춘식" />
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title2">바리스타 춘식</p>
@@ -83,7 +83,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item2">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/08.png" alt="리드"/>
+                            <img src="assets/images/products/08.png" alt="리드"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title2">리드</p>
@@ -91,7 +91,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item2">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/09.png" alt="리유저블"/>
+                            <img src="assets/images/products/09.png" alt="리유저블"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title2">리유저블</p>
@@ -99,7 +99,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item2">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/10.png" alt="케이스"/>
+                            <img src="assets/images/products/10.png" alt="케이스"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title2">케이스</p>
@@ -107,7 +107,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item2">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/11.png" alt="핸디 데스크"/>
+                            <img src="assets/images/products/11.png" alt="핸디 데스크"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title2">핸디 데스크</p>
@@ -122,7 +122,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         <div className="recommand-product-list">
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/12.png" alt="23 SS 체리 튤립 로맨틱 워터보틀 384ml"/>
+                            <img src="assets/images/products/12.png" alt="23 SS 체리 튤립 로맨틱 워터보틀 384ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -132,7 +132,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/01.png" alt="23 SS 체리 밸류 로맨틱 텀블러 355ml"/>
+                            <img src="assets/images/products/01.png" alt="23 SS 체리 밸류 로맨틱 텀블러 355ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -142,7 +142,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/13.png" alt="23 SS 체리블라썸 엘마 로맨틱 텀블러 473ml"/>
+                            <img src="assets/images/products/13.png" alt="23 SS 체리블라썸 엘마 로맨틱 텀블러 473ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -152,7 +152,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/14.png" alt=""/>
+                            <img src="assets/images/products/14.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -162,7 +162,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/15.png" alt="23 체리 플로런스 로맨틱 텀블러 473ml"/>
+                            <img src="assets/images/products/15.png" alt="23 체리 플로런스 로맨틱 텀블러 473ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -172,7 +172,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/16.png" alt="23 체리 아이코닉 글리터 텀블러 473ml"/>
+                            <img src="assets/images/products/16.png" alt="23 체리 아이코닉 글리터 텀블러 473ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -182,7 +182,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/17.png" alt="23 체리블라썸 아치 페탈 텀블러 473ml"/>
+                            <img src="assets/images/products/17.png" alt="23 체리블라썸 아치 페탈 텀블러 473ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -192,7 +192,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/18.png" alt="23 체리블라썸 팝핸들 로맨틱 콜드컵 473ml"/>
+                            <img src="assets/images/products/18.png" alt="23 체리블라썸 팝핸들 로맨틱 콜드컵 473ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -202,7 +202,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/19.png" alt="23 체리블라썸 플라워 머그앤소서 237ml"/>
+                            <img src="assets/images/products/19.png" alt="23 체리블라썸 플라워 머그앤소서 237ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -212,7 +212,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/20.png" alt="23 체리블라썸 회전목마 머그앤리드 355ml"/>
+                            <img src="assets/images/products/20.png" alt="23 체리블라썸 회전목마 머그앤리드 355ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -222,7 +222,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/21.png" alt="23 체리블라썸 로맨틱 문 무드등"/>
+                            <img src="assets/images/products/21.png" alt="23 체리블라썸 로맨틱 문 무드등"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -232,7 +232,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/22.png" alt="23 체리블라썸 로맨틱 문 장우산"/>
+                            <img src="assets/images/products/22.png" alt="23 체리블라썸 로맨틱 문 장우산"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -259,7 +259,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/02.png" alt=""/>
+                            <img src="assets/images/products/02.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">23 체리블라썸 JOG 보온병 250ml</p>
@@ -268,7 +268,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/02.png" alt=""/>
+                            <img src="assets/images/products/02.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">23 체리블라썸 JOG 보온병 250ml</p>
@@ -277,7 +277,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/02.png" alt=""/>
+                            <img src="assets/images/products/02.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">23 체리블라썸 JOG 보온병 250ml</p>
@@ -286,7 +286,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/02.png" alt=""/>
+                            <img src="assets/images/products/02.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">23 체리블라썸 JOG 보온병 250ml</p>
@@ -295,7 +295,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/02.png" alt=""/>
+                            <img src="assets/images/products/02.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">23 체리블라썸 JOG 보온병 250ml</p>
@@ -311,7 +311,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         <div className="recommand-product-list">
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/03.png" alt="부드러운 티라미수 롤케이크"/>
+                            <img src="assets/images/products/03.png" alt="부드러운 티라미수 롤케이크"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-new">New</p>
@@ -321,7 +321,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/03.png" alt=""/>
+                            <img src="assets/images/products/03.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">부드러운 티라미수 롤케이크</p>
@@ -330,7 +330,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/03.png" alt=""/>
+                            <img src="assets/images/products/03.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">부드러운 티라미수 롤케이크</p>
@@ -339,7 +339,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/03.png" alt=""/>
+                            <img src="assets/images/products/03.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">부드러운 티라미수 롤케이크</p>
@@ -348,7 +348,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/03.png" alt=""/>
+                            <img src="assets/images/products/03.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">부드러운 티라미수 롤케이크</p>
@@ -357,7 +357,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/03.png" alt=""/>
+                            <img src="assets/images/products/03.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">부드러운 티라미수 롤케이크</p>
@@ -373,7 +373,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         <div className="recommand-product-list">
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/07.png" alt="파스텔 핑크 텀블러 473ml"/>
+                            <img src="assets/images/products/07.png" alt="파스텔 핑크 텀블러 473ml"/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">파스텔 핑크 텀블러 473ml</p>
@@ -382,7 +382,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/07.png" alt=""/>
+                            <img src="assets/images/products/07.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">파스텔 핑크 텀블러 473ml</p>
@@ -391,7 +391,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/07.png" alt=""/>
+                            <img src="assets/images/products/07.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">파스텔 핑크 텀블러 473ml</p>
@@ -400,7 +400,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/07.png" alt=""/>
+                            <img src="assets/images/products/07.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">파스텔 핑크 텀블러 473ml</p>
@@ -409,7 +409,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/07.png" alt=""/>
+                            <img src="assets/images/products/07.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">파스텔 핑크 텀블러 473ml</p>
@@ -418,7 +418,7 @@ export default function MainLayout(props: { children: React.ReactNode}) {
                         </div>
                         <div className="recommand-product-item">
                             <div className="recommand-product-item__img">
-                            <img src="../images/products/07.png" alt=""/>
+                            <img src="assets/images/products/07.png" alt=""/>
                             </div>
                             <div className="recommand-product-item__info">
                             <p className="item-title">파스텔 핑크 텀블러 473ml</p>
