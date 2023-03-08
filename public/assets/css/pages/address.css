@@ -1,0 +1,98 @@
+section .input-address-box{
+    border: none;
+    width: 100%;
+    padding: 5px;
+}
+
+section .input-address-box2{
+    border: none;
+    width: 95%;
+    padding: 5px;
+}
+
+
+section .address-box-list .address-border-color {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    margin: 30px 0px;
+}
+
+section .address-box-list .address-border-color2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    margin: 30px 0px;
+}
+
+section .address-box-list .address-border-color3 {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: lightgray;
+    width: 65%;
+}
+
+section .address-box-list .address-border-color2 .address-btn {
+    width: 100%;
+    height: 30px;
+    color: green;
+    border: solid 1px green;
+    border-radius: 30px;
+    background: none;
+}
+
+section .address-box-list .address-border-color4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    margin: 30px 0px;
+}
+
+section .address-box-list .address-border-color4 .address-checkbox{
+    justify-content: space-between;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-color:green;
+    background: none;
+}
+
+.container .address-bg{
+    border-top-style: solid;
+    border-width: 1px;
+    border-top-color: lightgray;
+    width: 100%;
+    height: 105px;
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container .address-bg .address-mini-bg{
+    width:350px;
+    height: 55px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.container .address-bg .address-mini-bg input{
+    width: 350px;
+    height: 55px;
+    border-radius: 35px;
+    border: none;
+    background-color: mediumseagreen;
+    color: white;
+    font-size: 20px;
+}

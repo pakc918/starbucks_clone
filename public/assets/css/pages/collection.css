@@ -1,0 +1,39 @@
+
+section#collection1 {
+    padding: 0px 0px;
+}
+
+section#collection2 {
+    padding: 0px 0px;
+}
+
+section#collection1 .information-collection{
+    padding : 40px 14px;
+    font-size: 13px;
+}
+
+section#collection1 .table-collection{
+    padding: 14px;
+}
+section#collection1 .table-collection table {
+    font-size: 13px;
+    height: 100px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #dfdfdf;
+    border-collapse: collapse;
+}
+
+section#collection1 .table-collection table td, th{
+    border: 1px solid #dfdfdf;
+    padding: 10px;
+    font-size: 12px;
+}
+
+section#collection1 .table-collection table td{
+    color: #828282;
+}
+
+section#collection1 .table-collection table th{
+    color: #747474;
+}

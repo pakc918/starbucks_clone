@@ -1,0 +1,134 @@
+{
+    "nav" : [
+        {
+            "id": 1,
+            "name": "메인",
+            "link": "/"
+        },
+        {
+            "id": 2,
+            "name":"기획전",
+            "link": "/event"
+        },
+        {
+            "id": 3,
+            "name": "베스트",
+            "link": "/best"
+        },
+        {
+            "id": 4,
+            "name": "마이페이지",
+            "link": "mypage"
+        }
+    ],
+    "main-event-list": [
+        {
+            "id": 1,
+            "title": "TREND TAG",
+            "eventId": 1
+        },
+        {
+            "id": 2,
+            "title": "Cherry Blossom🌸",
+            "eventId": 2
+        },
+        {
+            "id": 3,
+            "title": "Cherry Blossom💜",
+            "eventId": 3
+        },
+        {
+            "id": 4,
+            "title": "Starbucks Cake🍰",
+            "eventId": 4
+        }
+    ],
+    "products" : [
+        {
+            "id": 1,
+            "title" : "프리미엄 블랙티",
+            "price": 10000,
+            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "isNew": true
+        },
+        {
+            "id": 2,
+            "title" : "프리미엄 홍차",
+            "price": 10000,
+            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "isNew": true
+        },        {
+            "id": 3,
+            "title" : "프리미엄 블랙티",
+            "price": 10000,
+            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "isNew": true
+        },
+        {
+            "id": 4,
+            "title" : "프리미엄 홍차",
+            "price": 10000,
+            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "isNew": true
+        },
+        {
+            "id": 5,
+            "title" : "프리미엄 블랙티",
+            "price": 10000,
+            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "isNew": true
+        }
+    ],
+    "event-product-List" : [
+        {
+            "id": 1,
+            "evnetId": 1,
+            "productId": 1
+        },
+        {
+            "id": 2,
+            "evnetId": 1,
+            "productId": 2
+        },
+        {
+            "id": 3,
+            "evnetId": 1,
+            "productId": 3
+        },
+        {
+            "id": 4,
+            "evnetId": 1,
+            "productId": 4
+        },
+        {
+            "id": 5,
+            "evnetId": 2,
+            "productId": 1
+        },
+        {
+            "id": 6,
+            "evnetId": 2,
+            "productId": 2
+        },
+        {
+            "id": 7,
+            "evnetId": 3,
+            "productId": 1
+        },
+        {
+            "id": 8,
+            "evnetId": 3,
+            "productId": 3
+        },
+        {
+            "id": 9,
+            "evnetId": 4,
+            "productId": 2
+        },
+        {
+            "id": 10,
+            "evnetId": 4,
+            "productId": 3
+        }
+    ]
+}

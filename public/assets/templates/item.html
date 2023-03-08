@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="StarBucks Clone Site">
+        <meta name="keywords" content="StarBucks, Clone, Site">
+        <meta name="author" content="SpaLand">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>StarBucks Clone Site</title>
+    </head>
+<body>
+    <div class="modal hidden">
+        <div class="bg"></div>
+        <div class="modalBox">
+            <div style="text-align: center; margin: 20px 0px; border-bottom: 1PX;">
+                상품 공유하기
+            </div>
+            <p style="font-size: 13px; text-align: center;">이 상품 어때요? 다른 사람에게 공유해 보세요!</p>
+            <div class="shareBox">
+                <img src="../images/icons/kakaotalk.png" style="width: 50px; height: 50px;">
+                <img src="../images/icons/URL.png" style="width: 50px; height: 50px;">
+            </div>
+            <div style="background-color: mediumseagreen; border-radius: 25px; height: 50px;">
+                <button class="closeBtn" style="background-color: mediumseagreen; color: white; height: 50px;">닫기</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <div class="header-top" style="border-bottom-style: solid; border-width: 1px; border-bottom-color: lightgray;">
+                <div class="back-icon">
+                    <a href="index.html"><img src="../images/icons/back.png" alt="뒤로가기"></a>
+                </div>
+                <h1><a href="index.html">온라인 스토어</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="search.html"><img src="../images/icons/search.svg"></a></li>
+                        <li><img src="../images/icons/shopping-cart.svg"></li>
+                        <li><a href="mypage.html"><img src="../images/icons/user.svg"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- <div style="position: fixed; width: 100%; height: 80px; bottom: 0px; background-color: white;">
+            <div>
+                <img src="../images/item_information/buybtn.png" style="width:100%; height: 20px;">
+                <img src="../images/item_information/buy.png" style="width:100%; height: 60px;">
+            </div>
+        </div> -->
+        <section id="item-event-banner">
+            <div class="event-banner">
+                <div class="event-banner__item">
+                    <div class="event-banner__item__img">
+                        <img src="https://shop-phinf.pstatic.net/20230213_282/1676250820294ccH77_JPEG/77386648106178298_1928937226.jpg?type=m510" width="100%" height="100%" alt="23 SS 체리 콕시클 라벤더 콜드컵 591ml">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="recommand-md">
+            <div>
+                <div class="item-info">
+                    <div>
+                        <p style="font-size: 25px;"><b>23 SS 체리 콕시클 라벤더 콜드컵 591ml </b><span class="item-new" style="vertical-align: super;"> New</span></p>
+                    </div>
+                    <div>
+                        <button class="openBtn"><img src="../images/icons/share.svg" style="width:20px;"></a></button>
+                    </div>
+                </div>
+                <div>
+                    <p style="font-size: 0.8rem; color: var(--color-black);">라일락이 떠오르는 퍼플 컬러로 구성된 591ml 용량의 찬 음료 전용 콜드컵입니다.</p>
+                </div>
+                <div>
+                    <p style="font-size: 25px;"><b>55,000원</b></p>
+                </div>
+            </div>
+        </section>
+        <section id="recommand-md2">
+            <div>
+                <p style="font-size: 16px;"><b>상품 정보</b></p>
+            </div>
+            <div class="border-color">
+                <img style="width: 100%; height: auto;" src="https://prod-starbucks-product-details.s3.ap-northeast-2.amazonaws.com/naver/product/11140349.jpg">
+            </div>
+            <div>
+                <img style="width: 100%; height: auto;" src="../images/item_information/item_information1.png">
+            </div>
+            <div class="border-color">
+                <img style="width: 100%; height: auto;" src="../images/item_information/item_information2.png">
+            </div>
+            <div class="border-color">
+                <img style="width: 100%; height: auto;" src="../images/item_information/item_information3.png">
+            </div>
+            <div >
+                <img style="width: 100%; height: auto;" src="../images/item_information/item_information4.png">
+            </div>
+            <div style="border-bottom-style: solid; border-width: 1px; border-bottom-color: lightgray;">
+                <img style="width: 100%; height: auto;" src="../images/item_information/item_information5.png">
+            </div>
+            <div class="border-color">
+                <img style="width: 100%; height: auto;" src="../images/item_information/item_information6.png">
+            </div>
+        </section>
+
+        <footer class="item-footer">
+            <div class="item-buy-btn">
+                <p>구매하기</p>
+            </div>
+        </footer>
+    </div>
+</body>
+    <script src="../js/item.js"></script>
+</html>

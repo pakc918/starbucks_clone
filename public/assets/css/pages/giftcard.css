@@ -1,0 +1,172 @@
+section#top{
+    margin-top: 18%;
+}
+
+section#top .e-gift-box{
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: black;
+    height: 40px;
+    margin: 0px 15px;
+}
+
+section#top .e-gift-box-item {
+    padding: 25px 15px;
+    height: 60px;
+    text-align: center;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: black;
+    margin: 0px 15px;
+}
+
+section#top .e-gift-box span{
+    font-weight: 600;
+}
+
+section#top .e-gift-box-item span{
+    position: relative;
+    top: 20px;
+}
+
+section#middle{
+    margin-top: 18%;
+}
+
+section#middle .e-gift-box2{
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: black;
+    height: 40px;
+    margin: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section#middle .e-gift-box2 .e-gift-in-box{
+    width: 50%;
+}
+
+section#middle .e-gift-box2 .e-gift-in-box span{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+section#middle .e-gift-box-item2 {
+    padding: 25px 15px;
+    height: 60px;
+    text-align: center;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: black;
+    margin: 0px 15px;
+}
+
+section#middle .e-gift-box-item2 span{
+    position: relative;
+    top: 20px;
+}
+
+section#middle .e-gift-box2 nav{
+    width: 80px;
+}
+
+section#middle .e-gift-box2 nav ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+section#middle .e-gift-box2 nav ul img{
+    width: 15px;
+    height: 15px;
+}
+
+section#middle .e-gift-box2 nav ul li{
+    list-style: none;
+    margin: 0 8px;
+    display: flex;
+    color: #068547;
+    font-size: 15px;
+}
+
+section#bottom{
+    margin-bottom: 120px;
+}
+
+section#bottom .payment{
+    margin: 15px 0px;
+}
+
+section#bottom .payment .payment-price-box{
+    height: 30px;
+    margin: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section#bottom .payment .payment-price-box .payment-price1{
+    width: 50%;
+}
+
+section#bottom .payment .payment-price-box .payment-price1 span{
+    font-weight: bold;
+}
+
+section#bottom .payment .payment-price-box .payment-price2{
+    text-align: end;
+}
+
+section#bottom .payment .payment-price-box .payment-price2 span{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+section#bottom .payment-information{
+    margin: 30px 14px;
+    background-color:#f7f7f7;
+}
+
+section#bottom .payment-information .payment-information-box{
+    padding: 15px 14px;
+}
+
+section#bottom .payment-information .payment-information-box p{
+    font-size: 13px;
+    margin: 0px;
+    color: #7c7c7c;
+}
+
+section#bottom .refund-box .refund{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+}
+
+section#bottom .refund-box .refund .giftcard-checkbox{
+    justify-content: space-between;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    color: #00a862;
+    background: none;
+}
+
+section#bottom .refund-box p{
+    font-size: 13px;
+    position: relative;
+    right: 100px;
+    font-weight: 600;
+}
+
+section#bottom .cancel-refund p{
+    font-size: 11px;
+    margin: 0px;
+    color: #7c7c7c;
+}

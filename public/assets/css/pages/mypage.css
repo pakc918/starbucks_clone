@@ -1,0 +1,87 @@
+.tracking {
+    margin: 28% 2%;
+    margin-bottom: 0;
+}
+
+
+.tracking-subject {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tracking-subject .subject {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tracking-subject .recent-3 {
+    font-size: 14px;
+    color: #5c5c5c;
+}
+
+.tracking-step {
+    display: flex;
+    justify-content: center;
+    margin: 0px 5%;
+}
+
+.tracking-step img {
+    width: 4%;
+    height: 5%;
+    margin-top: 4.5%;
+}
+
+.product-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.product-step p {
+    white-space: nowrap;
+}
+
+.product-count {
+    margin: 0;
+    font-weight: bold;
+    color: lightgrey;
+    font-size: 30px;
+}
+
+.service-policy {
+    background-color: #f7f7f7;
+}
+
+.service {
+    padding: 3% 1%;
+}
+
+.service-subject, .policy-subject {
+    font-weight: bold;
+    font-size: 20px;
+
+    margin: 5% 0;
+    margin-bottom: 0;
+}
+
+.service-button {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+}
+
+.service-button p {
+    width: 100%;
+    margin-left: 5%;
+}
+
+.service-button img {
+    width:20px;
+    height: 20px;
+}
+
+.policy {
+    height: 10rem;
+}
