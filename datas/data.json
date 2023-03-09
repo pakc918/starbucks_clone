@@ -41,94 +41,160 @@
             "id": 4,
             "title": "Starbucks Cake🍰",
             "eventId": 4
+        },
+        {
+            "id": 5,
+            "title": "Online Only📌",
+            "eventId": 5
         }
+
     ],
     "products" : [
         {
             "id": 1,
-            "title" : "프리미엄 블랙티",
-            "price": 10000,
-            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "title" : "23 SS 체리 튤립 로맨틱 워터보틀 384ml",
+            "price": 33000,
+            "imgUrl" : "assets/images/products/12.png",
             "isNew": true
         },
         {
             "id": 2,
-            "title" : "프리미엄 홍차",
-            "price": 10000,
-            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "title" : "23 SS 체리 밸류 로맨틱 텀블러 355ml",
+            "price": 32000,
+            "imgUrl" : "assets/images/products/01.png",
             "isNew": true
         },        {
             "id": 3,
-            "title" : "프리미엄 블랙티",
-            "price": 10000,
-            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "title" : "23 SS 체리블라썸 엘마 로맨틱 텀블러 473ml",
+            "price": 34000,
+            "imgUrl" : "assets/images/products/13.png",
             "isNew": true
         },
         {
             "id": 4,
-            "title" : "프리미엄 홍차",
-            "price": 10000,
-            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "title" : "23 SS 체리 트로이 꼴라쥬 텀블러 473ml",
+            "price": 34000,
+            "imgUrl" : "assets/images/products/14.png",
             "isNew": true
         },
         {
             "id": 5,
-            "title" : "프리미엄 블랙티",
-            "price": 10000,
-            "imgUrl" : "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
+            "title" : "23 체리 플로런스 로맨틱 텀블러 473ml",
+            "price": 19000,
+            "imgUrl" : "assets/images/products/15.png",
+            "isNew": true
+        },
+        {
+            "id": 6,
+            "title" : "23 체리 아이코닉 글리터 텀블러 473ml",
+            "price": 23000,
+            "imgUrl" : "assets/images/products/16.png",
+            "isNew": true
+        },
+        {
+            "id": 7,
+            "title" : "23 체리블라썸 아치 페탈 텀블러 473ml",
+            "price": 18000,
+            "imgUrl" : "assets/images/products/17.png",
+            "isNew": true
+        },
+        {
+            "id": 8,
+            "title" : "23 체리블라썸 팝핸들 로맨틱 콜드컵 473ml",
+            "price": 22000,
+            "imgUrl" : "assets/images/products/18.png",
+            "isNew": true
+        },
+        {
+            "id": 9,
+            "title" : "23 체리블라썸 플라워 머그앤소서 237ml",
+            "price": 34000,
+            "imgUrl" : "assets/images/products/19.png",
+            "isNew": true
+        },
+        {
+            "id": 10,
+            "title" : "23 체리블라썸 회전목마 머그앤리드 355ml",
+            "price": 27000,
+            "imgUrl" : "assets/images/products/20.png",
+            "isNew": true
+        },
+        {
+            "id": 11,
+            "title" : "23 체리블라썸 로맨틱 문 무드등",
+            "price": 32000,
+            "imgUrl" : "assets/images/products/21.png",
+            "isNew": true
+        },
+        {
+            "id": 12,
+            "title" : "23 체리블라썸 로맨틱 문 장우산",
+            "price": 23000,
+            "imgUrl" : "assets/images/products/22.png",
             "isNew": true
         }
+        
     ],
     "event-product-list" : [
         {
             "id": 1,
-            "eventId": 1,
+            "eventId": 2,
             "productId": 1
         },
         {
             "id": 2,
-            "eventId": 1,
+            "eventId": 2,
             "productId": 2
         },
         {
             "id": 3,
-            "eventId": 1,
+            "eventId": 2,
             "productId": 3
         },
         {
             "id": 4,
-            "eventId": 1,
+            "eventId": 2,
             "productId": 4
         },
         {
             "id": 5,
             "eventId": 2,
-            "productId": 1
+            "productId": 5
         },
         {
             "id": 6,
             "eventId": 2,
-            "productId": 2
+            "productId": 6
         },
         {
             "id": 7,
-            "eventId": 3,
-            "productId": 1
+            "eventId": 2,
+            "productId": 7
         },
         {
             "id": 8,
-            "eventId": 3,
-            "productId": 3
+            "eventId": 2,
+            "productId": 8
         },
         {
             "id": 9,
-            "eventId": 4,
-            "productId": 2
+            "eventId": 2,
+            "productId": 9
         },
         {
             "id": 10,
-            "eventId": 4,
-            "productId": 3
+            "eventId": 2,
+            "productId": 10
+        },
+        {
+            "id": 11,
+            "eventId": 2,
+            "productId": 11
+        },
+        {
+            "id": 12,
+            "eventId": 2,
+            "productId": 12
         }
     ]
 }

@@ -37,54 +37,6 @@ const Home: NextPageWithLayout = () => {
           />
         ))
       }
-      
-      <section id="recommand-md">
-        <div>
-          <h2>TREND TAG</h2>
-          <div className="recommand-product-list3">
-            <div className="recommand-product-item2">
-              <div className="recommand-product-item__img">
-                <img src="assets/images/products/05.png" alt="바리스타 춘식" />
-              </div>
-              <div className="recommand-product-item__info">
-                <p className="item-title2">바리스타 춘식</p>
-              </div>
-            </div>
-            <div className="recommand-product-item2">
-              <div className="recommand-product-item__img">
-                <img src="assets/images/products/08.png" alt="리드" />
-              </div>
-              <div className="recommand-product-item__info">
-                <p className="item-title2">리드</p>
-              </div>
-            </div>
-            <div className="recommand-product-item2">
-              <div className="recommand-product-item__img">
-                <img src="assets/images/products/09.png" alt="리유저블" />
-              </div>
-              <div className="recommand-product-item__info">
-                <p className="item-title2">리유저블</p>
-              </div>
-            </div>
-            <div className="recommand-product-item2">
-              <div className="recommand-product-item__img">
-                <img src="assets/images/products/10.png" alt="케이스" />
-              </div>
-              <div className="recommand-product-item__info">
-                <p className="item-title2">케이스</p>
-              </div>
-            </div>
-            <div className="recommand-product-item2">
-              <div className="recommand-product-item__img">
-                <img src="assets/images/products/11.png" alt="핸디 데스크" />
-              </div>
-              <div className="recommand-product-item__info">
-                <p className="item-title2">핸디 데스크</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }
