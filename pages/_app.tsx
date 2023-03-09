@@ -1,4 +1,5 @@
 import MainLayout from '@/components/layouts/MainLayout'
+import BestLayout from '@/components/layouts/BestLayout'
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ReactElement, ReactNode } from 'react'
@@ -19,6 +20,12 @@ export default function App ({ Component, pageProps}: AppProps) {
     <MainLayout>
       <Component {...pageProps} />
     </MainLayout>
+  )
+
+  return (
+    <BestLayout>
+      <Component {...pageProps} />
+    </BestLayout>
   )
 
 }

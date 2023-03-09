@@ -12,8 +12,20 @@ export interface productListCardType {
     isNew: boolean;
 }
 
+export interface tagListCardType {
+    id: number;
+    title: string;
+    imgUrl: string;
+}
+
 export interface eventProductListType {
     id: number;
     eventId: number;
     productId: number;
+}
+
+export interface tagListCardType {
+    id: number;
+    eventId: number;
+    tagId: number;
 }

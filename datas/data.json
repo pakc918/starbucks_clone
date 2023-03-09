@@ -49,6 +49,34 @@
         }
 
     ],
+    "tags" : [
+        {
+            "id": 1,
+            "title" : "바리스타 춘식",
+            "imgUrl" : "assets/images/products/05.png"
+        },
+        {
+            "id": 2,
+            "title" : "리드",
+            "imgUrl" : "assets/images/products/08.png"
+        },
+        {
+            "id": 3,
+            "title" : "리유저블",
+            "imgUrl" : "assets/images/products/09.png"
+        },
+        {
+            "id": 4,
+            "title" : "케이스",
+            "imgUrl" : "assets/images/products/10.png"
+        },
+        {
+            "id": 5,
+            "title" : "핸디 데스크",
+            "imgUrl" : "assets/images/products/11.png"
+        }
+    ],
+
     "products" : [
         {
             "id": 1,
@@ -132,9 +160,65 @@
             "price": 23000,
             "imgUrl" : "assets/images/products/22.png",
             "isNew": true
+        },
+        {
+            "id": 13,
+            "title" : "23 SS 체리 콕시클 라벤더 콜드컵 591ml",
+            "price": 55000,
+            "imgUrl" : "https://shop-phinf.pstatic.net/20230213_282/1676250820294ccH77_JPEG/77386648106178298_1928937226.jpg?type=m510",
+            "isNew": true
+        },
+        {
+            "id": 14,
+            "title" : "23 체리블라썸 JOG 보온병 250ml",
+            "price": 37000,
+            "imgUrl" : "assets/images/products/02.png",
+            "isNew": false
+        },
+        {
+            "id": 15,
+            "title" : "부드러운 티라미수 롤케이크",
+            "price": 19900,
+            "imgUrl" : "assets/images/products/03.png",
+            "isNew": false
+        },
+        {
+            "id": 16,
+            "title" : "파스텔 핑크 텀블러 473ml",
+            "price": 16000,
+            "imgUrl" : "assets/images/products/07.png",
+            "isNew": false
         }
-        
     ],
+
+    "event-tag-list" : [
+        {
+            "id": 1,
+            "eventId": 1,
+            "tagId": 1
+        },
+        {
+            "id": 2,
+            "eventId": 1,
+            "tagId": 2
+        },
+        {
+            "id": 3,
+            "eventId": 1,
+            "tagId": 3
+        },
+        {
+            "id": 4,
+            "eventId": 1,
+            "tagId": 4
+        },
+        {
+            "id": 5,
+            "eventId": 1,
+            "tagId": 5
+        }
+    ],
+
     "event-product-list" : [
         {
             "id": 1,
@@ -195,6 +279,76 @@
             "id": 12,
             "eventId": 2,
             "productId": 12
+        },
+        {
+            "id": 13,
+            "eventId": 3,
+            "productId": 13
+        },
+        {
+            "id": 14,
+            "eventId": 3,
+            "productId": 14
+        },
+        {
+            "id": 15,
+            "eventId": 3,
+            "productId": 14
+        },
+        {
+            "id": 16,
+            "eventId": 3,
+            "productId": 14
+        },
+        {
+            "id": 17,
+            "eventId": 3,
+            "productId": 14
+        },
+        {
+            "id": 18,
+            "eventId": 3,
+            "productId": 14
+        },
+        {
+            "id": 19,
+            "eventId": 4,
+            "productId": 15
+        },
+        {
+            "id": 20,
+            "eventId": 4,
+            "productId": 15
+        },
+        {
+            "id": 21,
+            "eventId": 4,
+            "productId": 15
+        },
+        {
+            "id": 22,
+            "eventId": 4,
+            "productId": 15
+        },
+        {
+            "id": 23,
+            "eventId": 4,
+            "productId": 15
+        },
+        {
+            "id": 24,
+            "eventId": 5,
+            "productId": 16
+        },
+        {
+            "id": 25,
+            "eventId": 5,
+            "productId": 16
+        },
+        {
+            "id": 26,
+            "eventId": 5,
+            "productId": 16
         }
     ]
 }
