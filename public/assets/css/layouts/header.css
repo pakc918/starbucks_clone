@@ -131,6 +131,7 @@ header {
   border-bottom: 1px;
   border-bottom-style: solid;
   border-bottom-color: #adadadb4;
+  white-space: nowrap;
 }
 
 .header-sub nav ul {
@@ -161,24 +162,6 @@ header {
 
 .header-sub nav ul li:last-child {
   padding-right: 10px;
-}
-
-.header-top .search input {
-  width: 300px;
-  height: 200px;
-  font-size: 30px;
-  border: none;
-  text-align: left;
-}
-
-.search img {
-  width: 20px;
-  top: 400px;
-  left: 530px;
-}
-
-.header-top .search {
-  width: 900px;
 }
 
 .header-bottom .ft-top {

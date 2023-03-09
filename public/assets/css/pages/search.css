@@ -1,0 +1,26 @@
+.header-top .search input {
+    width:280px; height:40px; border: none; background:transparent; position: absolute;
+}
+
+.header-top .search img {
+    vertical-align: middle; position: absolute; right: 6px; bottom: 10px;
+}
+
+.header-top .search {
+    width: 90%;
+    background-color: lightgray;
+    height: 40px;
+    position: relative;
+}
+.header-top .search-close {
+    width: 30px;
+    text-align: -webkit-right;
+}
+
+section#recommand-md .search-result{
+    vertical-align:middle;
+    height: 300px;
+    text-align: center;
+    margin-top: 150px;
+}
+
