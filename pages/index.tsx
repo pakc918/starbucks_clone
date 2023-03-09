@@ -9,7 +9,7 @@ const Home: NextPageWithLayout = () => {
 
   const [eventListData, setEventListData] = useState<mainEventListType[]>();
   useEffect(() => {
-    fetch('http://localhost:3001/main-event-list')
+    fetch('http://10.10.10.42:3001/main-event-list')
     .then(res => res.json())
     .then(data => setEventListData(data))
   },[])

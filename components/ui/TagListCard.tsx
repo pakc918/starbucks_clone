@@ -5,7 +5,7 @@ export default function productListCard(props: { tagId: number }) {
     const [tagData, setTagData] = useState<tagListCardType>()
 
     useEffect(() => {
-        fetch(`http://localhost:3001/tags/${props.tagId}`)
+        fetch(`http://10.10.10.42:3001/tags/${props.tagId}`)
             .then(res => res.json())
             .then(data => setTagData(data))
     }, [props.tagId])

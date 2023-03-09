@@ -14,13 +14,13 @@ export default function MainLayout(props: { children: React.ReactNode }) {
     const [navSubData, setNavSubData] = useState<subNavMenuType[]>()
 
     useEffect(() => {
-        fetch('http://localhost:3001/nav')
+        fetch('http://10.10.10.42:3001/nav')
             .then(res => res.json())
             .then(data => setNavBottomData(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3001/nav')
+        fetch('http://10.10.10.42:3001/nav')
             .then(res => res.json())
             .then(data => setNavSubData(data))
     }, [])
@@ -149,7 +149,6 @@ export default function MainLayout(props: { children: React.ReactNode }) {
                             </div>
                         </div>
                     </div>
-
                 </section>
             </div>
         </>

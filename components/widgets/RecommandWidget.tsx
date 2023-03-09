@@ -8,14 +8,14 @@ export default function RecommandWidget(props: { title: string, eventId: number 
 
     const [eventItemList, setEventItemList] = useState<eventProductListType[]>()
     useEffect(() => {
-        fetch(`http://localhost:3001/event-product-list?eventId=${props.eventId}`)
+        fetch(`http://10.10.10.42:3001/event-product-list?eventId=${props.eventId}`)
             .then(res => res.json())
             .then(data => setEventItemList(data))
     }, [])
 
     const [eventTagItemList, setEventTagItemList] = useState<tagListCardType[]>()
     useEffect(() => {
-        fetch(`http://localhost:3001/event-tag-list?eventId=${props.eventId}`)
+        fetch(`http://10.10.10.42:3001/event-tag-list?eventId=${props.eventId}`)
             .then(res => res.json())
             .then(data => setEventTagItemList(data))
     }, [])
