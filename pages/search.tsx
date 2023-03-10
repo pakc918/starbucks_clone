@@ -9,7 +9,7 @@ export default function search() {
                     <div className="header-top">
                         <div className="search">
                             <input type="text" placeholder="검색어를 입력하세요." />
-                            <a href="searchresult.html"><img src="assets/images/icons/search.svg" /></a>
+                            <Link href="/searchresult"><img src="assets/images/icons/search.svg" /></Link>
                         </div>
                         <nav className="search-close">
                             <Link href="/"><img src="assets/images/icons/close.png" /></Link>

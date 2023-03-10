@@ -71,10 +71,14 @@ section#buy2 .item-coupon-box .item-coupon-btn {
 
 }
 
+.buypage-footer a{
+    width: 90%;
+}
+
 .buypage-buy-btn {
     border-radius: 30px;
     background-color: #00a862;
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
