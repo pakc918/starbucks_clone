@@ -32,14 +32,14 @@ export default function MainLayout(props: { children: React.ReactNode }) {
                 <header>
                     <div className="header-top">
                         <div className="menu-icon">
-                            <a href="menu.html"><img src="assets/images/icons/menu.svg" alt="" /></a>
+                            <Link href="/menu"><img src="assets/images/icons/menu.svg" alt="" /></Link>
                         </div>
                         <h1><Link href="/">온라인 스토어</Link></h1>
                         <nav>
                             <ul>
                                 <li><Link href="/search"><img src="assets/images/icons/search.svg" /></Link></li>
-                                <li><a href="cart.html"><img src="assets/images/icons/shopping-cart.svg" /></a></li>
-                                <li><a href="mypage.html"><img src="assets/images/icons/user.svg" /></a></li>
+                                <li><Link href="/cart"><img src="assets/images/icons/shopping-cart.svg" /></Link></li>
+                                <li><Link href="/mypage"><img src="assets/images/icons/user.svg" /></Link></li>
                             </ul>
                         </nav>
                     </div>
