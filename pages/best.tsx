@@ -12,6 +12,7 @@ const Home: NextPageWithLayout = () => {
             <Head>
                 <title>Home</title>
             </Head>
+            
             <section className="best-product">
         <div className="best-product-list">
             <div className="product-item">
