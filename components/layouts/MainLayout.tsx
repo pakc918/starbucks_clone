@@ -12,19 +12,11 @@ export default function MainLayout(props: { children: React.ReactNode }) {
 
   const [navBottomData, setNavBottomData] = useState<bottomNavMenuType[]>()
 
-<<<<<<< HEAD
   useEffect(() => {
     fetch('http://localhost:3001/nav')
       .then(res => res.json())
       .then(data => setNavBottomData(data))
   }, [])
-=======
-    useEffect(() => {
-        fetch('http://localhost:3001/nav')
-            .then(res => res.json())
-            .then(data => setNavBottomData(data))
-    }, [])
->>>>>>> a874bb7b47d1257ac558ea4041012ac369af8309
 
 
   return (
