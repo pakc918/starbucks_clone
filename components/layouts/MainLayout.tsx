@@ -13,7 +13,7 @@ export default function MainLayout(props: { children: React.ReactNode }) {
   const [navBottomData, setNavBottomData] = useState<bottomNavMenuType[]>()
 
   useEffect(() => {
-    fetch('http://10.10.10.42:3001/nav')
+    fetch('http://localhost:3001/nav')
       .then(res => res.json())
       .then(data => setNavBottomData(data))
   }, [])

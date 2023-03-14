@@ -5,7 +5,7 @@ export default function ProductListCard(props: { productId: number }) {
     const [productData, setProductData] = useState<ProductListCardType>()
 
     useEffect(() => {
-        fetch(`http://10.10.10.42:3001/products/${props.productId}`)
+        fetch(`http://localhost:3001/products/${props.productId}`)
             .then(res => res.json())
             .then(data => setProductData(data))
     }, [props.productId])

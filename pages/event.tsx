@@ -30,11 +30,11 @@ const Event = () => {
 
   const [productData, setProductData] = useState<ProductListCardType>()
 
-    useEffect(() => {
-        fetch(`http://10.10.10.42:3001/products/4`)
-            .then(res => res.json())
-            .then(data => setProductData(data))
-    }, [])
+  useEffect(() => {
+    fetch(`http://localhost:3001/products/1`)
+      .then(res => res.json())
+      .then(data => setProductData(data))
+  }, [])
 
   return (
     <>
@@ -72,15 +72,38 @@ const Event = () => {
         </div>
       </section>
 
-      <section className='special_section_product2'>
-      <div className="special-recommand-product-list">
-          <div className="recommand-product-item">
-
+      {
+        productData &&
+        <section className='special_section_product2'>
+          <div className="special-recommand-product-list">
+            <div className="recommand-product-item">
+              <div className="special-recommand-product-item__img">
+                <img
+                  src={productData.imgUrl} alt={productData.title}
+                  style={{ height: "156px", width: "161px" }} />
+              </div>
+              <div className="recommand-product-item__info">
+                {productData.isNew ? <p className='item-new'>New</p> : null}
+                <p className="item-title">{productData.title}</p>
+                <p className="item-price"><span>{productData.price}</span>원</p>
+              </div>
             </div>
+
+            <div className="recommand-product-item2">
+              <div className="special-recommand-product-item__img">
+                <img
+                  src={productData.imgUrl} alt={productData.title}
+                  style={{ height: "156px", width: "161px" }} />
+              </div>
+              <div className="recommand-product-item__info">
+                {productData.isNew ? <p className='item-new'>New</p> : null}
+                <p className="item-title">{productData.title}</p>
+                <p className="item-price"><span>{productData.price}</span>원</p>
+              </div>
             </div>
-
-      </section>
-
+          </div>
+        </section>
+      }
       {/* <section className="special_section_product2">
         <div className="special-recommand-product-list">
           <div className="recommand-product-item">
