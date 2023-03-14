@@ -1,6 +1,5 @@
 header {
   background-color: var(--color-white);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   width: 100%;
@@ -118,11 +117,12 @@ header {
 }
 
 .header-bottom nav ul li.active {
-  transition: 1s;
+  transition: 1.0s;
   font-weight: bold;
   border-bottom: 3px;
   border-bottom-style: solid;
   border-bottom-color: var(--color-primary);
+
 }
 
 .header-sub {
@@ -168,7 +168,7 @@ header {
   width: 100%;
 }
 
-.header-bottom .ft-top .ft-information{
+.header-bottom .ft-top .ft-information {
   margin: 20px;
   font: -webkit-control;
 }
@@ -188,25 +188,13 @@ section#category2 {
   padding: 0px;
 }
 
-section#category .category-box{
+section#category .category-box {
   border-bottom: 1px;
   border-bottom-style: solid;
   border-bottom-color: lightgray;
 }
 
-section#category nav ul{
-  opacity: 0.8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-  height: 60px;
-  overflow-x: scroll;
-  width: 100%;
-  white-space: nowrap;
-}
-section#category2 nav ul{
+section#category nav ul {
   opacity: 0.8;
   display: flex;
   justify-content: space-between;
@@ -219,7 +207,20 @@ section#category2 nav ul{
   white-space: nowrap;
 }
 
-section#category nav ul li{
+section#category2 nav ul {
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  height: 60px;
+  overflow-x: scroll;
+  width: 100%;
+  white-space: nowrap;
+}
+
+section#category nav ul li {
   list-style: none;
   width: 25%;
   margin: 0 20px;
@@ -230,7 +231,7 @@ section#category nav ul li{
   border-bottom-color: var(--color-white);
 }
 
-section#category2 nav ul li{
+section#category2 nav ul li {
   list-style: none;
   width: 25%;
   margin: 0 20px;
@@ -241,7 +242,7 @@ section#category2 nav ul li{
   border-bottom-color: var(--color-white);
 }
 
-section#category nav ul.bar2{
+section#category nav ul.bar2 {
   white-space: nowrap;
   opacity: 0.8;
   display: flex;
@@ -254,7 +255,7 @@ section#category nav ul.bar2{
   width: 100%;
 }
 
-section#category2 nav ul.bar2{
+section#category2 nav ul.bar2 {
   opacity: 0.8;
   display: flex;
   justify-content: space-between;
@@ -268,7 +269,7 @@ section#category2 nav ul.bar2{
   white-space: nowrap;
 }
 
-section#category2 nav ul.bar2 li{
+section#category2 nav ul.bar2 li {
   list-style: none;
   width: 25%;
   margin: 0 20px;
