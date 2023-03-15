@@ -21,7 +21,31 @@ export const bottomNavData = [
     }
 ]
 
-export const subNavData = [
+export const eventsubNavData = [
+    {
+        id:1,
+        name: '케이크',
+        link: '/cake',
+    },
+    {
+        id:2,
+        name: '바리스타 춘식',
+        link: '/chunsik',
+    },
+    {
+        id:3,
+        name: '핸디 데스크',
+        link: '/handy_desk',
+    },
+    {
+        id:4,
+        name: '별★ 적립 혜택',
+        link: '/save_star',
+    },
+]
+
+
+export const bestsubNavData = [
     {
         id: 1,
         name: '케이크',

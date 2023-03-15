@@ -23,9 +23,3 @@ export interface eventProductListType {
     eventId: number;
     productId: number;
 }
-
-export interface tagListCardType {
-    id: number;
-    eventId: number;
-    tagId: number;
-}
