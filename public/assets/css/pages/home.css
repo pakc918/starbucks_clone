@@ -151,3 +151,12 @@ section#recommand-md .recommand-product-list3 .recommand-product-item2{
   padding: 0px;
 }
 
+.swiper-pagination-bullet{
+  background-color: rgb(255, 255, 255) !important;
+  opacity:var(--swiper-pagination-bullet-inactive-opacity,1) !important;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: black !important;
+  
+}
