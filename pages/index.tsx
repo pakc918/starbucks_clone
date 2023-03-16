@@ -5,6 +5,7 @@ import RecommandWidget from '@/components/widgets/RecommandWidget'
 import { useEffect, useState } from 'react'
 import { mainEventListType } from '@/types/fetchDataType'
 
+
 const Home: NextPageWithLayout = () => {
 
   const [eventListData, setEventListData] = useState<mainEventListType[]>();
@@ -17,7 +18,7 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>StarBucks Clone Site</title>
       </Head>
       <section id="event-banner">
         <div className="event-banner">
@@ -37,6 +38,7 @@ const Home: NextPageWithLayout = () => {
           />
         ))
       }
+      
     </>
   )
 }

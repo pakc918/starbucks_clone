@@ -4,6 +4,11 @@ export interface mainEventListType{
     eventId: number;
 }
 
+export interface BestListType{
+    id: number;
+    title: string;
+}
+
 export interface ProductListCardType {
     id: number;
     title: string;
@@ -21,6 +26,12 @@ export interface tagListCardType {
 export interface eventProductListType {
     id: number;
     eventId: number;
+    productId: number;
+}
+
+export interface bestProductListType {
+    id: number;
+    bestId:number;
     productId: number;
 }
 

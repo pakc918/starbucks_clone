@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ProductListCard from '../ui/ProductListCard'
+import ProductListCard from '../ui/productListCard'
 import TagListCard from '../ui/TagListCard'
 import { eventProductListType } from '@/types/fetchDataType'
 import { tagListCardType } from '@/types/fetchDataType'

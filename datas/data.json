@@ -1,5 +1,5 @@
 {
-    "nav" : [
+    "nav": [
         {
             "id": 1,
             "name": "메인",
@@ -7,7 +7,7 @@
         },
         {
             "id": 2,
-            "name":"기획전",
+            "name": "기획전",
             "link": "/event"
         },
         {
@@ -19,6 +19,34 @@
             "id": 4,
             "name": "마이페이지",
             "link": "/mypage"
+        }
+    ],
+    "iconLeft": [
+        {
+            "id": 1,
+            "name": "menu",
+            "imgUrl": "assets/images/icons/menu.svg",
+            "link" : "/menu"
+        }
+    ],
+    "iconRight": [
+        {
+            "id": 2,
+            "name": "search",
+            "imgUrl": "assets/images/icons/search.svg",
+            "link" : "/search"
+        },
+        {
+            "id": 3,
+            "name": "cart",
+            "imgUrl": "assets/images/icons/shopping-cart.svg",
+            "link" : "/cart"
+        },
+        {
+            "id": 4,
+            "name": "user",
+            "imgUrl": "assets/images/icons/user.svg",
+            "link" : "/mypage"
         }
     ],
     "main-event-list": [
@@ -48,150 +76,235 @@
             "eventId": 5
         }
     ],
-    "tags" : [
+    "tags": [
         {
             "id": 1,
-            "title" : "바리스타 춘식",
-            "imgUrl" : "assets/images/products/05.png"
+            "title": "바리스타 춘식",
+            "imgUrl": "assets/images/products/05.png"
         },
         {
             "id": 2,
-            "title" : "리드",
-            "imgUrl" : "assets/images/products/08.png"
+            "title": "리드",
+            "imgUrl": "assets/images/products/08.png"
         },
         {
             "id": 3,
-            "title" : "리유저블",
-            "imgUrl" : "assets/images/products/09.png"
+            "title": "리유저블",
+            "imgUrl": "assets/images/products/09.png"
         },
         {
             "id": 4,
-            "title" : "케이스",
-            "imgUrl" : "assets/images/products/10.png"
+            "title": "케이스",
+            "imgUrl": "assets/images/products/10.png"
         },
         {
             "id": 5,
-            "title" : "핸디 데스크",
-            "imgUrl" : "assets/images/products/11.png"
+            "title": "핸디 데스크",
+            "imgUrl": "assets/images/products/11.png"
         }
     ],
-
-    "products" : [
+    "best-event-list": [
         {
             "id": 1,
-            "title" : "23 SS 체리 튤립 로맨틱 워터보틀 384ml",
+            "title": "케이크",
+            "bestId": 1
+        },
+        {
+            "id": 2,
+            "title": "텀블러/보온병",
+            "bestId": 2
+        },
+        {
+            "id": 3,
+            "title": "머그/컵",
+            "bestId": 3
+        },
+        {
+            "id": 4,
+            "title": "라이프스타일",
+            "bestId": 4
+        },
+        {
+            "id": 5,
+            "title": "티/커피용품",
+            "bestId": 5
+        },
+        {
+            "id": 6,
+            "title": "세트",
+            "bestId": 6
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "title": "23 SS 체리 튤립 로맨틱 워터보틀 384ml",
             "price": 33000,
-            "imgUrl" : "assets/images/products/12.png",
+            "imgUrl": "assets/images/products/12.png",
             "isNew": true
         },
         {
             "id": 2,
-            "title" : "23 SS 체리 밸류 로맨틱 텀블러 355ml",
+            "title": "23 SS 체리 밸류 로맨틱 텀블러 355ml",
             "price": 32000,
-            "imgUrl" : "assets/images/products/01.png",
+            "imgUrl": "assets/images/products/01.png",
             "isNew": true
         },
         {
             "id": 3,
-            "title" : "23 SS 체리블라썸 엘마 로맨틱 텀블러 473ml",
+            "title": "23 SS 체리블라썸 엘마 로맨틱 텀블러 473ml",
             "price": 34000,
-            "imgUrl" : "assets/images/products/13.png",
+            "imgUrl": "assets/images/products/13.png",
             "isNew": true
         },
         {
             "id": 4,
-            "title" : "23 SS 체리 트로이 꼴라쥬 텀블러 473ml",
+            "title": "23 SS 체리 트로이 꼴라쥬 텀블러 473ml",
             "price": 34000,
-            "imgUrl" : "assets/images/products/14.png",
+            "imgUrl": "assets/images/products/14.png",
             "isNew": true
         },
         {
             "id": 5,
-            "title" : "23 체리 플로런스 로맨틱 텀블러 473ml",
+            "title": "23 체리 플로런스 로맨틱 텀블러 473ml",
             "price": 19000,
-            "imgUrl" : "assets/images/products/15.png",
+            "imgUrl": "assets/images/products/15.png",
             "isNew": true
         },
         {
             "id": 6,
-            "title" : "23 체리 아이코닉 글리터 텀블러 473ml",
+            "title": "23 체리 아이코닉 글리터 텀블러 473ml",
             "price": 23000,
-            "imgUrl" : "assets/images/products/16.png",
+            "imgUrl": "assets/images/products/16.png",
             "isNew": true
         },
         {
             "id": 7,
-            "title" : "23 체리블라썸 아치 페탈 텀블러 473ml",
+            "title": "23 체리블라썸 아치 페탈 텀블러 473ml",
             "price": 18000,
-            "imgUrl" : "assets/images/products/17.png",
+            "imgUrl": "assets/images/products/17.png",
             "isNew": true
         },
         {
             "id": 8,
-            "title" : "23 체리블라썸 팝핸들 로맨틱 콜드컵 473ml",
+            "title": "23 체리블라썸 팝핸들 로맨틱 콜드컵 473ml",
             "price": 22000,
-            "imgUrl" : "assets/images/products/18.png",
+            "imgUrl": "assets/images/products/18.png",
             "isNew": true
         },
         {
             "id": 9,
-            "title" : "23 체리블라썸 플라워 머그앤소서 237ml",
+            "title": "23 체리블라썸 플라워 머그앤소서 237ml",
             "price": 34000,
-            "imgUrl" : "assets/images/products/19.png",
+            "imgUrl": "assets/images/products/19.png",
             "isNew": true
         },
         {
             "id": 10,
-            "title" : "23 체리블라썸 회전목마 머그앤리드 355ml",
+            "title": "23 체리블라썸 회전목마 머그앤리드 355ml",
             "price": 27000,
-            "imgUrl" : "assets/images/products/20.png",
+            "imgUrl": "assets/images/products/20.png",
             "isNew": true
         },
         {
             "id": 11,
-            "title" : "23 체리블라썸 로맨틱 문 무드등",
+            "title": "23 체리블라썸 로맨틱 문 무드등",
             "price": 32000,
-            "imgUrl" : "assets/images/products/21.png",
+            "imgUrl": "assets/images/products/21.png",
             "isNew": true
         },
         {
             "id": 12,
-            "title" : "23 체리블라썸 로맨틱 문 장우산",
+            "title": "23 체리블라썸 로맨틱 문 장우산",
             "price": 23000,
-            "imgUrl" : "assets/images/products/22.png",
+            "imgUrl": "assets/images/products/22.png",
             "isNew": true
         },
         {
             "id": 13,
-            "title" : "23 SS 체리 콕시클 라벤더 콜드컵 591ml",
+            "title": "23 SS 체리 콕시클 라벤더 콜드컵 591ml",
             "price": 55000,
-            "imgUrl" : "https://shop-phinf.pstatic.net/20230213_282/1676250820294ccH77_JPEG/77386648106178298_1928937226.jpg?type=m510",
+            "imgUrl": "https://shop-phinf.pstatic.net/20230213_282/1676250820294ccH77_JPEG/77386648106178298_1928937226.jpg?type=m510",
             "isNew": true
         },
         {
             "id": 14,
-            "title" : "23 체리블라썸 JOG 보온병 250ml",
+            "title": "23 체리블라썸 JOG 보온병 250ml",
             "price": 37000,
-            "imgUrl" : "assets/images/products/02.png",
+            "imgUrl": "assets/images/products/02.png",
             "isNew": false
         },
         {
             "id": 15,
-            "title" : "부드러운 티라미수 롤케이크",
+            "title": "부드러운 티라미수 롤케이크",
             "price": 19900,
-            "imgUrl" : "assets/images/products/03.png",
+            "imgUrl": "assets/images/products/03.png",
             "isNew": false
         },
         {
             "id": 16,
-            "title" : "파스텔 핑크 텀블러 473ml",
+            "title": "파스텔 핑크 텀블러 473ml",
             "price": 16000,
-            "imgUrl" : "assets/images/products/07.png",
+            "imgUrl": "assets/images/products/07.png",
+            "isNew": false
+        },
+        {
+            "id": 17,
+            "title": "부드러운 고구마 생크림 케이크",
+            "price": 33000,
+            "imgUrl": "https://shop-phinf.pstatic.net/20221230_87/1672371248920KrduT_JPEG/73507032581228289_908311394.jpg?type=m510",
+            "isNew": false
+        },
+        {
+            "id": 18,
+            "title": "블루베리 치즈 케이크",
+            "price": 19900,
+            "imgUrl": "https://shop-phinf.pstatic.net/20221230_294/1672371457399tDq2z_JPEG/73507241105091598_1599621290.jpg?type=m510",
+            "isNew": false
+        },
+        {
+            "id": 19,
+            "title": "더블 초콜릿 케이크",
+            "price": 33000,
+            "imgUrl": "https://shop-phinf.pstatic.net/20221230_152/1672371405306IVKOz_JPEG/73507189011853712_324497504.jpg?type=m510",
+            "isNew": false
+        },
+        {
+            "id": 20,
+            "title": "별의 별 케이크",
+            "price": 25000,
+            "imgUrl": "https://shop-phinf.pstatic.net/20230215_274/1676424690223Q4bek_JPEG/77560524030735209_1274866820.jpg?type=m510",
             "isNew": false
         }
     ],
-
-    "event-tag-list" : [
+    "best-item-list": [
+        {
+            "id": 1,
+            "bestId": 1,
+            "productId": 15
+        },
+        {
+            "id": 2,
+            "bestId": 1,
+            "productId": 17
+        },
+        {
+            "id": 3,
+            "bestId": 1,
+            "productId": 18
+        },
+        {
+            "id": 4,
+            "bestId": 1,
+            "productId": 19
+        },
+        {
+            "id": 5,
+            "bestId": 1,
+            "productId": 20
+        }
+    ],
+    "event-tag-list": [
         {
             "id": 1,
             "eventId": 1,
@@ -218,8 +331,7 @@
             "tagId": 5
         }
     ],
-
-    "event-product-list" : [
+    "event-product-list": [
         {
             "id": 1,
             "eventId": 2,

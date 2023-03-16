@@ -53,3 +53,37 @@ export const subNavData = [
         link: '/set',
     }
 ]
+
+export const category = [
+    {
+        id : 1,
+        name: "전체",
+        categoryId : 0
+    },
+    {
+        id : 2,
+        name: "케이크",
+        categoryId : 1,
+        subCategory : [{
+            id : 1,
+            name: "카테고리",
+            menus: [
+                {
+                    id:1,
+                    name:"롤케이크",
+                    subCategoryId:1
+                },
+                {
+                    id:2,
+                    name:"홀케이크",
+                    subCategoryId:2
+                }
+            ]
+        }]
+    },
+    {
+        id : 3,
+        name: "텀블러/보온병",
+        categoryId : 2
+    },
+]
