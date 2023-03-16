@@ -16,7 +16,8 @@ export default function MainLayout(props: { children: React.ReactNode }) {
   const [navBottomData, setNavBottomData] = useState<bottomNavMenuType[]>()
   const [headerLeftIconData, setheaderLeftIconData] = useState<IconType[]>()
   const [headerRightIconData, setheaderRightIconData] = useState<IconType[]>()
-
+  const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
+  const [bestSubNavData, setBestSubNottomNavData] = useState<subNavMenuType[]>()
 
   useEffect(() => {
     fetch('http://localhost:3001/nav')
@@ -36,15 +37,11 @@ export default function MainLayout(props: { children: React.ReactNode }) {
       .then(data => setheaderLeftIconData(data))
   }, [])
 
-  const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
-
   useEffect(() => {
     fetch('http://localhost:3001/eventsubnav')
       .then(res => res.json())
       .then(data => setsubNavBottomData(data))
   },[])
-
-  const [bestSubNavData, setBestSubNottomNavData] = useState<subNavMenuType[]>()
 
   useEffect(() => {
     fetch('http://localhost:3001/bestsubnav')
