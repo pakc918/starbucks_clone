@@ -4,6 +4,7 @@ import MainLayout from '@/components/layouts/MainLayout'
 import RecommandWidget from '@/components/widgets/RecommandWidget'
 import { useEffect, useState } from 'react'
 import { mainEventListType } from '@/types/fetchDataType'
+import Homebanner from '@/components/widgets/Homebanner'
 
 
 const Home: NextPageWithLayout = () => {
@@ -24,7 +25,7 @@ const Home: NextPageWithLayout = () => {
         <div className="event-banner">
           <div className="event-banner__item">
             <div className="event-banner__item__img">
-              <img src="assets/images/banner/banner01.png" width="100%" height="100%" alt="" />
+              <Homebanner />
             </div>
           </div>
         </div>

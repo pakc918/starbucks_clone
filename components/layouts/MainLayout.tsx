@@ -1,6 +1,6 @@
 
 import { IconType } from '@/types/headerIconDataType'
-import { bottomNavMenuType } from '@/types/navMenuType'
+import { bottomNavMenuType, subNavMenuType } from '@/types/navMenuType'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -34,6 +34,22 @@ export default function MainLayout(props: { children: React.ReactNode }) {
     fetch('http://localhost:3001/iconLeft')
       .then(res => res.json())
       .then(data => setheaderLeftIconData(data))
+  }, [])
+
+  const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
+
+  useEffect(() => {
+    fetch('http://localhost:3001/eventsubnav')
+      .then(res => res.json())
+      .then(data => setsubNavBottomData(data))
+  },[])
+
+  const [bestSubNavData, setBestSubNottomNavData] = useState<subNavMenuType[]>()
+
+  useEffect(() => {
+    fetch('http://localhost:3001/bestsubnav')
+      .then(res => res.json())
+      .then(data => setBestSubNottomNavData(data))
   }, [])
 
 
@@ -102,27 +118,31 @@ export default function MainLayout(props: { children: React.ReactNode }) {
               <div className="header-sub">
                 <nav>
                   <ul>
-                    <li className="active">케이크</li>
-                    <li>텀블러/보온병</li>
-                    <li>머그/컵</li>
-                    <li>라이프스타일</li>
-                    <li>티/커피용품</li>
-                    <li>세트</li>
+                    {
+                      bestSubNavData && bestSubNavData.map(bestnav => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
+                        <li
+                          key={bestnav.id}
+                          className={""}
+                        >
+                          {bestnav.name}
+                        </li>
+                      ))
+                    }
                   </ul>
                 </nav>
               </div>
-            ) :
-              ""
-          }
-          {
-            router.pathname === '/event' ? (
+            ) : router.pathname === '/event' ? (
               <div className="header-sub">
                 <nav>
                   <ul>
-                    <li className="active">케이크</li>
-                    <li>바리스타 춘식</li>
-                    <li>핸디 데스크</li>
-                    <li>별★ 적립 혜택</li>
+                    {
+                      eventSubNavData && eventSubNavData.map(subnav => (
+                        <li
+                          key={subnav.id}
+                          className={""}
+                        >{subnav.name}</li>
+                      ))
+                    }
                   </ul>
                 </nav>
               </div>
