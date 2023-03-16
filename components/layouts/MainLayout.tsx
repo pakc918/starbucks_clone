@@ -1,12 +1,13 @@
 
 import { IconType } from '@/types/headerIconDataType'
-import { bottomNavMenuType, subNavMenuType } from '@/types/navMenuType'
+import { bottomNavMenuType } from '@/types/navMenuType'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 //import{ bottomNavData } from 'assets/../datas/navData'
-import SignupModal from '../modals/SignupModal'
+//import SignupModal from '../modals/SignupModal'
+
 
 export default function MainLayout(props: { children: React.ReactNode }) {
 
@@ -16,8 +17,6 @@ export default function MainLayout(props: { children: React.ReactNode }) {
   const [navBottomData, setNavBottomData] = useState<bottomNavMenuType[]>()
   const [headerLeftIconData, setheaderLeftIconData] = useState<IconType[]>()
   const [headerRightIconData, setheaderRightIconData] = useState<IconType[]>()
-  const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
-  const [bestSubNavData, setBestSubNottomNavData] = useState<subNavMenuType[]>()
 
   useEffect(() => {
     fetch('http://localhost:3001/nav')
@@ -37,17 +36,7 @@ export default function MainLayout(props: { children: React.ReactNode }) {
       .then(data => setheaderLeftIconData(data))
   }, [])
 
-  useEffect(() => {
-    fetch('http://localhost:3001/eventsubnav')
-      .then(res => res.json())
-      .then(data => setsubNavBottomData(data))
-  },[])
 
-  useEffect(() => {
-    fetch('http://localhost:3001/bestsubnav')
-      .then(res => res.json())
-      .then(data => setBestSubNottomNavData(data))
-  }, [])
 
 
   return (
@@ -79,7 +68,7 @@ export default function MainLayout(props: { children: React.ReactNode }) {
               <ul>
                 {
                   headerRightIconData && headerRightIconData.map(iconRight => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
-                    <li 
+                    <li
                       key={iconRight.id}
                     >
                       <Link href={iconRight.link}><img src={iconRight.imgUrl} /></Link>
@@ -109,42 +98,6 @@ export default function MainLayout(props: { children: React.ReactNode }) {
                   </nav>
                 </div>
               ) : ""))
-          }
-          {
-            router.pathname === '/best' ? (
-              <div className="header-sub">
-                <nav>
-                  <ul>
-                    {
-                      bestSubNavData && bestSubNavData.map(bestnav => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
-                        <li
-                          key={bestnav.id}
-                          className={""}
-                        >
-                          {bestnav.name}
-                        </li>
-                      ))
-                    }
-                  </ul>
-                </nav>
-              </div>
-            ) : router.pathname === '/event' ? (
-              <div className="header-sub">
-                <nav>
-                  <ul>
-                    {
-                      eventSubNavData && eventSubNavData.map(subnav => (
-                        <li
-                          key={subnav.id}
-                          className={""}
-                        >{subnav.name}</li>
-                      ))
-                    }
-                  </ul>
-                </nav>
-              </div>
-            ) :
-              ""
           }
         </header>
       </div>

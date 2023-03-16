@@ -1,18 +1,23 @@
+
+import { IconType } from '@/types/headerIconDataType'
 import { bottomNavMenuType, subNavMenuType } from '@/types/navMenuType'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import BestWidget from '../widgets/BestWidget'
 //import{ bottomNavData } from 'assets/../datas/navData'
+//import SignupModal from '../modals/SignupModal'
 
-export default function BestLayout(props: { children: React.ReactNode }) {
+
+export default function MainLayout(props: { children: React.ReactNode }) {
 
     const router = useRouter()
     console.log(router.pathname)
 
     const [navBottomData, setNavBottomData] = useState<bottomNavMenuType[]>()
-    const [bestSubNavData, setBestSubNottomNavData] = useState<subNavMenuType[]>()
+    const [headerLeftIconData, setheaderLeftIconData] = useState<IconType[]>()
+    const [headerRightIconData, setheaderRightIconData] = useState<IconType[]>()
+    const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
 
     useEffect(() => {
         fetch('http://localhost:3001/nav')
@@ -21,10 +26,24 @@ export default function BestLayout(props: { children: React.ReactNode }) {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3001/bestsubnav')
+        fetch('http://localhost:3001/iconRight')
             .then(res => res.json())
-            .then(data => setBestSubNottomNavData(data))
+            .then(data => setheaderRightIconData(data))
     }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:3001/iconLeft')
+            .then(res => res.json())
+            .then(data => setheaderLeftIconData(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:3001/eventsubnav')
+            .then(res => res.json())
+            .then(data => setsubNavBottomData(data))
+    }, [])
+
+
 
     return (
         <>
@@ -35,24 +54,39 @@ export default function BestLayout(props: { children: React.ReactNode }) {
                 <link rel="stylesheet" href="assets/css/style.css" />
                 <title>StarBucks Clone Site</title>
             </Head>
+
             <div className="container">
                 <header>
                     <div className="header-top">
                         <div className="menu-icon">
-                            <a href="menu.html"><img src="assets/images/icons/menu.svg" alt="" /></a>
+                            {
+                                headerLeftIconData && headerLeftIconData.map(iconLeft => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
+                                    <li
+                                        key={iconLeft.id}
+                                    >
+                                        <Link href={iconLeft.link}><img src={iconLeft.imgUrl} /></Link>
+                                    </li>
+                                ))
+                            }
                         </div>
                         <h1><Link href="/">온라인 스토어</Link></h1>
                         <nav>
                             <ul>
-                                <li><Link href="/search"><img src="assets/images/icons/search.svg" /></Link></li>
-                                <li><a href="cart.html"><img src="assets/images/icons/shopping-cart.svg" /></a></li>
-                                <li><a href="mypage.html"><img src="assets/images/icons/user.svg" /></a></li>
+                                {
+                                    headerRightIconData && headerRightIconData.map(iconRight => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
+                                        <li
+                                            key={iconRight.id}
+                                        >
+                                            <Link href={iconRight.link}><img src={iconRight.imgUrl} /></Link>
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </nav>
                     </div>
                     {
                         navBottomData && navBottomData.map(nav => (
-                            router.pathname === nav.link ?
+                            router.pathname === nav.link ? (
                                 <div className="header-bottom">
                                     <nav>
                                         <ul>
@@ -69,21 +103,19 @@ export default function BestLayout(props: { children: React.ReactNode }) {
                                         </ul>
                                     </nav>
                                 </div>
-                                : ""))
+                            ) : ""))
                     }
                     {
-                        router.pathname === '/best' ? (
+                        router.pathname === '/event' ? (
                             <div className="header-sub">
                                 <nav>
                                     <ul>
                                         {
-                                            bestSubNavData && bestSubNavData.map(bestsubnav => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
+                                            eventSubNavData && eventSubNavData.map(eventsubnav => (
                                                 <li
-                                                    key={bestsubnav.id}
-                                                    className={router.pathname === bestsubnav.link ? "active" : ""}
-                                                >
-                                                    <Link href={bestsubnav.link}>{bestsubnav.name}</Link>
-                                                </li>
+                                                    key={eventsubnav.id}
+                                                    className={router.pathname === eventsubnav.link ? "active" : ""}
+                                                >{eventsubnav.name}</li>
                                             ))
                                         }
                                     </ul>
