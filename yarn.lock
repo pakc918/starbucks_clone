@@ -291,6 +291,11 @@ ast-types-flow@^0.0.7:
   resolved "https://registry.npmjs.org/ast-types-flow/-/ast-types-flow-0.0.7.tgz"
   integrity sha512-eBvWn1lvIApYMhzQMsu9ciLfkBY499mFZlNqG+/9WR7PVlroQw0vG30cOQQbaKz3sCEc44TAOu2ykzqXSNnwag==
 
+atom@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/atom/-/atom-1.4.1.tgz"
+  integrity sha512-FpdehYLT2I17Pk7jVjdr7gDbARljF/YzMPdaKqkXgB8hinM5rz+zdKnw4hvf/mLVVVezd4+xAsVvlL6mW6km+Q==
+
 available-typed-arrays@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz"

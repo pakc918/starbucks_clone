@@ -1,7 +1,7 @@
-import {atom} from 'react'
+import atom from 'recoil'
 
-export const cartState =  atom( {
+export const cartState = atom( {
 
-    key: "cartState",
+    key: 'cartState',
     default: 0,
 });
