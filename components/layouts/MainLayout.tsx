@@ -1,6 +1,6 @@
 
 import { IconType } from '@/types/headerIconDataType'
-import { bottomNavMenuType } from '@/types/navMenuType'
+import { bottomNavMenuType, subNavMenuType } from '@/types/navMenuType'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -17,6 +17,8 @@ export default function MainLayout(props: { children: React.ReactNode }) {
   const [navBottomData, setNavBottomData] = useState<bottomNavMenuType[]>()
   const [headerLeftIconData, setheaderLeftIconData] = useState<IconType[]>()
   const [headerRightIconData, setheaderRightIconData] = useState<IconType[]>()
+  const [bestSubNavData, setBestSubNottomNavData] = useState<subNavMenuType[]>()
+  const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
 
   useEffect(() => {
     fetch('http://localhost:3001/nav')
@@ -36,7 +38,17 @@ export default function MainLayout(props: { children: React.ReactNode }) {
       .then(data => setheaderLeftIconData(data))
   }, [])
 
+  useEffect(() => {
+    fetch('http://localhost:3001/bestsubnav')
+      .then(res => res.json())
+      .then(data => setBestSubNottomNavData(data))
+  }, [])
 
+  useEffect(() => {
+    fetch('http://localhost:3001/eventsubnav')
+      .then(res => res.json())
+      .then(data => setsubNavBottomData(data))
+  }, [])
 
 
   return (
@@ -98,6 +110,46 @@ export default function MainLayout(props: { children: React.ReactNode }) {
                   </nav>
                 </div>
               ) : ""))
+          }
+          {
+            router.pathname === '/best' ? (
+              <div className="header-sub">
+                <nav>
+                  <ul>
+                    {
+                      bestSubNavData && bestSubNavData.map(bestsubnav => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
+                        <li
+                          key={bestsubnav.id}
+                          className={router.pathname === bestsubnav.link ? "active" : ""}
+                        >
+                          <Link href={bestsubnav.link}>{bestsubnav.name}</Link>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </nav>
+              </div>
+            ) :
+              ""
+          }
+          {
+            router.pathname === '/event' ? (
+              <div className="header-sub">
+                <nav>
+                  <ul>
+                    {
+                      eventSubNavData && eventSubNavData.map(eventsubnav => (
+                        <li
+                          key={eventsubnav.id}
+                          className={router.pathname === eventsubnav.link ? "active" : ""}
+                        >{eventsubnav.name}</li>
+                      ))
+                    }
+                  </ul>
+                </nav>
+              </div>
+            ) :
+              ""
           }
         </header>
       </div>

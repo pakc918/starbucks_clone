@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { NextPageWithLayout } from './_app'
-import BestLayout from '@/components/layouts/BestLayout'
+import MAinLayout from '@/components/layouts/MainLayout'
 import BestWidget from '@/components/widgets/BestWidget'
 import { useEffect, useState } from 'react'
 import { bestProductListType } from '@/types/fetchDataType'
