@@ -17,7 +17,6 @@ export default function App ({ Component, pageProps}: AppProps) {
   // const getLayout = Component.getLayout ?? ((page) => page)
 
   const router = useRouter();
-  const [cartCnt, setCartCnt] = useState<number>(0);
 
   return (
     <div>

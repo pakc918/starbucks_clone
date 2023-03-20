@@ -1,7 +1,10 @@
-import atom from 'recoil'
+import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
 
-export const cartState = atom( {
+const { persistAtom } = recoilPersist();
 
-    key: 'cartState',
-    default: 0,
+export const cartState = atom({
+  key: "cartState",
+  default: 0,
+  //effects_UNSTABLE: [persistAtom],
 });

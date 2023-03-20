@@ -1,7 +1,8 @@
 import { inputRegisterType } from '@/types/UserInformation/Information';
-import React, { useState, useEffect } from 'react';
-import axiois from 'axios';
 import moment from 'moment';
+import React, { useState, useEffect } from 'react';
+// import axiois from 'axios';
+// import moment from 'moment';
 
 interface ChildProps {
     inputData: inputRegisterType;

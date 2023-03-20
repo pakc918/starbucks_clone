@@ -9,8 +9,8 @@ import SignupModal from "../modals/SignupModal";
 import { useRecoilValue } from "recoil";
 import { cartState } from "../../state/cartState";
 
-import { headerMenu } from "@/Types/starbucksTypes";
-import { filterMenuType, filterSubCategoryType, filterType, sizeType, smallCategoryType } from "@/Types/header/filterType";
+import { headerMenu } from "@/types/starbucksTypes";
+import { filterMenuType, filterSubCategoryType, filterType, sizeType, smallCategoryType } from "@/types/header/filterType";
 
 import { headerNavMenus, headerIcons, categoryList } from "../../datas/starbucksStaticDatas";
 import axios from "axios";

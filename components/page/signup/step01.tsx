@@ -1,6 +1,6 @@
 import { inputRegisterType, privateAgreeType } from '@/types/UserInformation/Information'
 import React, { useEffect, useState } from 'react'
-import TotalCheckBox from '@/components/ui/totalCheckBox'
+import TotalCheckBox from '@/components/ui/TotalCheckBox'
 import CheckBox from '@/components/ui/CheckBox'
 
 interface ChildProps {

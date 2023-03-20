@@ -516,5 +516,35 @@
             "eventId": 5,
             "productId": 16
         }
+    ],
+    "cartListByUser" : [
+        {
+            "cartId":1,
+            "productId":1,
+            "bigCategoryId":6,
+            "count":1,
+            "check":false
+        },
+        {
+            "cartId":2,
+            "productId":2,
+            "bigCategoryId":1,
+            "count":1,
+            "check":false
+        },
+        {
+            "cartId":3,
+            "productId":57,
+            "bigCategoryId":2,
+            "count":4,
+            "check":false
+        },
+        {
+            "cartId":4,
+            "productId":84,
+            "bigCategoryId":3,
+            "count":3,
+            "check":false
+        }
     ]
 }
