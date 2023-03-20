@@ -2,9 +2,36 @@ section#buy {
     margin-top: 20%;
 }
 
+section#buy .purchase p{
+    font-size: 25px;
+}
+
+section#buy .ship-info p{
+    font-size: 17px;
+    height: 50px;
+}
+
 section#buy .address-box{
     text-align: center;
     height: 130px;
+}
+
+.item-thum img{
+    width: 20px;
+    height: 20px;
+}
+
+.info-btn img{
+    width: 60px;
+    height: 60px;
+}
+
+.item-info-subject{
+    font-size: 15px;
+}
+
+section#buy .address-box span{
+    font-size: 13px;
 }
 
 section#buy .address-box .address-btn {
@@ -33,6 +60,31 @@ section#buy .item-information-box .item-information-btn{
     margin: 2%;
 }
 
+.buy-recommand-md {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: lightgray; 
+    height: 180px;
+}
+
+.buy-type {
+    height: 60px;
+}
+
+.buy-type p {
+    font-size: 18px;
+}
+
+.buy-recommand-md .item-coupon-box {
+    height:70px; 
+    position: relative;
+    margin: 10px;
+}
+
+.item-coupon-box div {
+    height: 60px;
+}
+
 section#buy2 .item-coupon-box{
     border-bottom-style: solid;
     border-width: 1px;
@@ -55,6 +107,27 @@ section#buy2 .item-coupon-box button{
 section#buy2 .item-coupon-box .item-coupon-btn {
     display: flex;
     justify-content: space-between;
+}
+
+.item-coupon-box nav li {
+    font-size : 15px
+}
+
+.item-coupon-btn div img {
+    width: 20px;
+    height: 20px;
+}
+
+.mobile {
+    width: 50%;
+}
+
+.mobile b {
+    font-size: 20px;
+}
+
+.item-coupon-btn div span b{
+    font-size: 20px;
 }
 
 .buypage-footer {
