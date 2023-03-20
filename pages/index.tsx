@@ -7,6 +7,7 @@ import { mainEventListType } from '@/types/fetchDataType'
 import Homebanner from '@/components/widgets/Homebanner'
 
 
+
 const Home: NextPageWithLayout = () => {
 
   const [eventListData, setEventListData] = useState<mainEventListType[]>();

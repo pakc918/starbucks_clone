@@ -1,10 +1,11 @@
-
-import { IconType } from '@/types/headerIconDataType'
 import { bottomNavMenuType, subNavMenuType } from '@/types/navMenuType'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import { headerNavMenus, headerIcons, categoryList } from "@/datas/starbucksStaticDatas";
+import { headerMenu } from '@/Types/starbucksTypes'
+import SignupModal from '../modals/SignupModal'
 //import{ bottomNavData } from 'assets/../datas/navData'
 //import SignupModal from '../modals/SignupModal'
 
@@ -15,27 +16,18 @@ export default function MainLayout(props: { children: React.ReactNode }) {
   console.log(router.pathname)
 
   const [navBottomData, setNavBottomData] = useState<bottomNavMenuType[]>()
-  const [headerLeftIconData, setheaderLeftIconData] = useState<IconType[]>()
-  const [headerRightIconData, setheaderRightIconData] = useState<IconType[]>()
+
   const [bestSubNavData, setBestSubNottomNavData] = useState<subNavMenuType[]>()
   const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
+  const [headerMenus, setHeaderMenus] = useState<headerMenu[]>(headerNavMenus);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState<boolean>(false);
+
 
   useEffect(() => {
     fetch('http://localhost:3001/nav')
       .then(res => res.json())
       .then(data => setNavBottomData(data))
-  }, [])
-
-  useEffect(() => {
-    fetch('http://localhost:3001/iconRight')
-      .then(res => res.json())
-      .then(data => setheaderRightIconData(data))
-  }, [])
-
-  useEffect(() => {
-    fetch('http://localhost:3001/iconLeft')
-      .then(res => res.json())
-      .then(data => setheaderLeftIconData(data))
   }, [])
 
   useEffect(() => {
@@ -53,6 +45,10 @@ export default function MainLayout(props: { children: React.ReactNode }) {
 
   return (
     <>
+      <SignupModal
+        isSignupModalOpen={isSignupModalOpen}
+        setIsSignupModalOpen={setIsSignupModalOpen}
+      />
       <Head>
         <meta name="description" content="StarBucks Clone Site" />
         <meta name="keywords" content="StarBucks, Clone, Site" />
@@ -64,29 +60,40 @@ export default function MainLayout(props: { children: React.ReactNode }) {
       <div className="container">
         <header>
           <div className="header-top">
-            <div className="menu-icon">
+            <div className="menu-icon" onClick={() => setIsModalOpen(true)}>
               {
-                headerLeftIconData && headerLeftIconData.map(iconLeft => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
-                  <li
-                    key={iconLeft.id}
-                  >
-                    <Link href={iconLeft.link}><img src={iconLeft.imgUrl} /></Link>
-                  </li>
-                ))
+                <img src='assets/images/icons/menu.svg' />
               }
             </div>
             <h1><Link href="/">온라인 스토어</Link></h1>
             <nav>
               <ul>
                 {
-                  headerRightIconData && headerRightIconData.map(iconRight => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
-                    <li
-                      key={iconRight.id}
-                    >
-                      <Link href={iconRight.link}><img src={iconRight.imgUrl} /></Link>
-                    </li>
-                  ))
-                }
+                  headerIcons.map((icon) => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
+                    icon.name === 'mypage' ?
+                      <li
+                        onClick={() => setIsSignupModalOpen(true)}
+                        key={icon.id}
+                      >
+                        <img src={icon.icon} />
+                      </li>
+                      :
+                      icon.name === 'cart' ?
+                        <li key={icon.id}>
+                          <Link href={icon.link}>
+                            <img src={icon.icon} />
+                          </Link>
+                        </li>
+                        :
+                        icon.name === 'search' ?
+                        <li key={icon.id}>
+                          <Link href={icon.link}>
+                            <img src={icon.icon} />
+                          </Link>
+                        </li>
+                        : ""
+                    ))
+                  }
               </ul>
             </nav>
           </div>
@@ -152,7 +159,7 @@ export default function MainLayout(props: { children: React.ReactNode }) {
               ""
           }
         </header>
-      </div>
+      </div >
       <div className="container">
         {props.children}
       </div>

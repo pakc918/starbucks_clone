@@ -1,79 +1,85 @@
+import { inputRegisterType } from '@/types/UserInformation/Information';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import Head from 'next/head';
-import Link from 'next/link';
-import React from 'react'
-import MainLayout from '../layouts/MainLayout';
 
-const SignupModal = () => {
+import Swal from 'sweetalert2';
+import Step01 from '../page/signup/step01';
+import Step02 from '../page/signup/step02';
+import Step03 from '../page/signup/step03';
+import Step04 from '../page/signup/step04';
+import StButton from '../ui/stButton';
 
-  return (
-    <>
-      <Head>
-        <title>StarBucks Clone Site</title>
-      </Head>
-      <div className="container">
-        <header className="signup-header">
-          <div className="signup-header-cancel">
-            <button><img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" /></button>
-          </div>
-        </header>
 
-        <section className="signup-logo">
-          <img src="https://www.starbucks.co.kr/common/img/common/logo.png" />
-        </section>
-
-        <section className="signup-notice">
-          <p className="customer">고객님</p>
-          <p className="welcome">환영합니다!</p>
-        </section>
-
-        <section className="signup-policy">
-          <div className="signup-policy-top">
-            <input type="checkbox" />
-            <p>약관 전체동의</p>
-          </div>
-          <div className="signup-policy-bottom">
-            <div className="signup-policy-bottom-list">
-              <div className="signup-policy-bottom-list-subject">
-                <input type="checkbox" />
-                <p>이용약관 동의(필수)</p>
-              </div>
-              <img src="../images/icons/right-arrow-black.png" />
-            </div>
-            <div className="signup-policy-bottom-list">
-              <div className="signup-policy-bottom-list-subject">
-                <input type="checkbox" />
-                <p>개인정보 수집 및 이용동의(필수)</p>
-              </div>
-              <img src="../images/icons/right-arrow-black.png" />
-            </div>
-
-            <div className="signup-policy-bottom-list">
-              <div className="signup-policy-bottom-list-subject">
-                <input type="checkbox" />
-                <p>광고성 정보 수신동의(선택)</p>
-              </div>
-              <img src="../images/icons/right-arrow-black.png" />
-            </div>
-          </div>
-          <div className="signup-policy-bottom-method">
-            <p>광고성 정보 수신 방법(선택)</p>
-            <div className="signup-policy-bottom-method-category">
-              <input type="checkbox" id="E-mail" />
-              <p>E-mail</p>
-              <input type="checkbox" />
-              <p>SMS</p>
-            </div>
-          </div>
-        </section>
-
-        <footer className="signup-footer">
-          <a href="identity.html"><div className="signup-next-btn">
-            <p>다음</p>
-          </div></a>
-        </footer>
-      </div>
-    </>
-  )
+export interface SignupModalProps {
+  isSignupModalOpen: boolean;
+  setIsSignupModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export default SignupModal
+export default function SignupModal({ isSignupModalOpen, setIsSignupModalOpen }: SignupModalProps) {
+
+  const [stepId, setStepId] = useState<number>(1)
+  const [inputData, setInputData] = useState<inputRegisterType>({
+    userEmail: '',
+    userName: '',
+    userNickname: '',
+    birthday: new Date(),
+    password: '',
+    confirmPassword: '',
+    phone: '',
+    isUserConfirm: false,
+    privateAgree: {
+      isAgree: false,
+      isUseConfirm: false,
+      isAdvertisionConfirm: false
+    }
+  })
+
+  const steps: any = [
+    { 1: <Step01 inputData={inputData} setInputData={setInputData} /> },
+    { 2: <Step02 inputData={inputData} setInputData={setInputData} /> },
+    { 3: <Step03 inputData={inputData} setInputData={setInputData} /> },
+    { 4: <Step04 inputData={inputData} setInputData={setInputData} /> },
+  ]
+
+  useEffect(() => {
+    console.log(inputData)
+  }, [inputData])
+
+  const handleStepNext = () => {
+    console.log(inputData.privateAgree)
+    if (stepId === 1 && inputData.privateAgree) {
+      if (!inputData.privateAgree.isAgree || !inputData.privateAgree.isUseConfirm) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '필수 항목을 동의 해주세요.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
+        return
+      }
+      setStepId(stepId + 1)
+    }
+  }
+
+  if (!isSignupModalOpen) return null;
+
+  return (
+    <div className="signupmodalBox">
+      <header className="signup-header">
+        <div className="signup-header-cancel" onClick={() => setIsSignupModalOpen(false)}>
+          <img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" />
+        </div>
+      </header>
+      {steps[stepId - 1][stepId]}
+      <section className='submit-container'>
+        <StButton
+          buttontext = '다음'
+          textsize = '1.1rem'
+          handler = { handleStepNext }
+        />
+      </section>
+    </div>
+  )
+}
