@@ -94,4 +94,4 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
     )
 }
 
-export default Step01;
+export default Step01

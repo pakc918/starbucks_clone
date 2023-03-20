@@ -96,12 +96,13 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
 
     return (
         <>
-            <div className='slide-in'>
+            <div className="email-password-box">
                 <div className="greeting">
-                    <h2 className="signup-info">아이디와 비밀번호를<br />입력해주세요.</h2>
+                    <h2 className="signup-info">이메일과 비밀번호를<br />입력해주세요.</h2>
                 </div>
                 <form className="agree-input" id="agree-main">
-                    <div>
+                    <div className="email-box">
+                        <p>email : </p>
                         <input
                             type="email"
                             name="userEmail"
@@ -124,20 +125,24 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
                             <p>{moment(timeLeft / 60, 'mm:ss').format("mm:ss")}</p>
                         </div>
                     }
-
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder='암호를 입력해주세요.'
-                        onChange={handleChagne}
-                    />
-                    <input
-                        type="password"
-                        name="confirmPassword"
-                        placeholder='암호를 한번 더 입력해주세요.'
-                        onChange={handleChagne}
-                    />
-
+                    <div className="password-box">
+                        <p>password : </p>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder='암호를 입력해주세요.'
+                            onChange={handleChagne}
+                        />
+                    </div>
+                    <div className="confirmPassword-box">
+                        <p>confirmPassword : </p>
+                        <input
+                            type="password"
+                            name="confirmPassword"
+                            placeholder='암호를 한번 더 입력해주세요.'
+                            onChange={handleChagne}
+                        />
+                    </div>
                 </form>
             </div>
         </>
