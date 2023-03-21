@@ -8,6 +8,7 @@ export interface inputRegisterType {
     phone: string;
     isUserConfirm: boolean;
     privateAgree: privateAgreeType;
+    confirmKey: string;
 }
 
 export interface inputUserType {

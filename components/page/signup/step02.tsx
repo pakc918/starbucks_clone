@@ -68,23 +68,31 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
         }
         console.log("이메일 전송")
         setConfirmView(true)
-        // 서버에 이메일 전송
-
-
+        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
+            userEmail: inputData.userEmail,
+        })
+        .then((res) => {
+            console.log(res)
+            // 키값이 일치하면 인증완료
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }
     const handleConfirmKey = () => {
         console.log(confirmKey)
         //서버에 키값 확인
-        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
-            confirmKey: confirmKey,
+        axios.post('http://10.10.10.39:8080/api/v1/email/checkcode', {
+            userEmail: inputData.userEmail,
+            confirmKey: inputData.confirmKey
         })
-            .then((res) => {
-                console.log(res)
-                // 키값이 일치하면 인증완료
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        .then((res) => {
+            console.log(res)
+            // 키값이 일치하면 인증완료
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }
 
     const handleCheck = (e: React.FormEvent<HTMLFormElement>) => {

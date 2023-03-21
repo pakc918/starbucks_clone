@@ -31,7 +31,8 @@ export default function SignupModal({ isSignupModalOpen, setIsSignupModalOpen }:
       isAgree: false,
       isUseConfirm: false,
       isAdvertisionConfirm: false
-    }
+    },
+    confirmKey: ''
   })
 
   const steps: any = [
@@ -75,7 +76,7 @@ export default function SignupModal({ isSignupModalOpen, setIsSignupModalOpen }:
       {steps[stepId - 1][stepId]}
       <section className='submit-container'>
         <StButton
-          buttontext = '다음'
+          buttontext = 'Next'
           textsize = '1.1rem'
           handler = { handleStepNext }
         />
