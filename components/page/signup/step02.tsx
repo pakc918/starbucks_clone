@@ -1,8 +1,7 @@
 import { inputRegisterType } from '@/types/UserInformation/Information';
 import moment from 'moment';
 import React, { useState, useEffect } from 'react';
-// import axiois from 'axios';
-// import moment from 'moment';
+import axios from 'axios';
 
 interface ChildProps {
     inputData: inputRegisterType;
@@ -75,17 +74,17 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
     }
     const handleConfirmKey = () => {
         console.log(confirmKey)
-        // 서버에 키값 확인
-        // axiois.post('http://localhost:3000/api/user/confirmKey', {
-        //   confirmKey: confirmKey,
-        // })
-        // .then((res) => {
-        //   console.log(res)
-        //   // 키값이 일치하면 인증완료
-        // })
-        // .catch((err) => {
-        //   console.log(err)
-        // })
+        //서버에 키값 확인
+        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
+            confirmKey: confirmKey,
+        })
+            .then((res) => {
+                console.log(res)
+                // 키값이 일치하면 인증완료
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     const handleCheck = (e: React.FormEvent<HTMLFormElement>) => {

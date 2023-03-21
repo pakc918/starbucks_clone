@@ -9,23 +9,25 @@ import { cartType, cartListType } from '@/types/cart/cartListType'
 import axios from 'axios'
 import CartList from '@/components/page/cart/CartList'
 
-const setCartList = useSetRecoilState<cartType>(cartListState);
 
-useEffect(() => {
-    axios.get(`http://localhost:3001/cartListByUser`)
-        .then((res) => {
-            console.log(res.data)
-            setCartList({
-                cartListFreeze: res.data.filter((item: cartListType) => item.bigCategoryId === 1),
-                cartList: res.data.filter((item: cartListType) => item.bigCategoryId !== 1)
-            })
-        }).catch((err) => {
-            console.log(err)
-        })
-}, [])
 
 export default function cart() {
+    const setCartList = useSetRecoilState<cartType>(cartListState);
 
+    useEffect(() => {
+        axios.get(`http://localhost:3001/cartListByUser`)
+            .then((res) => {
+                console.log(res.data)
+                setCartList({
+                    cartListFreeze: res.data.filter((item: cartListType) => item.bigCategoryId === 1),
+                    cartList: res.data.filter((item: cartListType) => item.bigCategoryId !== 1)
+                })
+            }).catch((err) => {
+                console.log(err)
+            })
+    }, [])
+
+    
     return (
         <>
             {/* <section className="empty-cart">
