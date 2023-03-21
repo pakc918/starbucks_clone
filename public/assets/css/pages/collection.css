@@ -1,6 +1,47 @@
+.col-header-top {
+    border-bottom-style: solid; 
+    border-width: 1px;
+    border-bottom-color: lightgray;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+.col-header-top span {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.col-header-top a {
+    position: relative;
+    right: 20px;
+}
+
+.col-header-top img {
+    width: 15px;
+    opacity: 0.5;
+}
+
+.table-collection .sub{
+    background-color: #f7f7f7;
+}
+
+.collection-warning {
+    font-size: 13px; 
+    padding: 10px 14px; 
+    font-weight: 600;
+}
 
 section#collection1 {
     padding: 0px 0px;
+    margin-top: 8%;
+}
+
+section#collection1 b{
+    font-size: 15px; padding: 0px 14px;
 }
 
 section#collection2 {

@@ -1,0 +1,26 @@
+.modal-header-top {
+    border-bottom-style: solid; 
+    border-width: 1px;
+    border-bottom-color: lightgray;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+.modal-header-top span {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.modal-header-top a {
+    position: relative;
+    right: 20px;
+}
+
+.modal-header-top img {
+    width: 15px;
+    opacity: 0.5;
+}

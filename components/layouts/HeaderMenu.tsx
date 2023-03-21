@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function HedaerMenu(props: { data?: any; handleFilter?: any; }) {
+export default function HeaderMenu(props: { data?: any; handleFilter?: any; }) {
 
     const[data, setData] = useState<any>(props.data)
 

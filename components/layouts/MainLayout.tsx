@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { headerNavMenus, headerIcons, categoryList } from "@/datas/starbucksStaticDatas";
-import { headerMenu } from '@/Types/starbucksTypes'
+import { headerMenu } from '@/types/starbucksTypes'
 import SignupModal from '../modals/SignupModal'
 //import{ bottomNavData } from 'assets/../datas/navData'
 //import SignupModal from '../modals/SignupModal'
