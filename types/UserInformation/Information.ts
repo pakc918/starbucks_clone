@@ -10,6 +10,11 @@ export interface inputRegisterType {
     privateAgree: privateAgreeType;
 }
 
+export interface inputUserType {
+    userNickname : string;
+    password : string;
+}
+
 export interface privateAgreeType {
     isAgree : boolean;
     isUseConfirm : boolean;

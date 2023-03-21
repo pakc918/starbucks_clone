@@ -7,7 +7,7 @@ import Step01 from '../page/signup/step01';
 import Step02 from '../page/signup/step02';
 import Step03 from '../page/signup/step03';
 import Step04 from '../page/signup/step04';
-import StButton from '../ui/stButton';
+import StButton from '../ui/StButton';
 
 
 export interface SignupModalProps {
