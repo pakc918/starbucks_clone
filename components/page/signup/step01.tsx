@@ -31,7 +31,7 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                 isAdvertisionConfirm: checked
             }),
             setAddOption({
-                
+
 
             })
         }
