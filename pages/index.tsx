@@ -19,9 +19,6 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <>
-      <Head>
-        <title>StarBucks Clone Site</title>
-      </Head>
       <section id="event-banner">
         <div className="event-banner">
           <div className="event-banner__item">

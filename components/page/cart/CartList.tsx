@@ -43,11 +43,16 @@ export default function CartList() {
 
     return (
         <section id="cart-list">
-
-            <div className="select">
+            {/* <div className="select">
                 <div className="select-items">
                     <div className={listAllCheck ? 'sbCheckBoxOn' : 'sbCheckBox'} onClick={() => handleCartListAllCheck(listAllCheck)}></div>
                     <p className='cart-select-btn'>일반상품</p>
+                </div>
+            </div> */}
+            <div>
+            <div className="cart-product-category">
+                <div className="cart-product-category-detail">
+                    <input type="checkbox" id="section-cb"  onClick={() => handleCartListAllCheck(listAllCheck)}/><span>일반 상품</span>
                 </div>
             </div>
             {
@@ -58,13 +63,20 @@ export default function CartList() {
                     />
                 ))
             }
+            </div>
 
             {cartItems.cartListFreeze ? (
                 <>
-                    <div className="select">
+                    {/* <div className="select">
                         <div className="select-items">
                             <div className={listFreezeAllCheck ? 'sbCheckBoxOn' : 'sbCheckBox'} onClick={() => handleFreezeCartListAllCheck(listFreezeAllCheck)}></div>
                             <p className='cart-select-btn'>냉동상품</p>
+                        </div>
+                    </div> */}
+                    <div>
+                    <div className="cart-product-category">
+                        <div className="cart-product-category-detail">
+                            <input type="checkbox" id="section-cb" onClick={() => handleFreezeCartListAllCheck(listFreezeAllCheck)}/><span>냉동 상품</span>
                         </div>
                     </div>
                     {
@@ -75,6 +87,7 @@ export default function CartList() {
                             />
                         ))
                     }
+                    </div>
                 </>
             )
                 : null

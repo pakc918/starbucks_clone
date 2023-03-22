@@ -48,21 +48,13 @@ export default function MainLayout(props: { children: React.ReactNode }) {
   return (
     <>
       <LoginModal
-        isLoginModalOpen={isLoginModalOpen}
-        setIsLoginModalOpen={setIsLoginModalOpen}
+        isModalOpen={isLoginModalOpen}
+        setIsModalOpen={setIsLoginModalOpen}
       />
       <SignupModal
         isSignupModalOpen={isSignupModalOpen}
         setIsSignupModalOpen={setIsSignupModalOpen}
       />
-      <Head>
-        <meta name="description" content="StarBucks Clone Site" />
-        <meta name="keywords" content="StarBucks, Clone, Site" />
-        <meta name="author" content="SpaLand" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <title>StarBucks Clone Site</title>
-      </Head>
-
       <div className="container">
         <header>
           <div className="header-top">

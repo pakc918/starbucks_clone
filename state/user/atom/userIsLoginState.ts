@@ -4,5 +4,5 @@ import { recoilPersist } from 'recoil-persist'
 export const userIsLogin = atom( {
     key: "userLoginState",
     default: false,
-    effects_UNSTABLE: [p]
+    effects_UNSTABLE: []
 })

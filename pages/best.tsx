@@ -17,10 +17,6 @@ const Home: NextPageWithLayout = () => {
 
     return (
         <>
-            <Head>
-                <title>StarBucks Clone Site</title>
-            </Head>
-
             {
                 bestListData && bestListData.map(best => (
                     <BestWidget

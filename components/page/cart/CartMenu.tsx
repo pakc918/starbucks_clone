@@ -34,18 +34,33 @@ export default function CartMenu() {
     }
 
     return (
-        <section id="cart-header">
-            <p className="title">장바구니</p>
-            <div className="cart-select">
-                <div className="select-all">
-                    <div className={listAllCheck ? 'sbCheckBoxOn' : 'sbCheckBox'} onClick={() => handleAllCheck(listAllCheck)}></div>
-                    <p className='cart-select-btn'>전체선택</p>
+        // <section id="cart-header">
+        //     <p className="title">장바구니</p>
+        //     <div className="cart-select">
+        //         <div className="select-all">
+        //             <div className={listAllCheck ? 'sbCheckBoxOn' : 'sbCheckBox'} onClick={() => handleAllCheck(listAllCheck)}></div>
+        //             <p className='cart-select-btn'>전체선택</p>
+        //         </div>
+        //         <div className="select-del">
+        //             <p className='cart-select-btn'>선택삭제</p>
+        //             <p className='cart-select-btn'>전체삭제</p>
+        //         </div>
+        //     </div>
+        // </section>
+        <header className="cart-header">
+            <div className="header-bottom">
+                <div className="header-bottom-subject">
+                    <p>장바구니</p>
                 </div>
-                <div className="select-del">
-                    <p className='cart-select-btn'>선택삭제</p>
-                    <p className='cart-select-btn'>전체삭제</p>
+                <div className="header-bottom-check">
+                    <div className="header-bottom-check-left">
+                        <input type="checkbox" id="menu-cb" /><span>전체 선택</span>
+                    </div>
+                    <div className="header-bottom-check-right">
+                        <span className='selec-del'>선택삭제</span> <span>|</span> <span>전체삭제</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </header>
     )
 }

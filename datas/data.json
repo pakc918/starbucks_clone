@@ -521,7 +521,7 @@
         {
             "cartId":1,
             "productId":1,
-            "bigCategoryId":6,
+            "bigCategoryId":1,
             "count":1,
             "check":false
         },

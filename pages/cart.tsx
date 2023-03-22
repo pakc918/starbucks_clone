@@ -17,7 +17,7 @@ export default function cart() {
     useEffect(() => {
         axios.get(`http://localhost:3001/cartListByUser`)
             .then((res) => {
-                console.log(res.data)
+                console.log('cart',res.data)
                 setCartList({
                     cartListFreeze: res.data.filter((item: cartListType) => item.bigCategoryId === 1),
                     cartList: res.data.filter((item: cartListType) => item.bigCategoryId !== 1)
@@ -26,14 +26,13 @@ export default function cart() {
                 console.log(err)
             })
     }, [])
-
     
     return (
         <>
             {/* <section className="empty-cart">
-                <img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" />
-                <p>장바구니가 비어있습니다.</p>
-            </section> */}
+            <img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" />
+            <p>장바구니가 비어있습니다.</p>
+            </section>  */}
             <CartHeader />
             <CartMenu />
             <CartList />
