@@ -43,7 +43,7 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
     }, [timeLeft]);
 
 
-    const handleChagne = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         if (name === 'confirmKey') setConfirmKey(value);
         if (name === 'userEmail' && expression.test(value)) {
@@ -62,22 +62,17 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
             alert('이메일 형식이 올바르지 않습니다.')
             return;
         }
-        if (inputData.userEmail === '') {
-            alert('이메일을 입력해주세요.')
-            return;
-        }
         console.log("이메일 전송")
         setConfirmView(true)
         axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
             userEmail: inputData.userEmail,
         })
-        .then((res) => {
-            console.log(res)
-            // 키값이 일치하면 인증완료
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
     const handleConfirmKey = () => {
         console.log(confirmKey)
@@ -86,35 +81,88 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
             userEmail: inputData.userEmail,
             confirmKey: inputData.confirmKey
         })
-        .then((res) => {
-            console.log(res)
-            // 키값이 일치하면 인증완료
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+            .then((res) => {
+                console.log(res)
+                // 키값이 일치하면 인증완료
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
-
-    const handleCheck = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log('submit')
+    const handlephone = () => {
+        console.log("휴대폰 번호 전송")
+        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
+            phone: inputData.phone,
+        })
+            .then((res) => {
+                console.log(res)
+                alert('사용 가능합니다.')
+            })
+            .catch((err) => {
+                console.log(err)
+                alert('가입한 이력이 있는 전화번호 입니다.')
+            })
     }
-
+    const handlenickname = () => {
+        console.log("닉네임 전송")
+        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
+            userNickname: inputData.userNickname,
+        })
+            .then((res) => {
+                console.log(res)
+                alert('사용 가능합니다.')
+            })
+            .catch((err) => {
+                console.log(err)
+                alert('중복되는 닉네임 입니다.')
+            })
+    }
 
     return (
         <>
             <div className="email-password-box">
                 <div className="greeting">
-                    <h2 className="signup-info">이메일과 비밀번호를<br />입력해주세요.</h2>
+                    <h2 className="signup-info">회원 정보를<br />입력해주세요.</h2>
                 </div>
                 <form className="agree-input" id="agree-main">
+                    <div className="userName-box">
+                        <p>이름 : </p>
+                        <input
+                            type="text"
+                            name="userName"
+                            placeholder='이름 입력'
+                            maxLength={6}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="birthday-box">
+                        <p>생일 : </p>
+                        <input
+                            type="date"
+                            name="birthday"
+                            value="2023-03-22"
+                            max="2023-03-31"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="phone-box">
+                        <p>휴대폰 : </p>
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder='전화번호 입력'
+                            maxLength={11}
+                            onChange={handleChange}
+                        />
+                        {/* <button type="button" onClick={handlephone}>휴대폰 확인</button> */}
+                    </div>
                     <div className="email-box">
-                        <p>email : </p>
+                        <p>이메일 : </p>
                         <input
                             type="email"
                             name="userEmail"
-                            placeholder='이메일을 입력해주세요.'
-                            onChange={handleChagne}
+                            placeholder='이메일 입력'
+                            onChange={handleChange}
                             required={true}
                         />
                         <button type="button" onClick={handleEmailCofirm}>이메일인증</button>
@@ -122,35 +170,54 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
                     {
                         confirmView &&
                         <div>
-                            <input
-                                type="text"
-                                name="confirmKey"
-                                placeholder='인증키를 입력해주세요.'
-                                onChange={handleChagne}
-                            />
-                            <button type="button" onClick={handleConfirmKey}>인증하기</button>
+                            <div className="confirm-box">
+                                <p>인증키 :</p>
+                                <input
+                                    type="text"
+                                    name="confirmKey"
+                                    placeholder='인증키 입력'
+                                    onChange={handleChange}
+                                />
+                                <button type="button" onClick={handleConfirmKey}>인증하기</button>
+                            </div>
                             <p>{moment(timeLeft / 60, 'mm:ss').format("mm:ss")}</p>
                         </div>
                     }
                     <div className="password-box">
-                        <p>password : </p>
+                        <p>비밀번호 : </p>
                         <input
                             type="password"
                             name="password"
-                            placeholder='암호를 입력해주세요.'
-                            onChange={handleChagne}
+                            placeholder='최대 12문자까지 입력'
+                            onChange={handleChange}
+                            maxLength={12}
                         />
                     </div>
                     <div className="confirmPassword-box">
-                        <p>confirmPassword : </p>
+                        <p>비밀번호 확인 : </p>
                         <input
                             type="password"
                             name="confirmPassword"
-                            placeholder='암호를 한번 더 입력해주세요.'
-                            onChange={handleChagne}
+                            placeholder='비밀번호 재입력'
+                            onChange={handleChange}
+                            maxLength={12}
                         />
                     </div>
+                    <div className="userNickname-box">
+                        <p>닉네임 : </p>
+                        <input
+                            type="text"
+                            name="userNickname"
+                            placeholder='닉네임(한글 6자리 이내)'
+                            onChange={handleChange}
+                            maxLength={6}
+                        />
+                        <button type="button" onClick={handlenickname}>닉네임 확인</button>
+                    </div>
                 </form>
+                <section id="nickname-notice-box">
+                    <p>· 매장에서 주문한 메뉴를 찾으실 때, 등록한 닉네임으로 불러 드립니다.</p>
+                </section>
             </div>
         </>
     );

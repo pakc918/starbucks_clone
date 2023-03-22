@@ -42,12 +42,12 @@ export default function SignupModal({ isSignupModalOpen, setIsSignupModalOpen }:
     { 4: <Step04 inputData={inputData} setInputData={setInputData} /> },
   ]
 
-  useEffect(() => {
-    console.log(inputData)
-  }, [inputData])
+  // useEffect(() => {
+  //   console.log(inputData)
+  // }, [inputData])
 
   const handleStepNext = () => {
-    console.log(inputData.privateAgree)
+    //console.log(inputData.privateAgree)
     if (stepId === 1 && inputData.privateAgree) {
       if (!inputData.privateAgree.isAgree || !inputData.privateAgree.isUseConfirm) {
         Swal.fire({
@@ -61,7 +61,33 @@ export default function SignupModal({ isSignupModalOpen, setIsSignupModalOpen }:
         return
       }
       setStepId(stepId + 1)
-    }
+    } else if (stepId === 2)
+      if (inputData.userName === '') {
+        alert('이름을 입력해주세요.')
+        return;
+      } else if (inputData.phone === '') {
+        alert('전화번호를 입력해주세요.')
+        return;
+      } else if (inputData.userEmail === '') {
+        alert('이메일을 입력해주세요.')
+        return;
+      } else if (inputData.password === '') {
+        alert('바말번호를 입력해주세요.')
+        return;
+      } else if (inputData.confirmPassword === '') {
+        alert('비밀번호를 한번 더 입력해주세요.')
+        return;
+      } else if (inputData.userNickname === '') {
+        alert('닉네임을 입력해주세요.')
+        return;
+      } else if (inputData.password !== inputData.confirmPassword) {
+        alert('비밀번호가 동일하지 않습니다.')
+        return;
+      } else {
+        alert('회원가입 완료')
+        setStepId(stepId + 1)
+        return;
+      }
   }
 
   if (!isSignupModalOpen) return null;
@@ -76,9 +102,9 @@ export default function SignupModal({ isSignupModalOpen, setIsSignupModalOpen }:
       {steps[stepId - 1][stepId]}
       <section className='submit-container'>
         <StButton
-          buttontext = 'Next'
-          textsize = '1.1rem'
-          handler = { handleStepNext }
+          buttontext='Next'
+          textsize='1.1rem'
+          handler={handleStepNext}
         />
       </section>
     </div>

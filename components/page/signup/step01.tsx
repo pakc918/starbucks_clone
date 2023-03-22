@@ -2,6 +2,8 @@ import { inputRegisterType, privateAgreeType } from '@/types/UserInformation/Inf
 import React, { useEffect, useState } from 'react'
 import TotalCheckBox from '@/components/ui/TotalCheckBox'
 import CheckBox from '@/components/ui/CheckBox'
+import SignupModal from '@/components/modals/SignupModal'
+import StButton from '@/components/ui/StButton'
 
 interface ChildProps {
     inputData: inputRegisterType;
@@ -53,31 +55,31 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                     <TotalCheckBox
                         lableText='약관 전체 동의'
                         inputName='isAllAgree'
-                        handler = { handleInput }
+                        handler={handleInput}
                     />
                     <CheckBox
                         lableText='이용약관 동의(필수)'
-                        isArrow= {true}
-                        inputName = 'isAgree'
-                        link = '/best'
+                        isArrow={true}
+                        inputName='isAgree'
+                        link='/best'
                         handler={handleInput}
-                        value = {agreeArray.isAgree}
+                        value={agreeArray.isAgree}
                     />
                     <CheckBox
                         lableText='개인정보 수집 및 이용동의(필수)'
-                        isArrow= {true}
-                        inputName = 'isUseConfirm'
-                        link = '/best'
+                        isArrow={true}
+                        inputName='isUseConfirm'
+                        link='/best'
                         handler={handleInput}
-                        value = {agreeArray.isUseConfirm}
+                        value={agreeArray.isUseConfirm}
                     />
                     <CheckBox
                         lableText='광고성 정보 수신동의(선택)'
-                        isArrow= {true}
-                        inputName = 'isAdvertisionConfirm'
-                        link = '/best'
+                        isArrow={true}
+                        inputName='isAdvertisionConfirm'
+                        link='/best'
                         handler={handleInput}
-                        value = {agreeArray.isAdvertisionConfirm}
+                        value={agreeArray.isAdvertisionConfirm}
                     />
                     <div className="signup-policy-bottom-method">
                         <p>광고성 정보 수신 방법(선택)</p>
