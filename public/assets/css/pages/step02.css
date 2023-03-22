@@ -18,7 +18,7 @@
 }
 
 .userName-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
@@ -38,12 +38,13 @@
 }
 
 .birthday-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
     height: 30px;
     margin: 30px 0px;
+    background-color: white;
 }
 
 .birthday-box p{
@@ -54,11 +55,11 @@
 .birthday-box input{
     margin: 0px;
     border: none;
-    width: 70%;
+    width: 40%;
 }
 
 .phone-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
@@ -74,16 +75,16 @@
 .phone-box input{
     margin: 0px;
     border: none;
-    width: 40%;
+    width: 50%;
 }
 
 .phone-box button{
     margin: 0px;
-    width: 22%;
+    width: 20%;
 }
 
 .email-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
@@ -99,7 +100,7 @@
 .email-box input{
     margin: 0px;
     border: none;
-    width: 40%;
+    width: 50%;
 }
 
 .email-box button{
@@ -108,7 +109,7 @@
 }
 
 .confirm-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
@@ -124,7 +125,7 @@
 .confirm-box input{
     margin: 0px;
     border: none;
-    width: 40%;
+    width: 50%;
 }
 
 .confirm-box button{
@@ -133,7 +134,7 @@
 }
 
 .password-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
@@ -153,7 +154,7 @@
 }
 
 .confirmPassword-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
@@ -173,7 +174,7 @@
 }
 
 .userNickname-box {
-    display: -webkit-box;
+    display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
@@ -189,12 +190,13 @@
 .userNickname-box input{
     margin: 0px;
     border: none;
-    width: 40%;
+    width: 50%;
 }
 
 .userNickname-box button{
     margin: 0px;
-    width: 22%;
+    width: 20%;
+    font-size: 13px;
 }
 
 section#nickname-notice-box {

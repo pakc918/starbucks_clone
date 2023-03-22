@@ -88,7 +88,7 @@ const Step03 = ({ inputData, setInputData }: ChildProps) => {
         })
         .then((res) => {
             console.log(res)
-            // 키값이 일치하면 인증완료
+            alert("인증 완료!")
         })
         .catch((err) => {
             console.log(err)

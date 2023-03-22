@@ -29,11 +29,19 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                 isAgree: checked,
                 isUseConfirm: checked,
                 isAdvertisionConfirm: checked
+            }),
+            setAddOption({
+                
+
             })
         }
         else {
             setAgreeArray({
                 ...agreeArray,
+                [name]: checked
+            }),
+            setAddOption({
+                ...addOption,
                 [name]: checked
             })
         }

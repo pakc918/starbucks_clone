@@ -63,12 +63,17 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
             return;
         }
         console.log("이메일 전송")
-        setConfirmView(true)
+        
         axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
             userEmail: inputData.userEmail,
         })
             .then((res) => {
-                console.log(res)
+                if (res.data === true) {
+                    setConfirmView(true)
+                }else if (res.data === false) {
+                    alert('이미 가입되어 있는 이메일입니다.')
+                    setConfirmView(false)
+                }
             })
             .catch((err) => {
                 console.log(err)
