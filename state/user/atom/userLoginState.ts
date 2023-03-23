@@ -6,11 +6,11 @@ const { persistAtom } = recoilPersist();
 export const userLoginState = atom({
     key: "userLoginState",
     default: {
-        userId: "",
+        userEmail: "",
         accessToken: "",
         refreshToken: "",
         isLogin: false,
     },
-    // effects_UNSTABLE: [persistAtom],
+    effects_UNSTABLE: [persistAtom],
 });
 

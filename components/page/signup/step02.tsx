@@ -95,7 +95,7 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
             })
     }
     const handlephone = () => {
-        console.log("휴대폰 번호 전송")
+        console.log("휴대폰 번호 확인")
         axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
             phone: inputData.phone,
         })
@@ -108,25 +108,25 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
                 alert('가입한 이력이 있는 전화번호 입니다.')
             })
     }
-    const handlenickname = () => {
-        console.log("닉네임 전송")
-        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
-            userNickname: inputData.userNickname,
-        })
-            .then((res) => {
-                console.log(res)
-                alert('사용 가능합니다.')
-            })
-            .catch((err) => {
-                console.log(err)
-                alert('중복되는 닉네임 입니다.')
-            })
-    }
+    // const handlenickname = () => {
+    //     console.log("닉네임 전송")
+    //     axios.post('url', {
+    //         userNickname: inputData.userNickname,
+    //     })
+    //         .then((res) => {
+    //             console.log(res)
+    //             alert('사용 가능합니다.')
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //             alert('중복되는 닉네임 입니다.')
+    //         })
+    // }
 
     return (
         <>
-            <div className="email-password-box">
-                <div className="greeting">
+            <div className="Information-box">
+                <div className="signup-info-box">
                     <h2 className="signup-info">회원 정보를<br />입력해주세요.</h2>
                 </div>
                 <form className="agree-input" id="agree-main">
@@ -217,7 +217,7 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
                             onChange={handleChange}
                             maxLength={6}
                         />
-                        <button type="button" onClick={handlenickname}>닉네임 확인</button>
+                        {/* <button type="button" onClick={handlenickname}>닉네임 확인</button> */}
                     </div>
                 </form>
                 <section id="nickname-notice-box">

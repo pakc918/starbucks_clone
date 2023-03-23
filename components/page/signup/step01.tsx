@@ -2,7 +2,7 @@ import { inputRegisterType, privateAgreeType } from '@/types/UserInformation/Inf
 import React, { useEffect, useState } from 'react'
 import TotalCheckBox from '@/components/ui/TotalCheckBox'
 import CheckBox from '@/components/ui/CheckBox'
-import SignupModal from '@/components/modals/SignupModal'
+import SignupModal from '@/components/modals/Signup'
 import StButton from '@/components/ui/StButton'
 
 interface ChildProps {
@@ -29,19 +29,11 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                 isAgree: checked,
                 isUseConfirm: checked,
                 isAdvertisionConfirm: checked
-            }),
-            setAddOption({
-
-
             })
         }
         else {
             setAgreeArray({
                 ...agreeArray,
-                [name]: checked
-            }),
-            setAddOption({
-                ...addOption,
                 [name]: checked
             })
         }
@@ -90,7 +82,6 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                         value={agreeArray.isAdvertisionConfirm}
                     />
                     <div className="signup-policy-bottom-method">
-                        <p>광고성 정보 수신 방법(선택)</p>
                         <div className="signup-policy-bottom-method-category">
                             <input type="checkbox" id="E-mail" />
                             <p>E-mail</p>

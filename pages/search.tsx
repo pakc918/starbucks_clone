@@ -1,20 +1,15 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import SearchBar from '@/components/header/SearchBar'
+import { seacrchKeyword } from '@/types/search/searchKeywords';
 
 export default function search() {
+
     return (
         <>
             <div className="container">
                 <header>
-                    <div className="header-top">
-                        <div className="search">
-                            <input type="search" placeholder="검색어를 입력하세요." />
-                            <Link href="/searchresult"><img src="assets/images/icons/search.svg" /></Link>
-                        </div>
-                        <nav className="search-close">
-                            <Link href="/"><img src="assets/images/icons/close.png" /></Link>
-                        </nav>
-                    </div>
+                    <SearchBar />
                 </header>
                 <section id="recommand-md">
                     <div className="search-result">
