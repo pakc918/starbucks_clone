@@ -9,12 +9,13 @@
     font-family: 'KCCChassam' !important;
 }
 
-.email-password-box {
+.Information-box {
     margin: 20px;
 }
 
-.greeting {
+.signup-info-box {
     margin-top: 20%;
+    margin-bottom: 40px;
 }
 
 .userName-box {
@@ -22,8 +23,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 30px 0px;
+    height: 20px;
+    margin: 35px 0px;
 }
 
 .userName-box p{
@@ -42,8 +43,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 30px 0px;
+    height: 20px;
+    margin: 35px 0px;
     background-color: white;
 }
 
@@ -63,8 +64,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 30px 0px;
+    height: 20px;
+    margin: 35px 0px;
 }
 
 .phone-box p{
@@ -88,8 +89,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 30px 0px;
+    height: 20px;
+    margin: 35px 0px;
 }
 
 .email-box p{
@@ -113,8 +114,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 15px 0px;
+    height: 20px;
+    margin: 20px 0px;
 }
 
 .confirm-box p{
@@ -138,8 +139,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 30px 0px;
+    height: 20px;
+    margin: 35px 0px;
 }
 
 .password-box p{
@@ -158,8 +159,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 30px 0px;
+    height: 20px;
+    margin: 35px 0px;
 }
 
 .confirmPassword-box p{
@@ -178,8 +179,8 @@
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
-    height: 30px;
-    margin: 30px 0px;
+    height: 20px;
+    margin: 35px 0px;
 }
 
 .userNickname-box p{
@@ -190,13 +191,7 @@
 .userNickname-box input{
     margin: 0px;
     border: none;
-    width: 50%;
-}
-
-.userNickname-box button{
-    margin: 0px;
-    width: 20%;
-    font-size: 13px;
+    width: 70%;
 }
 
 section#nickname-notice-box {

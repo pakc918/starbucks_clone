@@ -12,7 +12,7 @@ export interface inputRegisterType {
 }
 
 export interface inputUserType {
-    userNickname : string;
+    userEmail: string;
     password : string;
 }
 
@@ -21,3 +21,4 @@ export interface privateAgreeType {
     isUseConfirm : boolean;
     isAdvertisionConfirm?: boolean;
 }
+

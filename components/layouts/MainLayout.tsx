@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { headerNavMenus, headerIcons, categoryList } from "@/datas/starbucksStaticDatas";
 import { headerMenu } from '@/types/starbucksTypes'
-import SignupModal from '../modals/SignupModal'
-import LoginModal from '../modals/LoginModal'
+import Signup from '@/pages/Signup'
+import Login from '@/pages/Login'
 //import{ bottomNavData } from 'assets/../datas/navData'
 //import SignupModal from '../modals/SignupModal'
 
@@ -22,8 +22,6 @@ export default function MainLayout(props: { children: React.ReactNode }) {
   const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
   const [headerMenus, setHeaderMenus] = useState<headerMenu[]>(headerNavMenus);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState<boolean>(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
 
   useEffect(() => {
@@ -47,18 +45,10 @@ export default function MainLayout(props: { children: React.ReactNode }) {
 
   return (
     <>
-      <LoginModal
-        isModalOpen={isLoginModalOpen}
-        setIsModalOpen={setIsLoginModalOpen}
-      />
-      <SignupModal
-        isSignupModalOpen={isSignupModalOpen}
-        setIsSignupModalOpen={setIsSignupModalOpen}
-      />
       <div className="container">
         <header>
           <div className="header-top">
-            <div className="menu-icon" onClick={() => setIsSignupModalOpen(true)}>
+            <div className="menu-icon" onClick={() => setIsModalOpen(true)}>
               {
                 <img src='assets/images/icons/menu.svg' />
               }
@@ -69,11 +59,8 @@ export default function MainLayout(props: { children: React.ReactNode }) {
                 {
                   headerIcons.map((icon) => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
                     icon.name === 'mypage' ?
-                      <li
-                        onClick={() => setIsLoginModalOpen(true)}
-                        key={icon.id}
-                      >
-                        <img src={icon.icon} />
+                      <li key={icon.id}>
+                        <Link href={"/Login"}><img src={icon.icon} /></Link>
                       </li>
                       :
                       icon.name === 'cart' ?

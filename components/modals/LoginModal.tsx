@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
 import { userIsLogin } from '@/state/user/atom/userIsLoginState';
 import { userLoginState } from '@/state/user/atom/userLoginState';
 import { LoginRes } from '@/types/UserRequest/Response';
-import { LoginReq } from '@/types/UserRequest/Request';
 import Link from 'next/link';
 
 export interface LoginModalProps {

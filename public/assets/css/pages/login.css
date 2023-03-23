@@ -167,4 +167,6 @@ input:not(:placeholder-shown) {
 
 .login-footer-btn button {
     background-color: #00a862;
+    width: 90%;
+    height: 100%;
 }
