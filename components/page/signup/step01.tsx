@@ -24,6 +24,7 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
 
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, checked } = e.target;
+        console.log('e.target name checked',e.target,name, checked)
         if (name === 'isAllAgree') {
             setAgreeArray({
                 isAgree: checked,
@@ -31,8 +32,6 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                 isAdvertisionConfirm: checked
             }),
             setAddOption({
-
-
             })
         }
         else {

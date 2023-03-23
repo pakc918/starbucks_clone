@@ -67,7 +67,6 @@ export default function LoginModal(props: { isModalOpen: boolean, setIsModalOpen
                 myLogin.setItem('userId', res.data.data.userId);
                 myLogin.setItem('accessToken', res.data.data.accessToken);
                 myLogin.setItem('refreshToken', res.data.data.refreshToken);
-
             }).then(() => {
                 Swal.fire({
                     icon: "success",
@@ -78,7 +77,6 @@ export default function LoginModal(props: { isModalOpen: boolean, setIsModalOpen
                 .catch(err => {
                     console.log(err);
                 })
-
         }
     };
 

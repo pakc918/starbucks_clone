@@ -1,0 +1,28 @@
+.itemModal-notice {
+    position: relative;
+    top: 60px;
+    padding: 0 14px;
+    margin-bottom: 212px;
+    color : #7c7c7c
+}
+
+.itemModal-table {
+    width: 100%;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.itemModal-table-body tr :first-child {
+    width: 40%;
+    background-color: #f7f7f7;
+}
+
+.itemModal-table-body :first-child :last-child {
+    font-weight: bold;
+}
+
+.itemModal-table-body tr td {
+    border: 1px solid #dddddd;
+}

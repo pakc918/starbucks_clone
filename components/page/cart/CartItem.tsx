@@ -38,7 +38,7 @@ export default function CartItem(props: { data: cartListType }) {
         <section className="cart-product">
             <div className="checkbox-border">
                 <div className="checkbox-border-left">
-                    <input type="checkbox" onClick={handleCheck}/>
+                    <input className={props.data.check ? 'checkboxOn' : 'checkbox'} type='checkbox'  onClick={handleCheck}/>
                     <img src="assets/images/products/01.png" />
                 </div>
                 <div className="checkbox-border-right">

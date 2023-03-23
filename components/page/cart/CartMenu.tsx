@@ -54,7 +54,7 @@ export default function CartMenu() {
                 </div>
                 <div className="header-bottom-check">
                     <div className="header-bottom-check-left">
-                        <input type="checkbox" id="menu-cb" /><span>전체 선택</span>
+                        <input type="checkbox" onClick={()=>handleAllCheck(listAllCheck)} id="menu-cb" /><span>전체 선택</span>
                     </div>
                     <div className="header-bottom-check-right">
                         <span className='selec-del'>선택삭제</span> <span>|</span> <span>전체삭제</span>

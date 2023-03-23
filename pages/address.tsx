@@ -1,7 +1,10 @@
+import ModalHeader from '@/components/header/ModalHeader'
 import React from 'react'
 
 export default function address() {
     return (
+        <>
+        <ModalHeader subject='배송지 변경'/>
         <div className="container">
             <section style={{ margin: "12% 0" }}>
                 <div style={{ padding: "10px", margin: "5px;" }}>
@@ -59,5 +62,6 @@ export default function address() {
                 </div>
             </section>
         </div>
+        </>
     )
 }

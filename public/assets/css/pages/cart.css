@@ -21,13 +21,13 @@
 
 }
 
-.cart-header .header-bottom .header-bottom-subject {
+.header-bottom-subject {
     margin-left: 20px;
     font-size: 1.7rem;
     font-weight: bold;
 }
 
-.cart-header .header-bottom .header-bottom-subject p {
+.header-bottom-subject p {
     margin-bottom: 5%;
 }
 
@@ -51,7 +51,7 @@
     align-items: center;
 }
 
-.header-bottom-check-right .selec-del{
+.header-bottom-check-right .selec-del {
     color: #00a862;
 }
 
@@ -110,6 +110,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 4%;
+    width: 50%;
 }
 
 .checkbox-border-right .subject {
@@ -393,3 +394,19 @@
     background-color: var(--color-gray-background);
 }
 
+.checkboxOn {
+    width: 25px;
+    height: 20px;
+    background-color: #00a862;
+    border: 1px solid #00a862;
+    border-radius: 3px;
+    content: '✔';
+    color: white;
+}
+
+.checkbox {
+    width: 25px;
+    height: 20px;
+    border: 1px solid #00a862;
+    border-radius: 3px;
+}
