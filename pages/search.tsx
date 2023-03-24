@@ -9,7 +9,7 @@ export default function search() {
         <>
             <div className="container">
                 <header>
-                    <SearchBar />
+                    <SearchBar/>
                 </header>
                 <section id="recommand-md">
                     <div className="search-result">

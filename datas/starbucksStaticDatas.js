@@ -41,7 +41,7 @@ export const headerIcons = [
   {
     id: 3,
     name: 'mypage',
-    link: '/signup',
+    link: '/Login',
     icon: '/assets/images/icons/user.svg',
   }
 ]

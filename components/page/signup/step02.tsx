@@ -2,6 +2,7 @@ import { inputRegisterType } from '@/types/UserInformation/Information';
 import moment from 'moment';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 interface ChildProps {
     inputData: inputRegisterType;
@@ -9,7 +10,7 @@ interface ChildProps {
 }
 const Step02 = ({ inputData, setInputData }: ChildProps) => {
 
-    const [confirmKey, setConfirmKey] = useState<string>('');
+    const [confirmKey, setConfirmKey] = useState<string>("");
     const [confirmView, setConfirmView] = useState<boolean>(false);
 
     const MINUTES_IN_MS = 3 * 60;
@@ -59,19 +60,33 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
     const handleEmailCofirm = () => {
 
         if (!expression.test(inputData.userEmail)) {
-            alert('이메일 형식이 올바르지 않습니다.')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '이메일 형식이 올바르지 않습니다.',
+                customClass: {
+                    confirmButton: 'swal-confirm-button'
+                }
+            })
             return;
         }
         console.log("이메일 전송")
-        
-        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
+
+        axios.post('http://10.10.10.196:8080/api/v1/email/confirm', {
             userEmail: inputData.userEmail,
         })
             .then((res) => {
                 if (res.data === true) {
                     setConfirmView(true)
-                }else if (res.data === false) {
-                    alert('이미 가입되어 있는 이메일입니다.')
+                } else if (res.data === false) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: '이미 가입되어 있는 이메일입니다.',
+                        customClass: {
+                            confirmButton: 'swal-confirm-button'
+                        }
+                    })
                     setConfirmView(false)
                 }
             })
@@ -82,32 +97,46 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
     const handleConfirmKey = () => {
         console.log(confirmKey)
         //서버에 키값 확인
-        axios.post('http://10.10.10.39:8080/api/v1/email/checkcode', {
+        axios.post('http://10.10.10.196:8080/api/v1/email/checkcode', {
             userEmail: inputData.userEmail,
             confirmKey: inputData.confirmKey
         })
             .then((res) => {
                 console.log(res)
                 // 키값이 일치하면 인증완료
+                Swal.fire({
+                    icon: 'success',
+                    text: '인증 완료되었습니다.',
+                    customClass: {
+                        confirmButton: 'swal-confirm-button'
+                    }
+                })
             })
             .catch((err) => {
                 console.log(err)
             })
     }
-    const handlephone = () => {
-        console.log("휴대폰 번호 확인")
-        axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
-            phone: inputData.phone,
-        })
-            .then((res) => {
-                console.log(res)
-                alert('사용 가능합니다.')
-            })
-            .catch((err) => {
-                console.log(err)
-                alert('가입한 이력이 있는 전화번호 입니다.')
-            })
-    }
+    // const handlephone = () => {
+    //     console.log("휴대폰 번호 확인")
+    //     axios.post('http://10.10.10.39:8080/api/v1/email/confirm', {
+    //         phone: inputData.phone,
+    //     })
+    //         .then((res) => {
+    //             console.log(res)
+    //             Swal.fire({
+    //                 icon: 'success',
+    //                 title: 'Oops...',
+    //                 text: '사용 가능합니다.',
+    //                 customClass: {
+    //                     confirmButton: 'swal-confirm-button'
+    //                 }
+    //             })
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //             alert('가입한 이력이 있는 전화번호 입니다.')
+    //         })
+    // }
     // const handlenickname = () => {
     //     console.log("닉네임 전송")
     //     axios.post('url', {

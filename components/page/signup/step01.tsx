@@ -2,7 +2,7 @@ import { inputRegisterType, privateAgreeType } from '@/types/UserInformation/Inf
 import React, { useEffect, useState } from 'react'
 import TotalCheckBox from '@/components/ui/TotalCheckBox'
 import CheckBox from '@/components/ui/CheckBox'
-import SignupModal from '@/components/modals/Signup'
+import Signup from '@/pages/Signup'
 import StButton from '@/components/ui/StButton'
 
 interface ChildProps {
