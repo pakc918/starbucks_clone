@@ -31,20 +31,20 @@
     ],
     "iconRight": [
         {
-            "id": 2,
+            "id": 1,
             "name": "search",
             "imgUrl": "assets/images/icons/search.svg",
             "link" : "/search"
         },
         {
-            "id": 3,
+            "id": 2,
             "name": "cart",
             "imgUrl": "assets/images/icons/shopping-cart.svg",
             "link" : "/cart"
         },
         {
-            "id": 4,
-            "name": "user",
+            "id": 3,
+            "name": "mypage",
             "imgUrl": "assets/images/icons/user.svg",
             "link" : "/mypage"
         }

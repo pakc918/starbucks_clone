@@ -1,23 +1,21 @@
 import React, { ChangeEvent, Dispatch, SetStateAction, useEffect, useState } from 'react'
-import Head from 'next/head';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { userIsLogin } from '@/state/user/atom/userIsLoginState';
-import { userLoginState } from '@/state/user/atom/userLoginState';
+import { userLoginState, userIsLoginState } from '@/state/user/atom/userLoginState';
 import { LoginRes } from '@/types/UserRequest/Response';
 import { inputUserType } from '@/types/UserInformation/Information'
 import Link from 'next/link';
 
-export default function Login() { 
+export default function login() { 
 
     const [loginData, setLoginData] = useRecoilState<LoginRes>(userLoginState);
-    const setIsLogIn = useSetRecoilState<boolean>(userIsLogin);
+    const setIsLogIn = useSetRecoilState<boolean>(userIsLoginState);
 
 
     const [inputData, setInputData] = useState<inputUserType>({
-        userEmail: '',
-        password: ''
+        userEmail: "",
+        password: ""
     });
 
     const [isError, setIsError] = useState({
@@ -49,23 +47,26 @@ export default function Login() {
             //   console.log(res);
             // });
 
-            axios.post('url', {
+            axios.post('http://10.10.10.196:8080/api/v1/auth/authenticate', {
                 userEmail: inputData.userEmail,
                 password: inputData.password,
-            }).then(res => {
-                console.log(res);
-                setLoginData(res.data.data);
+            },{withCredentials:true}).then(res => {
+                setLoginData(res.data);
                 setIsLogIn(true);
                 let myLogin = localStorage;
-                myLogin.setItem('userEmail', res.data.data.userEmail);
-                myLogin.setItem('accessToken', res.data.data.accessToken);
-                myLogin.setItem('refreshToken', res.data.data.refreshToken);
+                myLogin.setItem("userEmail", res.data.userEmail);
+                myLogin.setItem("accessToken", res.data.token);
+                myLogin.setItem("refreshToken", res.data.refreshToken);
             }).then(() => {
                 Swal.fire({
                     icon: "success",
                     text: "Welcome!",
-                });
-
+                })
+                .then(function(loginresult){
+                    if (loginresult) {
+                        location.href = "/";
+                    }
+                })
             })
                 .catch(err => {
                     console.log(err);
@@ -74,12 +75,10 @@ export default function Login() {
         }
     };
 
-    console.log(loginData)
-
     return (
         <>
             <div className="signupmodalBox">
-                        <header className="signup-header">
+                <header className="signup-header">
                     <div className="signup-header-cancel">
                     <Link href={"/"}><img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" /></Link>
                     </div>
@@ -131,7 +130,7 @@ export default function Login() {
                         <ul>
                             <li><Link href={"/"}>아이디 찾기</Link></li>
                             <li><Link href={"/"}>비밀번호 찾기</Link></li>
-                            <li><Link href={"/Signup"}>회원가입</Link></li>
+                            <li><Link href={"/signup"}>회원가입</Link></li>
                         </ul>
                         </section>
                             <footer className="login-footer">

@@ -11,7 +11,7 @@ import StButton from '@/components/ui/StButton';
 import axios from 'axios';
 import Link from 'next/link';
 
-export default function Signup() {
+export default function signup() {
 
   const [stepId, setStepId] = useState<number>(1)
   const [inputData, setInputData] = useState<inputRegisterType>({
@@ -34,8 +34,7 @@ export default function Signup() {
   const steps: any = [
     { 1: <Step01 inputData={inputData} setInputData={setInputData} /> },
     { 2: <Step02 inputData={inputData} setInputData={setInputData} /> },
-    { 3: <Step03 inputData={inputData} setInputData={setInputData} /> },
-    { 4: <Step04 inputData={inputData} setInputData={setInputData} /> },
+    { 3: <Step03 /> },
   ]
 
   useEffect(() => {
@@ -59,31 +58,87 @@ export default function Signup() {
       setStepId(stepId + 1)
     } else if (stepId === 2) {
       if (inputData.userName === '') {
-        alert('이름을 입력해주세요.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '이름을 입력해주세요.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else if (inputData.phone === '') {
-        alert('전화번호를 입력해주세요.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '전화번호를 입력해주세요.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else if (inputData.userEmail === '') {
-        alert('이메일을 입력해주세요.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '이메일을 입력해주세요.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else if (inputData.password === '') {
-        alert('바말번호를 입력해주세요.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '바말번호를 입력해주세요.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else if (inputData.confirmPassword === '') {
-        alert('비밀번호를 한번 더 입력해주세요.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '비밀번호를 한번 더 입력해주세요.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else if (inputData.userNickname === '') {
-        alert('닉네임을 입력해주세요.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '닉네임을 입력해주세요.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else if (inputData.password !== inputData.confirmPassword) {
-        alert('비밀번호가 동일하지 않습니다.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '비밀번호가 동일하지 않습니다.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else if (inputData.confirmKey === "") {
-        alert('이메일 인증이 필요합니다.')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '이메일 인증이 필요합니다.',
+          customClass: {
+            confirmButton: 'swal-confirm-button'
+          }
+        })
         return;
       } else {
-        axios.post('http://10.10.10.39:8080/api/v1/auth/signup', {
+        axios.post('http://10.10.10.196:8080/api/v1/auth/signup', {
           userName: inputData.userName,
           userphone: inputData.phone,
           userEmail: inputData.userEmail,
@@ -96,10 +151,28 @@ export default function Signup() {
           })
           .catch((err) => {
             console.log(err)
-            alert('이미 가입되어 있는 회원 정보입니다.')
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: '이미 가입되어 있는 회원 정보입니다.',
+              customClass: {
+                confirmButton: 'swal-confirm-button'
+              }
+            })
           })
         return;
       }
+    } else if (stepId === 3) {
+      Swal.fire({
+        icon: "success",
+        text: "Welcome!",
+      })
+        .then(function (signupresult) {
+          if (signupresult) {
+            location.href = "/Login";
+          }
+        })
+      return;
     }
   }
 
