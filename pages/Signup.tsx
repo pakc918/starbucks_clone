@@ -138,7 +138,7 @@ export default function signup() {
         })
         return;
       } else {
-        axios.post('http://10.10.10.196:8080/api/v1/auth/signup', {
+        axios.post('http://10.10.10.104:8080/api/v1/auth/signup', {
           userName: inputData.userName,
           userphone: inputData.phone,
           userEmail: inputData.userEmail,
@@ -163,15 +163,7 @@ export default function signup() {
         return;
       }
     } else if (stepId === 3) {
-      Swal.fire({
-        icon: "success",
-        text: "Welcome!",
-      })
-        .then(function (signupresult) {
-          if (signupresult) {
-            location.href = "/Login";
-          }
-        })
+      location.href = "/login";
       return;
     }
   }

@@ -21,7 +21,6 @@ function Header() {
     const cartCnt = useRecoilValue(cartState)
 
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [isSignupModalOpen, setIsSignupModalOpen] = useState<boolean>(false);
     const [headerMenus, setHeaderMenus] = useState<headerMenu[]>(headerNavMenus);
     const [category, setCategory] = useState<filterMenuType[]>();
     const [sizeList, setSizeList] = useState<sizeType[]>();

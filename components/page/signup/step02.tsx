@@ -72,7 +72,7 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
         }
         console.log("이메일 전송")
 
-        axios.post('http://10.10.10.196:8080/api/v1/email/confirm', {
+        axios.post('http://10.10.10.104:8080/api/v1/email/confirm', {
             userEmail: inputData.userEmail,
         })
             .then((res) => {
@@ -97,7 +97,7 @@ const Step02 = ({ inputData, setInputData }: ChildProps) => {
     const handleConfirmKey = () => {
         console.log(confirmKey)
         //서버에 키값 확인
-        axios.post('http://10.10.10.196:8080/api/v1/email/checkcode', {
+        axios.post('http://10.10.10.104:8080/api/v1/email/checkcode', {
             userEmail: inputData.userEmail,
             confirmKey: inputData.confirmKey
         })

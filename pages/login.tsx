@@ -6,6 +6,7 @@ import { userLoginState, userIsLoginState } from '@/state/user/atom/userLoginSta
 import { LoginRes } from '@/types/UserRequest/Response';
 import { inputUserType } from '@/types/UserInformation/Information'
 import Link from 'next/link';
+import Router from 'next/router';
 
 export default function login() { 
 
@@ -21,6 +22,7 @@ export default function login() {
     const [isError, setIsError] = useState({
         userEmail: false,
         password: false,
+
     });
 
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -55,7 +57,7 @@ export default function login() {
                 setIsLogIn(true);
                 let myLogin = localStorage;
                 myLogin.setItem("userEmail", res.data.userEmail);
-                myLogin.setItem("accessToken", res.data.token);
+                myLogin.setItem("token", res.data.token);
                 myLogin.setItem("refreshToken", res.data.refreshToken);
             }).then(() => {
                 Swal.fire({
@@ -70,6 +72,10 @@ export default function login() {
             })
                 .catch(err => {
                     console.log(err);
+                    Swal.fire({
+                        icon: "success",
+                        text: "Welcome!",
+                    })
                 })
 
         }
@@ -132,8 +138,8 @@ export default function login() {
                             <li><Link href={"/"}>비밀번호 찾기</Link></li>
                             <li><Link href={"/signup"}>회원가입</Link></li>
                         </ul>
-                        </section>
-                            <footer className="login-footer">
+                    </section>
+                    <footer className="login-footer">
                         <div className="login-footer-btn">
                             <button type='submit'>로그인하기</button>
                         </div>
