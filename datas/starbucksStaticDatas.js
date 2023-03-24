@@ -21,7 +21,7 @@ export const headerNavMenus = [
   {
     id: 4,
     name: '마이페이지',
-    link: '/signup',
+    link: '/login',
   }
 ]
 
@@ -41,7 +41,7 @@ export const headerIcons = [
   {
     id: 3,
     name: 'mypage',
-    link: '/Login',
+    link: '/login',
     icon: '/assets/images/icons/user.svg',
   }
 ]

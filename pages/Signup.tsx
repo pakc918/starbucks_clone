@@ -11,7 +11,7 @@ import StButton from '@/components/ui/StButton';
 import axios from 'axios';
 import Link from 'next/link';
 
-export default function Signup() {
+export default function signup() {
 
   const [stepId, setStepId] = useState<number>(1)
   const [inputData, setInputData] = useState<inputRegisterType>({

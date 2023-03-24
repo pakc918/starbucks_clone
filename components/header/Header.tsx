@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 // component
-import LoginModal from "../../pages/product/Login";
-import SignupModal from "../modals/Signup";
 // recoil
 import { useRecoilValue } from "recoil";
 import { cartState } from "../../state/cartState";
@@ -91,17 +89,9 @@ function Header() {
     // console.log(isModalOpen)
     return (
         <>
-            <LoginModal
-                isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
-            />
-            <SignupModal
-                isSignupModalOpen={isSignupModalOpen}
-                setIsSignupModalOpen={setIsSignupModalOpen}
-            />
             <header>
                 <div className="header-top">
-                    <div className="menu-icon" onClick={() => setIsModalOpen(true)}>
+                    <div className="menu-icon">
                         <Image
                             src="/assets/images/icons/menu.svg"
                             alt="menu"
@@ -117,7 +107,6 @@ function Header() {
                             {headerIcons.map((icon) => (
                                 icon.name === 'mypage' ?
                                     <li
-                                        onClick={() => setIsSignupModalOpen(true)}
                                         key={icon.id}
                                     >
                                         <Image

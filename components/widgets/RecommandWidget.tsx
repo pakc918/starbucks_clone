@@ -16,9 +16,10 @@ export default function RecommandWidget(props: { title: string, eventId: number 
     const [eventTagItemList, setEventTagItemList] = useState<tagListCardType[]>()
     useEffect(() => {
         fetch(`http://localhost:3001/event-tag-list?eventId=${props.eventId}`)
-            .then(res => res.json())
+            .then(res => (res.json()))
             .then(data => setEventTagItemList(data))
     }, [])
+    
     return (
         <section id="recommand-md">
             <div className="recommand-md-products">

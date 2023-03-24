@@ -36,6 +36,8 @@ const Event = () => {
       .then(data => setProductData(data))
   }, [])
 
+  console.log(productData)
+
   return (
     <>
       <section className="special_section_image">

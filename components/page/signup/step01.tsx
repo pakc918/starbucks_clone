@@ -2,7 +2,6 @@ import { inputRegisterType, privateAgreeType } from '@/types/UserInformation/Inf
 import React, { useEffect, useState } from 'react'
 import TotalCheckBox from '@/components/ui/TotalCheckBox'
 import CheckBox from '@/components/ui/CheckBox'
-import Signup from '@/pages/Signup'
 import StButton from '@/components/ui/StButton'
 
 interface ChildProps {
@@ -24,6 +23,7 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
 
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, checked } = e.target;
+        console.log('e.target name checked',e.target,name, checked)
         if (name === 'isAllAgree') {
             setAgreeArray({
                 isAgree: checked,

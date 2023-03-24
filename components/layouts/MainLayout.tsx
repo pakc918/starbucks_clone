@@ -5,8 +5,6 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { headerNavMenus, headerIcons, categoryList } from "@/datas/starbucksStaticDatas";
 import { headerMenu } from '@/types/starbucksTypes'
-import Signup from '@/pages/Signup'
-import Login from '@/pages/Login'
 //import{ bottomNavData } from 'assets/../datas/navData'
 //import SignupModal from '../modals/SignupModal'
 
@@ -60,7 +58,7 @@ export default function MainLayout(props: { children: React.ReactNode }) {
                   headerIcons.map((icon) => (  // && 있으면 해라 라는 뜻 그러면 안정적으로 받아들임
                     icon.name === 'mypage' ?
                       <li key={icon.id}>
-                        <Link href={"/Login"}><img src={icon.icon} /></Link>
+                        <Link href={"/login"}><img src={icon.icon} /></Link>
                       </li>
                       :
                       icon.name === 'cart' ?
