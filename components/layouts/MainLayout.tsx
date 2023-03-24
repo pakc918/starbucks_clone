@@ -5,6 +5,9 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { headerNavMenus, headerIcons, categoryList } from "@/datas/starbucksStaticDatas";
 import { headerMenu } from '@/types/starbucksTypes'
+import { useRecoilState, useSetRecoilState } from 'recoil'
+import { LoginRes } from '@/types/UserRequest/Response'
+import { userIsLoginState, userLoginState } from '@/state/user/atom/userLoginState'
 //import{ bottomNavData } from 'assets/../datas/navData'
 //import SignupModal from '../modals/SignupModal'
 

@@ -17,7 +17,7 @@ const userLoginState = atom({
 const userIsLoginState = atom( {
     key: "userIsLoginState",
     default: false,
-    // effects_UNSTABLE: [persistAtom],
+    effects_UNSTABLE: [persistAtom],
 })
 
 export {userLoginState, userIsLoginState};
