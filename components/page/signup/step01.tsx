@@ -28,7 +28,7 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
             setAgreeArray({
                 isAgree: checked,
                 isUseConfirm: checked,
-                isAdvertisionConfirm: checked
+                isAdvertisionConfirm: checked,
             })
         }
         else {

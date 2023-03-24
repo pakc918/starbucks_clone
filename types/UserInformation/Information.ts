@@ -20,5 +20,6 @@ export interface privateAgreeType {
     isAgree : boolean;
     isUseConfirm : boolean;
     isAdvertisionConfirm?: boolean;
+
 }
 

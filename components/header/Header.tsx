@@ -3,10 +3,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 // component
-<<<<<<< HEAD
-
-=======
->>>>>>> cc7a5ce9a5d31c0db74953bda5de4bd27b61125c
 // recoil
 import { useRecoilValue } from "recoil";
 import { cartState } from "../../state/cartState";
