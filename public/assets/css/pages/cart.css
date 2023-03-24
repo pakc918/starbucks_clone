@@ -14,13 +14,6 @@
     border-bottom-color: lightgray;
 }
 
-.cart-header .header-bottom {
-    border-bottom: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: lightgray;
-
-}
-
 .header-bottom-subject {
     margin-left: 20px;
     font-size: 1.7rem;

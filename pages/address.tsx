@@ -1,4 +1,4 @@
-import ModalHeader from '@/components/header/ModalHeader'
+import ModalHeader from '@/components/header/ModalTopHeader'
 import React from 'react'
 
 export default function address() {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ModalHeader(props: { subject: string }) {
+export default function ModalTopHeader(props: { subject: string }) {
     return (
         <header>
             <div className='modal-header-top'>

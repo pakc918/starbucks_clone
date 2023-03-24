@@ -3,8 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 // component
-import LoginModal from "../../pages/product/Login";
-import SignupModal from "../modals/Signup";
+
 // recoil
 import { useRecoilValue } from "recoil";
 import { cartState } from "../../state/cartState";
