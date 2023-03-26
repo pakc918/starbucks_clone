@@ -52,7 +52,7 @@ export default function CartList() {
             <div>
             <div className="cart-product-category">
                 <div className="cart-product-category-detail">
-                    <input type="checkbox" id="section-cb"  onClick={() => handleCartListAllCheck(listAllCheck)}/><span>일반 상품</span>
+                    <input checked = {listAllCheck ? true : false} type="checkbox" id="section-cb"  onClick={() => handleCartListAllCheck(listAllCheck)}/><span>일반 상품</span>
                 </div>
             </div>
             {
@@ -76,7 +76,7 @@ export default function CartList() {
                     <div>
                     <div className="cart-product-category">
                         <div className="cart-product-category-detail">
-                            <input type="checkbox" id="section-cb" onClick={() => handleFreezeCartListAllCheck(listFreezeAllCheck)}/><span>냉동 상품</span>
+                            <input checked = {listFreezeAllCheck ? true : false} type="checkbox" id="section-cb" onClick={() => handleFreezeCartListAllCheck(listFreezeAllCheck)}/><span>냉동 상품</span>
                         </div>
                     </div>
                     {
