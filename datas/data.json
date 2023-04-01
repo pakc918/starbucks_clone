@@ -531,20 +531,294 @@
             "bigCategoryId":1,
             "count":1,
             "check":false
+        }
+    ],
+    "product":[
+        {
+            "productId": 1,
+            "bigCategory": "세트",
+            "smallCategory": "세트",
+            "event": "일반",
+            "tag": "",
+            "productName": "스타벅스 시럽 어소트먼트 3개입",
+            "imgUrl": "https://shop-phinf.pstatic.net/20220829_109/1661759574236mKOSA_JPEG/62895402058563628_968909996.jpg?type=m510",
+            "price": 23000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
         },
         {
-            "cartId":3,
-            "productId":57,
-            "bigCategoryId":2,
-            "count":4,
-            "check":false
+            "productId": 2,
+            "bigCategory": "케이크",
+            "smallCategory": "홀케이크",
+            "event": "일반",
+            "tag": "케이크",
+            "productName": "부드러운 고구마 생크림 케이크",
+            "imgUrl": "https://shop-phinf.pstatic.net/20221230_87/1672371248920KrduT_JPEG/73507032581228289_908311394.jpg?type=m510",
+            "price": 33000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
         },
         {
-            "cartId":4,
-            "productId":84,
-            "bigCategoryId":3,
-            "count":3,
-            "check":false
+            "productId": 3,
+            "bigCategory": "케이크",
+            "smallCategory": "홀케이크",
+            "event": "일반",
+            "tag": "케이크",
+            "productName": "더블 초콜릿 케이크",
+            "imgUrl": "https://shop-phinf.pstatic.net/20221230_152/1672371405306IVKOz_JPEG/73507189011853712_324497504.jpg?type=m510",
+            "price": 33000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        },
+        {
+            "productId": 4,
+            "bigCategory": "케이크",
+            "smallCategory": "롤케이크",
+            "event": "일반",
+            "tag": "케이크",
+            "productName": "부드러운 티라미수 롤케이크",
+            "imgUrl": "https://shop-phinf.pstatic.net/20230215_64/1676424666767CNRjg_JPEG/77560500579518181_629284917.jpg?type=m510",
+            "price": 19900,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        },
+        {
+            "productId": 5,
+            "bigCategory": "케이크",
+            "smallCategory": "홀케이크",
+            "event": "일반",
+            "tag": "케이크",
+            "productName": "블루베리 치즈 케이크",
+            "imgUrl": "https://shop-phinf.pstatic.net/20221230_294/1672371457399tDq2z_JPEG/73507241105091598_1599621290.jpg?type=m510",
+            "price": 36000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        },
+        {
+            "productId": 6,
+            "bigCategory": "케이크",
+            "smallCategory": "홀케이크",
+            "event": "일반",
+            "tag": "케이크",
+            "productName": "별의 별 케이크",
+            "imgUrl": "https://shop-phinf.pstatic.net/20230215_274/1676424690223Q4bek_JPEG/77560524030735209_1274866820.jpg?type=m510",
+            "price": 25000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        },
+        {
+            "productId": 7,
+            "bigCategory": "티/커피용품",
+            "smallCategory": "티/커피용품",
+            "event": "일반",
+            "tag": "",
+            "productName": "화이트 사이렌 그라인더",
+            "imgUrl": "https://shop-phinf.pstatic.net/20210919_196/1632031439764T01QH_JPEG/33167273578501640_2124951771.jpg?type=f296_296",
+            "price": 74000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        },
+        {
+            "productId": 8,
+            "bigCategory": "티/커피용품",
+            "smallCategory": "티/커피용품",
+            "event": "New Year",
+            "tag": "",
+            "productName": "23 뉴이어 클래식 블랙 그라인더",
+            "imgUrl": "https://shop-phinf.pstatic.net/20221226_272/1672022860246fdjrS_JPEG/73158643947500456_1709423482.jpg?type=f296_296",
+            "price": 74000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        },
+        {
+            "productId": 9,
+            "bigCategory": "티/커피용품",
+            "smallCategory": "티/커피용품",
+            "event": "Core",
+            "tag": "",
+            "productName": "크림 컴프레소",
+            "imgUrl": "https://shop-phinf.pstatic.net/20220117_11/1642385335685xqJw8_JPEG/43521163513775632_1199077540.jpg?type=f140",
+            "price": 68000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        },
+        {
+            "productId": 10,
+            "bigCategory": "티/커피용품",
+            "smallCategory": "티/커피용품",
+            "event": "일반",
+            "tag": "",
+            "productName": "SS 화이트 스타벅스 케틀",
+            "imgUrl": "https://shop-phinf.pstatic.net/20220330_164/1648619972750EsekO_JPEG/49755807582966233_791293441.jpg?type=o1000",
+            "price": 64000,
+            "size": "없음",
+            "amount": 1000,
+            "isNew": false,
+            "isBest": false
+        }
+    ],
+      "bigCategory": [
+        {
+            "name": "전체",
+            "index": "0"
+        },
+        {
+            "name": "케이크(5)",
+            "index": "1"
+        },
+        {
+            "name": "텀블러/보온병(30)",
+            "index": "2"
+        },
+        {
+            "name": "머그/컵(22)",
+            "index": "3"
+        },
+        {
+            "name": "라이프스타일(27)",
+            "index": "4"
+        },
+        {
+            "name": "티/커피용품(20)",
+            "index": "5"
+        },
+        {
+            "name": "세트(1)",
+            "index": "6"
+        }
+    ],
+    "size": [
+        {
+            "name": "Short"
+        },
+        {
+            "name": "Tall"
+        },
+        {
+            "name": "Grande"
+        },
+        {
+            "name": "Venti"
+        }
+    ],
+    "price": [
+        {
+            "name": "1만원미만"
+        },
+        {
+            "name": "1만원대"
+        },
+        {
+            "name": "2만원대"
+        },
+        {
+            "name": "3만원대"
+        },
+        {
+            "name": "4만원대"
+        },
+        {
+            "name": "5만원이상"
+        }
+    ],
+    "smallCategory": [
+        {
+            "name": "글라스",
+            "bigCategory": "머그/컵"
+        },
+        {
+            "name": "롤케이크",
+            "bigCategory": "케이크"
+        },
+        {
+            "name": "리유저블",
+            "bigCategory": "머그/컵"
+        },
+        {
+            "name": "머그",
+            "bigCategory": "머그/컵"
+        },
+        {
+            "name": "티/커피용품",
+            "bigCategory": "티/커피용품"
+        },
+        {
+            "name": "세트",
+            "bigCategory": "세트"
+        },
+        {
+            "name": "콜드컵",
+            "bigCategory": "텀블러/보온병"
+        },
+        {
+            "name": "스테인리스 텀블러",
+            "bigCategory": "텀블러/보온병"
+        },
+        {
+            "name": "보온병",
+            "bigCategory": "텀블러/보온병"
+        },
+        {
+            "name": "플라스틱 텀블러",
+            "bigCategory": "텀블러/보온병"
+        },
+        {
+            "name": "라이프스타일",
+            "bigCategory": "라이프스타일"
+        },
+        {
+            "name": "홀케이크",
+            "bigCategory": "케이크"
+        }
+    ],
+    "season": [
+        {
+            "name": "New Year"
+        },
+        {
+            "name": "Core"
+        },
+        {
+            "name": "23 체리블라썸"
+        },
+        {
+            "name": "갤럭시+스타벅스"
+        },
+        {
+            "name": "22 라인프렌즈 3rd"
+        },
+        {
+            "name": "Christmas"
+        },
+        {
+            "name": "22 Autumn"
+        },
+        {
+            "name": "22 아웃도어 컬렉션"
+        },
+        {
+            "name": "발렌타인데이"
+        },
+        {
+            "name": "라인프렌즈+스타벅스"
         }
     ]
 }

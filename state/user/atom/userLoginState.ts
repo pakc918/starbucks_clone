@@ -1,23 +1,21 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
-const { persistAtom } = recoilPersist();
-
 const userLoginState = atom({
     key: "userLoginState",
     default: {
-        userEmail: "",
+        userNickname: "",
         accessToken: "",
-        refreshToken: "",
-        isLogin: false,
+        // refreshToken 사용할때 주석 해제
+        // refreshToken: "",
+        isLogin: false
     },
-    effects_UNSTABLE: [persistAtom],
 });
 
 const userIsLoginState = atom( {
     key: "userIsLoginState",
     default: false,
-    effects_UNSTABLE: [persistAtom],
+//    effects_UNSTABLE: [persistAtom],
 })
 
 export {userLoginState, userIsLoginState};

@@ -25,7 +25,7 @@ export default function menu() {
                     <div className="menu-product-list">
                         <div className="menu-product-item">
                             <div className="product-img">
-                                <img src="../images/double_cake.jpg"/>
+                                <img src="assets/images/double_cake.jpg"/>
                             </div>
                             <div className="product-info">
                                 <p>케이크</p>
@@ -33,7 +33,7 @@ export default function menu() {
                         </div>
                         <div className="menu-product-item">
                             <div className="product-img">
-                                <img src="../images/double_cake.jpg"/>
+                                <img src="assets/images/double_cake.jpg"/>
                             </div>
                             <div className="product-info">
                                 <p>텀블러/보온병</p>
@@ -41,7 +41,7 @@ export default function menu() {
                         </div>
                         <div className="menu-product-item">
                             <div className="product-img">
-                                <img src="../images/double_cake.jpg"/>
+                                <img src="assets/images/double_cake.jpg"/>
                             </div>
                             <div className="product-info">
                                 <p>머그/컵</p>
@@ -54,7 +54,7 @@ export default function menu() {
                     <div className="menu-product-list">
                         <div className="menu-product-item">
                             <div className="product-img">
-                                <img src="../images/double_cake.jpg"/>
+                                <img src="assets/images/double_cake.jpg"/>
                             </div>
                             <div className="product-info">
                                 <p>라이프스타일</p>
@@ -62,7 +62,7 @@ export default function menu() {
                         </div>
                         <div className="menu-product-item">
                             <div className="product-img">
-                                <img src="../images/double_cake.jpg"/>
+                                <img src="assets/images/double_cake.jpg"/>
                             </div>
                             <div className="product-info">
                                 <p>티/커피용품</p>
@@ -70,7 +70,7 @@ export default function menu() {
                         </div>
                         <div className="menu-product-item">
                             <div className="product-img">
-                                <img src="../images/double_cake.jpg"/>
+                                <img src="assets/images/double_cake.jpg"/>
                             </div>
                             <div className="product-info">
                                 <p>세트</p>

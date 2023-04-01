@@ -1,7 +1,7 @@
 import { cartType } from '@/types/cart/cartListType'
 import { cartListState } from '@/state/cartListState'
 import React, { useEffect, useState } from 'react'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useResetRecoilState } from 'recoil'
 
 export default function CartMenu() {
 
@@ -33,6 +33,8 @@ export default function CartMenu() {
         })
     }
 
+    const resetState = useResetRecoilState(cartListState)
+
     return (
         // <section id="cart-header">
         //     <p className="title">장바구니</p>
@@ -57,7 +59,7 @@ export default function CartMenu() {
                         <input type="checkbox" onClick={()=>handleAllCheck(listAllCheck)} id="menu-cb" /><span>전체 선택</span>
                     </div>
                     <div className="header-bottom-check-right">
-                        <span className='selec-del'>선택삭제</span> <span>|</span> <span>전체삭제</span>
+                        <span className='selec-del'>선택삭제</span> <span>|</span> <span onClick={()=>resetState()}>전체삭제</span>
                     </div>
                 </div>
             </div>

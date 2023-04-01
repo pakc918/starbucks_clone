@@ -3,16 +3,18 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { userLoginState, userIsLoginState } from '@/state/user/atom/userLoginState';
-import { LoginRes } from '@/types/UserRequest/Response';
 import { inputUserType } from '@/types/UserInformation/Information'
 import Link from 'next/link';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
+import LoginFooterButton from '@/components/footer/LoginFooterButton';
+import { LoginRes } from '@/types/UserRequest/Response';
 
-export default function login() { 
 
+export default function login() {
+
+    const router = useRouter();
+    // const Base_URL = Config().baseUrl;
     const [loginData, setLoginData] = useRecoilState<LoginRes>(userLoginState);
-    const setIsLogIn = useSetRecoilState<boolean>(userIsLoginState);
-
 
     const [inputData, setInputData] = useState<inputUserType>({
         userEmail: "",
@@ -22,7 +24,6 @@ export default function login() {
     const [isError, setIsError] = useState({
         userEmail: false,
         password: false,
-
     });
 
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +31,10 @@ export default function login() {
         setInputData({ ...inputData, [name]: value });
     };
 
-    //로그인 확인용 => Recoil 셋업 되는대로 라우팅 처리 하겠습니다.
+    //로그인 확인용
     const handleSubmit = (event: any) => {
+        axios.defaults.baseURL = 'http://localhost:3000';
+
         event.preventDefault();
         console.log(inputData);
         if (inputData.userEmail === "" || inputData.password === "") {
@@ -39,45 +42,55 @@ export default function login() {
                 icon: "error",
                 title: "Oops...",
                 text: "이메일과 비밀번호를 입력해주세요!",
+                customClass: {
+                    confirmButton: 'swal-confirm-button'
+                }
             });
             return;
-        } else {
-            // RequestLogin({
-            //   userEmail: inputData.email,
-            //   password: inputData.password,
-            // }).then((res) => {
-            //   console.log(res);
-            // });
-
-            axios.post('http://10.10.10.196:8080/api/v1/auth/authenticate', {
+        }
+        else {
+            axios.post('http://10.10.10.196:8080/api/v1/users/login', {
                 userEmail: inputData.userEmail,
                 password: inputData.password,
-            },{withCredentials:true}).then(res => {
-                setLoginData(res.data);
-                setIsLogIn(true);
-                let myLogin = localStorage;
-                myLogin.setItem("userEmail", res.data.userEmail);
-                myLogin.setItem("token", res.data.token);
-                myLogin.setItem("refreshToken", res.data.refreshToken);
-            }).then(() => {
+            },{withCredentials:false}).then((res) => {                
+                setLoginData({
+                    userNickname: res.data, //res.data.userNickname 나중에 백 작업 다 되면 적어야 됨.
+                    accessToken: res.headers.authorization,
+                    // refreshToken:res.headers.cookie.refreshToken,
+                    isLogin: true
+                });
+                
+                const userNickname = res.data;
+                
+                const accessToken = res.headers.authorization;
+                axios.defaults.headers.common[
+                    "Authorization"
+                ] = `Bearer ${accessToken}`;
+
+
+                // https로 바꾸면 사용하기로 함.(refreshToken)
+                // const refreshToken = res.headers.cookie;
+
+
+                // axios.defaults.headers.common[
+                //     "Authorization"
+                // ] = `${refreshToken}`;
+                
+                localStorage.setItem("userNickname", userNickname); //res.data.userNickname 나중에 백 작업 다 되면 적어야 됨.
+                localStorage.setItem("accessToken", accessToken); // 로컬은 무엇을 넣든 다 문자열로 저장됨.
+                
+
                 Swal.fire({
                     icon: "success",
-                    text: "Welcome!",
+                    text: `${res.data}님 환영합니다~ ^^`, //res.data.userNickname 나중에 백 작업 다 되면 적어야 됨.
                 })
-                .then(function(loginresult){
-                    if (loginresult) {
-                        location.href = "/";
-                    }
-                })
+                router.push("/");
+                return res;
             })
                 .catch(err => {
                     console.log(err);
-                    Swal.fire({
-                        icon: "success",
-                        text: "Welcome!",
-                    })
                 })
-
+            return;
         }
     };
 
@@ -86,7 +99,7 @@ export default function login() {
             <div className="signupmodalBox">
                 <header className="signup-header">
                     <div className="signup-header-cancel">
-                    <Link href={"/"}><img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" /></Link>
+                        <Link href={"/"}><img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" /></Link>
                     </div>
                     <div className="login-header-bot">
                         <p>로그인</p>
@@ -148,4 +161,24 @@ export default function login() {
             </div>
         </>
     )
+
+                        // 서버에서 보내온 쿠키 사용하기
+                        // const cookie = res.headers['set-cookie'];
+                        // console.log(cookie);
+                        // document.cookie = cookie;
+                        // console.log(document.cookie);
+                        // const token = cookie.split('=')[1];
+                        // console.log(token);
+                        // axios.defaults.headers.common[
+
+
+                        // 서버에서 보내온 쿠키 저장하기
+                        // const cookie = res.headers['set-cookie'];
+                        // console.log(cookie);
+                        // document.cookie = cookie;
+                        // console.log(document.cookie);
+                        // const token = cookie.split('=')[1];
+                        // console.log(token);
+                        // axios.defaults.headers.common[
+
 }

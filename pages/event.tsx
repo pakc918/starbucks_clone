@@ -3,10 +3,15 @@ import { mainEventListType, ProductListCardType } from '@/types/fetchDataType';
 import { bottomNavMenuType, subNavMenuType } from '@/types/navMenuType'
 
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { NextPageWithLayout } from './_app';
+import { Pagination } from 'swiper';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
+
+import "swiper/css";
+import "swiper/css/pagination";
 const Event = () => {
 
   // const router = useRouter()
@@ -29,6 +34,14 @@ const Event = () => {
   // }, [])
 
   const [productData, setProductData] = useState<ProductListCardType>()
+  const [slideindex, setSlideIndex] = useState<number>(0)
+  const [eventSubNavData, setsubNavBottomData] = useState<subNavMenuType[]>()
+
+  useEffect(() => {
+    fetch('http://localhost:3001/eventsubnav')
+      .then(res => res.json())
+      .then(data => setsubNavBottomData(data))
+  }, [slideindex])
 
   useEffect(() => {
     fetch(`http://localhost:3001/products/1`)
@@ -40,72 +53,306 @@ const Event = () => {
 
   return (
     <>
-      <section className="special_section_image">
-        <div>
-          <img src="assets/images/special_cake_crop.jpg" style={{ width: "100%", height: "auto" }} />
-        </div>
-      </section>
-      <section className="special_section_product">
-        <div className="special-recommand-product-list">
-          <div className="recommand-product-item">
-            <div className="special-recommand-product-item__img">
-              <img
-                src="https://shop-phinf.pstatic.net/20230215_64/1676424666767CNRjg_JPEG/77560500579518181_629284917.jpg?type=m510"
-                style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
-            </div>
-            <div className="recommand-product-item__info">
-              <p className="item-new">New</p>
-              <p className="item-title">부드러운 티라미수 롤케이크</p>
-              <p className="item-price"><span>19,900</span>원</p>
-            </div>
-          </div>
-          <div className="recommand-product-item2">
-            <div className="special-recommand-product-item__img">
-              <img
-                src="https://shop-phinf.pstatic.net/20230215_274/1676424690223Q4bek_JPEG/77560524030735209_1274866820.jpg?type=m510"
-                style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
-            </div>
-            <div className="recommand-product-item__info">
-              <p className="item-new">New</p>
-              <p className="item-title">별의 별 케이크</p>
-              <p className="item-price"><span>25,000</span>원</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {
-        productData &&
-        <section className='special_section_product2'>
-          <div className="special-recommand-product-list">
-            <div className="recommand-product-item">
-              <div className="special-recommand-product-item__img">
-                <img
-                  src={productData.imgUrl} alt={productData.title}
-                  style={{ height: "156px", width: "161px" }} />
-              </div>
-              <div className="recommand-product-item__info">
-                {productData.isNew ? <p className='item-new'>New</p> : null}
-                <p className="item-title">{productData.title}</p>
-                <p className="item-price"><span>{productData.price}</span>원</p>
-              </div>
-            </div>
+      <div className='header-top'></div>
+      <div className="header-sub">
+        <nav>
+          <ul>
+            {
+              eventSubNavData && eventSubNavData.map(eventsubnav => (
+                <li
+                  key={eventsubnav.id}
+                  className={slideindex === eventsubnav.id-1 ? "active" : ""}
+                >{eventsubnav.name}</li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
 
-            <div className="recommand-product-item2">
-              <div className="special-recommand-product-item__img">
-                <img
-                  src={productData.imgUrl} alt={productData.title}
-                  style={{ height: "156px", width: "161px" }} />
+
+      <Swiper
+        modules={[Pagination]}
+        slidesPerView={1}
+        onSlideChange={(swiper) => (setSlideIndex(swiper.activeIndex))}
+      >
+
+        <SwiperSlide>
+          <section className="special_section_image">
+            <div>
+              <img src="assets/images/special_cake_crop.jpg" style={{ width: "100%", height: "auto" }} />
+            </div>
+            <div>
+              <p>{slideindex}</p>
+            </div>
+          </section>
+          <section className="special_section_product">
+            <div className="special-recommand-product-list">
+              <div className="recommand-product-item">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_64/1676424666767CNRjg_JPEG/77560500579518181_629284917.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">부드러운 티라미수 롤케이크</p>
+                  <p className="item-price"><span>19,900</span>원</p>
+                </div>
               </div>
-              <div className="recommand-product-item__info">
-                {productData.isNew ? <p className='item-new'>New</p> : null}
-                <p className="item-title">{productData.title}</p>
-                <p className="item-price"><span>{productData.price}</span>원</p>
+              <div className="recommand-product-item2">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_274/1676424690223Q4bek_JPEG/77560524030735209_1274866820.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">별의 별 케이크</p>
+                  <p className="item-price"><span>25,000</span>원</p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      }
+          </section>
+
+          {
+            productData &&
+            <section className='special_section_product2'>
+              <div className="special-recommand-product-list">
+                <div className="recommand-product-item">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+
+                <div className="recommand-product-item2">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          }
+        </SwiperSlide>
+        <SwiperSlide>
+          <section className="special_section_image">
+            <div>
+              <img src="assets/images/special_cake_crop.jpg" style={{ width: "100%", height: "auto" }} />
+            </div>
+          </section>
+          <section className="special_section_product">
+            <div className="special-recommand-product-list">
+              <div className="recommand-product-item">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_64/1676424666767CNRjg_JPEG/77560500579518181_629284917.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">부드러운 티라미수 롤케이크</p>
+                  <p className="item-price"><span>19,900</span>원</p>
+                </div>
+              </div>
+              <div className="recommand-product-item2">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_274/1676424690223Q4bek_JPEG/77560524030735209_1274866820.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">별의 별 케이크</p>
+                  <p className="item-price"><span>25,000</span>원</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {
+            productData &&
+            <section className='special_section_product2'>
+              <div className="special-recommand-product-list">
+                <div className="recommand-product-item">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+
+                <div className="recommand-product-item2">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          }
+        </SwiperSlide>
+        <SwiperSlide>
+          <section className="special_section_image">
+            <div>
+              <img src="assets/images/special_cake_crop.jpg" style={{ width: "100%", height: "auto" }} />
+            </div>
+          </section>
+          <section className="special_section_product">
+            <div className="special-recommand-product-list">
+              <div className="recommand-product-item">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_64/1676424666767CNRjg_JPEG/77560500579518181_629284917.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">부드러운 티라미수 롤케이크</p>
+                  <p className="item-price"><span>19,900</span>원</p>
+                </div>
+              </div>
+              <div className="recommand-product-item2">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_274/1676424690223Q4bek_JPEG/77560524030735209_1274866820.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">별의 별 케이크</p>
+                  <p className="item-price"><span>25,000</span>원</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {
+            productData &&
+            <section className='special_section_product2'>
+              <div className="special-recommand-product-list">
+                <div className="recommand-product-item">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+
+                <div className="recommand-product-item2">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          }
+        </SwiperSlide>
+        <SwiperSlide>
+          <section className="special_section_image">
+            <div>
+              <img src="assets/images/special_cake_crop.jpg" style={{ width: "100%", height: "auto" }} />
+            </div>
+          </section>
+          <section className="special_section_product">
+            <div className="special-recommand-product-list">
+              <div className="recommand-product-item">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_64/1676424666767CNRjg_JPEG/77560500579518181_629284917.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">부드러운 티라미수 롤케이크</p>
+                  <p className="item-price"><span>19,900</span>원</p>
+                </div>
+              </div>
+              <div className="recommand-product-item2">
+                <div className="special-recommand-product-item__img">
+                  <img
+                    src="https://shop-phinf.pstatic.net/20230215_274/1676424690223Q4bek_JPEG/77560524030735209_1274866820.jpg?type=m510"
+                    style={{ height: "156px", width: "161px" }} alt="23 SS 체리 밸류 로맨틱 텀블러 355ml" />
+                </div>
+                <div className="recommand-product-item__info">
+                  <p className="item-new">New</p>
+                  <p className="item-title">별의 별 케이크</p>
+                  <p className="item-price"><span>25,000</span>원</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {
+            productData &&
+            <section className='special_section_product2'>
+              <div className="special-recommand-product-list">
+                <div className="recommand-product-item">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+
+                <div className="recommand-product-item2">
+                  <div className="special-recommand-product-item__img">
+                    <img
+                      src={productData.imgUrl} alt={productData.title}
+                      style={{ height: "156px", width: "161px" }} />
+                  </div>
+                  <div className="recommand-product-item__info">
+                    {productData.isNew ? <p className='item-new'>New</p> : null}
+                    <p className="item-title">{productData.title}</p>
+                    <p className="item-price"><span>{productData.price}</span>원</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          }
+        </SwiperSlide>
+      </Swiper>
       {/* <section className="special_section_product2">
         <div className="special-recommand-product-list">
           <div className="recommand-product-item">

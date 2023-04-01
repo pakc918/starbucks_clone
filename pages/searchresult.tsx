@@ -1,8 +1,26 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { productType } from '@/types/header/filterType';
+import axios from 'axios';
 
 export default function searchresult() {
+
+    const { query } = useRouter();
+    const [productList, setProductList] = useState<productType[]>([])
+
+    useEffect(() => {
+        axios.get(`http://localhost:3001/product`)
+            .then((res) => {
+                console.log(res.data.find((product: productType) => product.bigCategory === query.category))
+                console.log(res.data.filter((product: productType) =>
+                    product.bigCategory === query.category
+                ))
+                setProductList(res.data)
+            }).catch((err) => {
+                console.log(err)
+            })
+    }, [query.category])
 
     const router = useRouter()
     console.log(router.pathname)

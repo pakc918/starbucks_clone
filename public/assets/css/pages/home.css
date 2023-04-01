@@ -37,7 +37,7 @@ section .recommand-product-list .recommand-product-item {
   padding: 0px;
 }
 
-section .recommand-product-list .recommand-product-item:first-child {
+section .recommand-product-list .recommand-product-item :first-child {
   margin-left: 0px;
 }
 

@@ -27,11 +27,29 @@ header {
   border-bottom-color: lightgray;
 }
 
+.header-top3 {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 50px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-bottom-color: lightgray;
+}
+
 .header-top .menu-icon {
   width: 35%;
 }
 
 .header-top h1 {
+  text-align: center;
+  font-size: 1.0rem;
+  width: 30%;
+}
+
+.header-top3 h1 {
   text-align: center;
   font-size: 1.0rem;
   width: 30%;
@@ -46,11 +64,25 @@ header {
   width: 35%;
 }
 
+.header-top3 .back-icon {
+  width: 35%;
+}
+
 .header-top nav {
   width: 35%;
 }
 
+.header-top3 nav {
+  width: 35%;
+}
+
 .header-top img {
+  width: 20px;
+  height: auto;
+  opacity: 0.5;
+}
+
+.header-top3 img {
   width: 20px;
   height: auto;
   opacity: 0.5;
@@ -64,7 +96,20 @@ header {
   margin: 0px;
 }
 
+.header-top3 nav ul {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
 .header-top nav ul li {
+  list-style: none;
+  margin: 0 8px;
+}
+
+.header-top3 nav ul li {
   list-style: none;
   margin: 0 8px;
 }
@@ -82,10 +127,11 @@ header {
 .header-bottom nav ul {
   opacity: 0.8;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 0px;
   margin: 0px;
+  overflow-x: scroll;
 }
 
 .header-bottom nav ul li {
@@ -99,6 +145,7 @@ header {
   border-bottom-style: solid;
   border-bottom-color: var(--color-white);
   transition: 0.3s;
+  white-space : nowrap;
 }
 
 .header-bottom nav ul li a {
@@ -154,10 +201,6 @@ header {
 .header-sub nav ul li.active {
   color: var(--color-primary);
   font-weight: bold;
-}
-
-.header-sub nav ul li:first-child {
-  padding-right: 20px;
 }
 
 .header-sub nav ul li:last-child {

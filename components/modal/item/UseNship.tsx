@@ -1,11 +1,13 @@
 import FooterButton from '@/components/footer/FooterButton'
-import ModalHeader from '@/components/header/ModalTopHeader'
+import ModalTopHeader from '@/components/header/ModalTopHeader'
 import React from 'react'
 
 export default function useNship() {
+
     return (
         <>
-            <ModalHeader subject='이용조건 및 배송 안내' />
+            <ModalTopHeader subject='이용조건 및 배송 안내' />
+            
             <div className='itemModal-notice'>
                 <p>ㆍ온라인 스토어는 스타벅스 홈페이지 및 모바일 애플리케이션에
                     게시하고 있는 홈페이지 이용약관 및 비회원 이용약관에 의거합

@@ -170,3 +170,9 @@ input:not(:placeholder-shown) {
     width: 90%;
     height: 100%;
 }
+
+.logout-image{
+    width: 20px;
+    height: auto;
+    opacity: 0.5;
+}

@@ -115,7 +115,7 @@
     border-width: 1px;
     border-bottom-color: lightgray;
     height: 20px;
-    margin: 20px 0px;
+    margin-top: 20px;
 }
 
 .confirm-box p{
@@ -140,7 +140,7 @@
     border-width: 1px;
     border-bottom-color: lightgray;
     height: 20px;
-    margin: 35px 0px;
+    margin-top: 25px;
 }
 
 .password-box p{
@@ -154,13 +154,18 @@
     width: 70%;
 }
 
+.password-error-box {
+    height: 10px;
+    font-size: 11px;
+}
+
 .confirmPassword-box {
     display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
     height: 20px;
-    margin: 35px 0px;
+    margin-top: 20px;
 }
 
 .confirmPassword-box p{
@@ -174,13 +179,18 @@
     width: 70%;
 }
 
+.confirmPassword-error-box{
+    height: 10px;
+    font-size: 11px;
+}
+
 .userNickname-box {
     display: flex;
     border-bottom-style: solid;
     border-width: 1px;
     border-bottom-color: lightgray;
     height: 20px;
-    margin: 35px 0px;
+    margin: 20px 0px;
 }
 
 .userNickname-box p{
@@ -202,4 +212,17 @@ section#nickname-notice-box p {
     font-size: 12px;
     color: #888a88;
     font-family: 'KCCChassam';
+}
+
+.confirm-countdown-box {
+    width: 100%;
+    font-size: 13px;
+}
+
+.confirm-countdown-box .countdown-box{
+    width: 20%;
+}
+
+.confirm-countdown-box .confirm-error-box{
+    width: 80%;
 }

@@ -31,3 +31,18 @@ export interface smallCategoryType {
 export interface sizeType {
     name: String;
 }
+
+export interface productType {
+    productId: Number,
+    bigCategory: String,
+    smallCategory: String,
+    event: String,
+    tag: String,
+    productName: String,
+    imgUrl: String,
+    price: Number,
+    size: String,
+    amount: Number,
+    isNew: Boolean,
+    isBest: Boolean,
+}

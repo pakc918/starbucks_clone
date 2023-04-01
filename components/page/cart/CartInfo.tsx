@@ -1,6 +1,15 @@
+import { cartListState } from '@/state/cartListState';
 import React from 'react'
+import { useRecoilState } from 'recoil';
 
 export default function CartInfo() {
+    
+    const [cartItems, setCartItems] = useRecoilState(cartListState);
+    
+    let price = 0;
+
+        
+    
     return (
         <section id="total-cart-price">
             <div>
