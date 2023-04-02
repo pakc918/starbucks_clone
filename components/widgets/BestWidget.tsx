@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import ProductListCard from '../ui/ProductListCard'
 import { bestProductListType } from '@/types/fetchDataType'
+import ProductListCard from '../ui/ProductListCard'
 
 export default function BestWidget(props: { bestId: number }) {
 

@@ -356,7 +356,7 @@ export default function MainLayout(props: { children: React.ReactNode }) {
                 </div>
               ) : ""))
           }
-          {
+          {/* {
             router.pathname === '/best' ? (
               <div className="header-sub">
                 <nav>
@@ -376,7 +376,7 @@ export default function MainLayout(props: { children: React.ReactNode }) {
               </div>
             ) :
               ""
-          }
+          } */}
           {/* {
             router.pathname === '/event' ? (
               <div className="header-sub">

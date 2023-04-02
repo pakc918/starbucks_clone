@@ -8,42 +8,49 @@ export default function mypage() {
                     <p className="subject">주문/배송 현황</p>
                     <p className="recent-3">최근 3개월 동안 구매한 상품</p>
                 </div>
-                <div className="tracking-step">
-                    <div className="product-step">
-                        <p className="product-count">0</p>
-                        <p>상품준비중</p>
+                <Link href={'/orderlist'}>
+                    <div className="tracking-step">
+                        <div className="product-step">
+                            <p className="product-count">0</p>
+                            <p>상품준비중</p>
+                        </div>
+                        <img src="assets/images/icons/right-arrow.png" />
+                        <div className="product-step">
+                            <p className="product-count">0</p>
+                            <p>배송준비중</p>
+                        </div>
+                        <img src="assets/images/icons/right-arrow.png" />
+                        <div className="product-step">
+                            <p className="product-count">0</p>
+                            <p>배송중</p>
+                        </div>
+                        <img src="assets/images/icons/right-arrow.png" />
+                        <div className="product-step">
+                            <p className="product-count">0</p>
+                            <p>배송완료</p>
+                        </div>
                     </div>
-                    <img src="assets/images/icons/right-arrow.png" />
-                    <div className="product-step">
-                        <p className="product-count">0</p>
-                        <p>배송준비중</p>
-                    </div>
-                    <img src="assets/images/icons/right-arrow.png" />
-                    <div className="product-step">
-                        <p className="product-count">0</p>
-                        <p>배송중</p>
-                    </div>
-                    <img src="assets/images/icons/right-arrow.png" />
-                    <div className="product-step">
-                        <p className="product-count">0</p>
-                        <p>배송완료</p>
-                    </div>
-                </div>
+                </Link>
             </section>
             <section className="service-policy">
                 <div className="service">
                     <p className="service-subject">서비스</p>
+
+                    <Link href='orderlist'>                    
                     <div className="service-button">
                         <img src="assets/images/icons/order.png" />
                         <p>주문 내역</p>
                         <img src="assets/images/icons/right-arrow-black.png" />
                     </div>
+                    </Link>
 
+                    <Link href='receivegift'>             
                     <div className="service-button">
                         <img src="https://cdn-icons-png.flaticon.com/512/548/548427.png" />
                         <p>선물함</p>
                         <img src="assets/images/icons/right-arrow-black.png" />
                     </div>
+                    </Link>
 
                     <div className="service-button">
                         <img src="https://cdn-icons-png.flaticon.com/512/2438/2438167.png" />
