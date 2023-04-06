@@ -1,12 +1,21 @@
 import FooterButton from '@/components/footer/FooterButton'
+import Image from 'next/image'
 import React from 'react'
+import Link from 'next/link'
 
 export default function identity() {
     return (
         <>
             <header className="identity-header">
                 <div className="identity-header-cancel">
-                    <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" /></a>
+                    <Link href="/">
+                    <Image
+                        src="https://cdn-icons-png.flaticon.com/512/864/864393.png"
+                        width={20}
+                        height={20}
+                        alt= "StarBucks"
+                    />
+                    </Link>
                 </div>
             </header>
             <section className="identity-section1">
@@ -22,19 +31,39 @@ export default function identity() {
                     <div className="identity-policy-detail-list">
                         <div className="identity-policy-detail">
                             <p>휴대폰 본인 인증 서비스 이용약관 동의 (필수)</p>
-                            <img src="../images/icons/right-arrow.png" />
+                            <Image
+                            src="/assets/images/icons/right-arrow.png"
+                            width={20}
+                            height={20}
+                            alt= "right-arrow"
+                            />
                         </div>
                         <div className="identity-policy-detail">
                             <p>휴대폰 통신사 이용약관 동의 (필수)</p>
-                            <img src="../images/icons/right-arrow.png" />
+                            <Image
+                                src="/assets/images/icons/right-arrow.png"
+                                width={20}
+                                height={20}
+                                alt= "right-arrow"
+                            />
                         </div>
                         <div className="identity-policy-detail">
                             <p>개인정보 제공 및 이용 동의 (필수)</p>
-                            <img src="../images/icons/right-arrow.png" />
+                            <Image
+                                src="/assets/images/icons/right-arrow.png"
+                                width={20}
+                                height={20}
+                                alt= "right-arrow"
+                            />
                         </div>
                         <div className="identity-policy-detail">
                             <p>고유식별정보 처리 (필수)</p>
-                            <img src="../images/icons/right-arrow.png" />
+                            <Image
+                                src="/assets/images/icons/right-arrow.png"
+                                width={20}
+                                height={20}
+                                alt= "right-arrow"
+                            />
                         </div>
                     </div>
                 </div>

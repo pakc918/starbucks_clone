@@ -13,7 +13,7 @@ export default function FilterMenuList(props: {
     const handleAddQuery = (item: MenuDataType) => {
         console.log(item);
         if (item.key === "category") {
-            router.push(`/listview?category=${item.name}`);
+            router.push(`/searchresult?category=${item.name}`);
             return;
         }
 

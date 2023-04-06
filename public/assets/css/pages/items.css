@@ -40,7 +40,7 @@
 
 .header-top-item nav ul {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding: 0px;
   margin: 0px;
@@ -60,6 +60,11 @@ section#item-event-banner .event-banner .event-banner__item .event-banner__item_
   height: 100%;
 }
 
+.event-banner__item__img img {
+  width: 100%;
+  height: auto;
+}
+
 section#item-event-banner {
   padding: 0px;
   margin-top: 50.8px;
@@ -68,6 +73,7 @@ section#item-event-banner {
 .item-info {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .container .bg {
@@ -186,6 +192,10 @@ button {
 
 section#recommand-md .item-info .item-info-1 {
   font-size: 25px;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
 }
 
 section#recommand-md .item-info .item-new {

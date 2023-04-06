@@ -40,3 +40,97 @@ export interface tagListCardType {
     eventId: number;
     tagId: number;
 }
+
+export interface eventProductListCardType {
+    createDate: string;
+    description: string;
+    frozen: number;
+    id: number;
+    inventory: number;
+    name: string;
+    price: number;
+    salesQuantity: number;
+    titleImg: string;
+    updateTime: string;
+}
+
+
+export interface eventProductType {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    inventory: number;
+    titleImg: string;
+    productImageList: Array<productImageListType>;
+    frozen: number;
+    salesQuantity: number;
+    isNew : boolean;
+}
+
+export interface productImageListType {
+    id: number;
+    imgUrl: string;
+    imgAlt: string;
+    productImageList: [
+        {
+            id: number;
+            imgUrl: string;
+            imgAlt: string;
+        }
+    ],
+    frozen: number;
+    salesQuantity: number;
+}
+
+export interface eventListType {
+    id: number;
+    name: string;
+    description: string;
+    imgUrl: string;
+    imgAlt: string;
+    startDate: string;
+    endDate: string;
+    discountRate: number;
+    isDisplay: boolean;
+}
+
+export interface CategoryListType {
+    keyword: string;
+    categoryLarge: string;
+    categoryMiddle: string;
+    option: string;
+    season: string;
+    price: string;
+    sort: string;
+    event: string;
+}
+
+export interface SortListType {
+    id: number;
+    name: string;
+}
+
+export interface ProductDetailType {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    inventory: number;
+    titleImg: string;
+    productImageList: [
+        {
+            id: number;
+            imgUrl: string;
+            imgAlt: string;
+        }
+    ],
+    frozen: number;
+    salesQuantity: number;
+}
+
+export interface CategoryLarge{
+    id: number;
+    name: string;
+    titleImg: string;
+}

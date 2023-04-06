@@ -1,14 +1,25 @@
 .header-top .search input {
-    width:280px; height:40px; border: none; background:transparent; position: absolute;
+    width:90%;
+    height:40px;
+    border: none;
+    background:transparent;
+    position: absolute;
+}
+
+.header-top .search input::placeholder {
+    color: #dadada;
 }
 
 .header-top .search img {
-    vertical-align: middle; position: absolute; right: 6px; bottom: 10px;
+    vertical-align: middle;
+    position: absolute;
+    right: 6px;
+    bottom: 10px;
 }
 
 .header-top .search {
     width: 90%;
-    background-color: lightgray;
+    background-color: #f7f7f7;
     height: 40px;
     position: relative;
 }
@@ -24,3 +35,41 @@ section#recommand-md .search-result{
     margin-top: 150px;
 }
 
+.search-words {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: lightgray;
+    width: 48%;
+    margin: 10px 0px;
+    height: 25px;
+}
+
+.search-word {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    place-content: center;
+}
+
+.search-word img{
+    width: 7%;
+    height: 50%;
+}
+
+.search-word p{
+    width: 80%;
+    height: 100%;
+    margin: 0;
+}
+
+.search-words-box2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.total-delete button{
+    float: right;
+}

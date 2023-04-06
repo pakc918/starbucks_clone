@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
@@ -29,7 +30,14 @@ export default function CheckBox(
                 </div>
                     <Link href={props.link && props.link}>
                         {
-                            props.isArrow && <img className="arrow" src="assets/images/icons/right-arrow-black.png" />
+                            props.isArrow && 
+                            <Image
+                                src="/assets/images/icons/right-arrow-black.png"
+                                width={20}
+                                height={20}
+                                alt= "right-arrow-black"
+                                className="arrow"
+                            />
                         }
                     </Link>
             </div>

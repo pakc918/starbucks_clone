@@ -1,37 +1,32 @@
 import Head from 'next/head'
 import { NextPageWithLayout } from './_app'
-import MainLayout from '@/components/layouts/MainLayout'
 import RecommandWidget from '@/components/widgets/RecommandWidget'
 import { useEffect, useState } from 'react'
-import { mainEventListType } from '@/types/fetchDataType'
+import { eventListType, mainEventListType } from '@/types/fetchDataType'
+import Config from '@/configs/config.export'
+import axios from 'axios'
 import Homebanner from '@/components/widgets/Homebanner'
-
 
 
 const Home: NextPageWithLayout = () => {
 
-  const [eventListData, setEventListData] = useState<mainEventListType[]>();
+  const {baseUrl} = Config();
+
+  const [eventListData, setEventListData] = useState<eventListType[]>();
   useEffect(() => {
-    fetch('http://localhost:3001/main-event-list')
-      .then(res => res.json())
+    axios(`${baseUrl}/api/v1/event/all`)
+      .then(res => res.data.data)
       .then(data => setEventListData(data))
-  }, [])
+  }, [baseUrl])
 
   return (
     <>
-      <Head>
-        <meta name="description" content="StarBucks Clone Site" />
-        <meta name="keywords" content="StarBucks, Clone, Site" />
-        <meta name="author" content="SpaLand" />
-        <title>StarBucks Clone Site</title>
-      </Head>
-      <Homebanner />
+      <Homebanner/>
       {
         eventListData && eventListData.map(event => (
           <RecommandWidget
             key={event.id}
-            title={event.title}
-            eventId={event.eventId}
+            title={event.name}
           />
         ))
       }

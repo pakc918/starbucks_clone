@@ -14,5 +14,4 @@ export interface headerIconMenuType{
 export interface subNavMenuType {
     id: number;
     name : string;
-    link: string;
 }

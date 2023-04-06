@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Step03 = () => {
@@ -6,7 +7,12 @@ const Step03 = () => {
         <>
             <div className="container">
                 <section className="signup-logo">
-                    <img src="https://www.starbucks.co.kr/common/img/common/logo.png" />
+                    <Image
+                        src="https://www.starbucks.co.kr/common/img/common/logo.png"
+                        width={20}
+                        height={20}
+                        alt= "logo"
+                    />
                 </section>
 
                 <section className="signup-notice">

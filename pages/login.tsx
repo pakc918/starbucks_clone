@@ -8,13 +8,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import LoginFooterButton from '@/components/footer/LoginFooterButton';
 import { LoginRes } from '@/types/UserRequest/Response';
+import Config from '@/configs/config.export';
+import Image from 'next/image';
 
 
-export default function login() {
+export default function Login() {
 
     const router = useRouter();
     // const Base_URL = Config().baseUrl;
     const [loginData, setLoginData] = useRecoilState<LoginRes>(userLoginState);
+    const { baseUrl } = Config();
 
     const [inputData, setInputData] = useState<inputUserType>({
         userEmail: "",
@@ -33,7 +36,7 @@ export default function login() {
 
     //로그인 확인용
     const handleSubmit = (event: any) => {
-        axios.defaults.baseURL = 'http://localhost:3000';
+        // axios.defaults.baseURL = 'http://localhost:3000';
 
         event.preventDefault();
         console.log(inputData);
@@ -49,7 +52,7 @@ export default function login() {
             return;
         }
         else {
-            axios.post('http://10.10.10.196:8080/api/v1/users/login', {
+            axios.post(`${baseUrl}/api/v1/users/login`, {
                 userEmail: inputData.userEmail,
                 password: inputData.password,
             },{withCredentials:false}).then((res) => {                
@@ -63,9 +66,9 @@ export default function login() {
                 const userNickname = res.data;
                 
                 const accessToken = res.headers.authorization;
-                axios.defaults.headers.common[
-                    "Authorization"
-                ] = `Bearer ${accessToken}`;
+                // axios.defaults.headers.common[
+                //     "Authorization"
+                // ] = `Bearer ${accessToken}`;
 
 
                 // https로 바꾸면 사용하기로 함.(refreshToken)
@@ -78,13 +81,13 @@ export default function login() {
                 
                 localStorage.setItem("userNickname", userNickname); //res.data.userNickname 나중에 백 작업 다 되면 적어야 됨.
                 localStorage.setItem("accessToken", accessToken); // 로컬은 무엇을 넣든 다 문자열로 저장됨.
-                
+                router.back();
 
                 Swal.fire({
                     icon: "success",
                     text: `${res.data}님 환영합니다~ ^^`, //res.data.userNickname 나중에 백 작업 다 되면 적어야 됨.
                 })
-                router.push("/");
+                
                 return res;
             })
                 .catch(err => {
@@ -99,7 +102,14 @@ export default function login() {
             <div className="signupmodalBox">
                 <header className="signup-header">
                     <div className="signup-header-cancel">
-                        <Link href={"/"}><img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" /></Link>
+                        <Link href={"/"}>
+                        <Image
+                                src="https://cdn-icons-png.flaticon.com/512/864/864393.png"
+                                width={20}
+                                height={20}
+                                alt= "close"
+                            />
+                        </Link>
                     </div>
                     <div className="login-header-bot">
                         <p>로그인</p>
@@ -107,7 +117,12 @@ export default function login() {
                 </header>
 
                 <section className="login-logo">
-                    <img src="https://www.starbucks.co.kr/common/img/common/logo.png" />
+                    <Image
+                        src="https://www.starbucks.co.kr/common/img/common/logo.png"
+                        width={20}
+                        height={20}
+                        alt= "logo"
+                    />
                 </section>
 
                 <section className="login-notice">
@@ -123,7 +138,7 @@ export default function login() {
                                 className="id"
                                 type="email"
                                 name='userEmail'
-                                maxLength={20}
+                                maxLength={40}
                                 placeholder="이메일"
                                 onChange={handleOnChange} />
                             <label htmlFor="id">이메일</label>
@@ -161,24 +176,4 @@ export default function login() {
             </div>
         </>
     )
-
-                        // 서버에서 보내온 쿠키 사용하기
-                        // const cookie = res.headers['set-cookie'];
-                        // console.log(cookie);
-                        // document.cookie = cookie;
-                        // console.log(document.cookie);
-                        // const token = cookie.split('=')[1];
-                        // console.log(token);
-                        // axios.defaults.headers.common[
-
-
-                        // 서버에서 보내온 쿠키 저장하기
-                        // const cookie = res.headers['set-cookie'];
-                        // console.log(cookie);
-                        // document.cookie = cookie;
-                        // console.log(document.cookie);
-                        // const token = cookie.split('=')[1];
-                        // console.log(token);
-                        // axios.defaults.headers.common[
-
 }

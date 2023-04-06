@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function ModalTopHeader(props: { subject: string }) {
@@ -5,7 +6,14 @@ export default function ModalTopHeader(props: { subject: string }) {
         <header>
             <div className='modal-header-top'>
                 <span>{props.subject}</span>
-                <button><img src="assets/images/icons/close.png" alt="끄기" /></button>
+                <button>
+                    <Image
+                        src="/assets/images/icons/close.png"
+                        width={20}
+                        height={20}
+                        alt= "close"
+                    />
+                </button>
             </div>
         </header>
     )

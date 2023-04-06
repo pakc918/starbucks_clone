@@ -74,7 +74,7 @@ section#middle .e-gift-box2 nav{
 
 section#middle .e-gift-box2 nav ul{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     padding: 0px;
     margin: 0px;
@@ -156,6 +156,7 @@ section#bottom .refund-box .refund .giftcard-checkbox{
     height: 20px;
     color: #00a862;
     background: none;
+    accent-color: #00a862;
 }
 
 section#bottom .refund-box p{

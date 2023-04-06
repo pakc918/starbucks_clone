@@ -9,7 +9,7 @@ export default function BestWidget(props: { bestId: number }) {
         fetch(`http://localhost:3001/best-item-list?bestId=${props.bestId}`)
             .then(res => res.json())
             .then(data => setbestItemList(data))
-    }, [])
+    }, [props.bestId])
 
     return (
         <section className="best-product">

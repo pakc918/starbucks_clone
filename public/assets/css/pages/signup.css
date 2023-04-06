@@ -16,11 +16,11 @@
 
 .signup-logo {
     padding: 0 25px;
-    margin-top: 25%;
+    margin-top: 35%;
 }
 
 .signup-notice {
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 0 25px;
 }
 
@@ -40,6 +40,11 @@
     margin-top: 15%;
     margin-bottom: 90px;
     padding: 0;
+}
+
+.signup-policy .font {
+    margin: 0 0 20px 48px;
+    font-size: 12px;
 }
 
 .signup-policy-top {
@@ -177,7 +182,7 @@
     border-radius: 30px;
     width: 90%;
     height: 50px;
-    background-color: #007042;
+    background-color: #00a862;
     border: none;
     color: var(--color-white);
     margin: 15px 0;

@@ -29,6 +29,7 @@ export interface smallCategoryType {
 }
 
 export interface sizeType {
+    id : number;
     name: String;
 }
 

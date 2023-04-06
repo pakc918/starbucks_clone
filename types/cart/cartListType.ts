@@ -1,9 +1,12 @@
 export interface cartListType {
-    cartId: number;
+    id: number;
     productId: number;
-    bigCategoryId: number;
-    count: number;
-    check: boolean;
+    titleImg: string;
+    price: number;
+    name: string;
+    frozen: number;
+    productAmount: number;
+    checkbox: boolean;
 }
 
 export interface cartType {

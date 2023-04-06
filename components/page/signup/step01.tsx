@@ -1,8 +1,11 @@
 import { inputRegisterType, privateAgreeType } from '@/types/UserInformation/Information'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import TotalCheckBox from '@/components/ui/TotalCheckBox'
 import CheckBox from '@/components/ui/CheckBox'
+import RadioCheckBox from '@/components/ui/RadioCheckBox'
 import StButton from '@/components/ui/StButton'
+import Image from 'next/image'
+import Agreement from '@/pages/agreement'
 
 interface ChildProps {
     inputData: inputRegisterType;
@@ -17,18 +20,15 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
         { id: 2, name: 'SNS', checked: false },
     ])
 
-    useEffect(() => {
-        setInputData({ ...inputData, privateAgree: agreeArray })
-    }, [agreeArray])
-
-    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, checked } = e.target;
-        console.log('e.target name checked',e.target,name, checked)
         if (name === 'isAllAgree') {
             setAgreeArray({
                 isAgree: checked,
                 isUseConfirm: checked,
                 isAdvertisionConfirm: checked,
+                isEmail:checked,
+                isSns: checked,
             })
         }
         else {
@@ -37,13 +37,22 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                 [name]: checked
             })
         }
-    }
+    }, [agreeArray])
+
+    useEffect(() => {
+        setInputData((prevInputData) => ({ ...prevInputData, privateAgree: agreeArray }))
+    }, [agreeArray, setInputData])
 
     return (
         <>
             <div className="container">
                 <section className="signup-logo">
-                    <img src="https://www.starbucks.co.kr/common/img/common/logo.png" />
+                    <Image
+                        src="https://www.starbucks.co.kr/common/img/common/logo.png"
+                        width={70}
+                        height={70}
+                        alt= "logo"
+                    />
                 </section>
 
                 <section className="signup-notice">
@@ -61,7 +70,7 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                         lableText='이용약관 동의(필수)'
                         isArrow={true}
                         inputName='isAgree'
-                        link='/best'
+                        link='/agreement'
                         handler={handleInput}
                         value={agreeArray.isAgree}
                     />
@@ -69,24 +78,36 @@ const Step01 = ({ inputData, setInputData }: ChildProps) => {
                         lableText='개인정보 수집 및 이용동의(필수)'
                         isArrow={true}
                         inputName='isUseConfirm'
-                        link='/best'
+                        link='/agreementtwo'
                         handler={handleInput}
                         value={agreeArray.isUseConfirm}
                     />
-                    <CheckBox
+                    <RadioCheckBox
                         lableText='광고성 정보 수신동의(선택)'
-                        isArrow={true}
                         inputName='isAdvertisionConfirm'
-                        link='/best'
                         handler={handleInput}
                         value={agreeArray.isAdvertisionConfirm}
                     />
+                    <p className="font">다양한 프로모션 소식 및 신규 매장 정보를 보내드립니다.</p>
                     <div className="signup-policy-bottom-method">
                         <div className="signup-policy-bottom-method-category">
-                            <input type="checkbox" id="E-mail" />
+                            <RadioCheckBox
+                                lableText='E-mail'
+                                inputName='isEmail'
+                                handler={handleInput}
+                                value={agreeArray.isEmail}
+                            />
+                            <RadioCheckBox
+                                lableText='SNS'
+                                inputName='isSns'
+                                handler={handleInput}
+                                value={agreeArray.isSns}
+                            />
+                            
+                            {/* <input type="checkbox" id="E-mail" />
                             <p>E-mail</p>
                             <input type="checkbox" />
-                            <p>SMS</p>
+                            <p>SMS</p> */}
                         </div>
                     </div>
                 </section>

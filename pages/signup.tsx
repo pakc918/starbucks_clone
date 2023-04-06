@@ -10,10 +10,22 @@ import StButton from '@/components/ui/StButton';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Config from '@/configs/config.export';
+import Image from 'next/image';
+import { useRecoilValue } from 'recoil';
+import { userLoginState } from '@/state/user/atom/userLoginState';
 
-export default function signup() {
+export default function Signup() {
 
   const router = useRouter();
+  const { baseUrl } = Config();
+  const { isLogin } = useRecoilValue(userLoginState)
+
+
+  if (isLogin) {
+    router.push('/');
+
+  }
 
   const [stepId, setStepId] = useState<number>(1)
   const [inputData, setInputData] = useState<inputRegisterType>({
@@ -113,7 +125,7 @@ export default function signup() {
         Swal.fire({
           icon: 'warning',
           text: '닉네임을 입력하지 않았습니다. 닉네임을 입력 해주세요.',
-          cancelButtonText:'닉네임 정하기',
+          cancelButtonText: '닉네임 정하기',
           customClass: {
             cancelButton: 'swal-cancel-button'
           }
@@ -129,7 +141,7 @@ export default function signup() {
         })
         return;
       } else {
-        axios.post('http://10.10.10.196:8080/api/v1/users/signup', {
+        axios.post(`${baseUrl}/api/v1/users/signup`, {
           userName: inputData.userName,
           userphone: inputData.phone,
           userEmail: inputData.userEmail,
@@ -141,13 +153,13 @@ export default function signup() {
               Swal.fire({
                 icon: 'warning',
                 text: `닉네임을 ${inputData.userNickname}으로 정하시겠습니까?`,
-                cancelButtonText:'다시 정하기',
+                cancelButtonText: '다시 정하기',
                 showCancelButton: true,
                 customClass: {
                   confirmButton: 'swal-confirm-button',
                   cancelButton: 'swal-cancel-button'
                 }
-              }).then(function() {
+              }).then(function () {
                 setStepId(stepId + 1)
               })
               return;
@@ -176,7 +188,14 @@ export default function signup() {
     <div className="signupmodalBox">
       <header className="signup-header">
         <div className="signup-header-cancel">
-          <Link href={"/"}><img src="https://cdn-icons-png.flaticon.com/512/864/864393.png" /></Link>
+          <Link href={"/"}>
+            <Image
+              src="https://cdn-icons-png.flaticon.com/512/864/864393.png"
+              width={20}
+              height={20}
+              alt="next"
+            />
+          </Link>
         </div>
       </header>
       {steps[stepId - 1][stepId]}

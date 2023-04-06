@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useState } from 'react'
 
 export function Modal(){
@@ -12,7 +13,12 @@ export default function ItemButton(props: { title: string}) {
         <>
         <button>
             <p>{props.title}</p>
-            <img src='assets/images/icons/right-arrow-black.png' style={{ width: '20px', height: '20px' }}></img>
+            <Image
+                src="/assets/images/icons/right-arrow-black.png"
+                width={20}
+                height={20}
+                alt= "right-arrow-black"
+            />
         </button>
         </>
     )

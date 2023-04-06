@@ -51,7 +51,7 @@ export default function iteminfonoti() {
                         </tr>
                     </tbody>
                 </table>
-                <p>*'스타벅스 코리아'를 운영하는 "주식회사 스타벅스커피 코리아"는 "주식회사 에스씨케이컴퍼니"로 상호명이 변경되었습니다.</p>
+                <p>*&#039;스타벅스 코리아&#039;를 운영하는 &quot;주식회사 스타벅스커피 코리아&quot;는 &quot;주식회사 에스씨케이컴퍼니&quot;로 상호명이 변경되었습니다.</p>
             </div>
             <FooterButton inputvalue='확인'/>
         </>

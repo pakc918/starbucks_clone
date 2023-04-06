@@ -1,0 +1,145 @@
+.productOrderSection {
+  position: fixed;
+  bottom: 0;
+  z-index: 800;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+  padding: 1rem 1rem;
+  box-sizing: border-box;
+}
+
+.productOrderSectionOpen {
+  position: fixed;
+  bottom: 0;
+  z-index: 800;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.productOrderSectionOpenBottomWrap {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productOrderSectionOpenBottomWrap img {
+  width: 5vw;
+  opacity: 0.6;
+  padding: 0px 10px 1px 15px;
+}
+
+.greyWrap {
+  padding: 0px 1rem 1.5rem;
+}
+.greyboxWrap {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(245, 245, 245);
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.greybox {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 2px;
+}
+
+.greybox .title {
+  opacity: 0.6;
+}
+
+.QtyCountWrap {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 18px 0px 0px 0px;
+}
+
+.QtyCount {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.QtyCount img {
+  width: 6vw;
+  height: auto;
+}
+
+.QtyCount span {
+  font-size: 1.2rem;
+}
+
+.disabled {  
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.priceBold {
+  font-weight: bold;
+}
+
+.bottomPriceWrap {
+  padding: 1rem 1rem 1.5rem;
+  display: flex;
+  justify-content: right;
+  font-weight: 600;
+}
+
+.rightBottomBoldPrice {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: right;
+  line-height: 17px;
+  padding-left: 10px;
+}
+
+.productSuccessWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  z-index: 890;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll: none;
+}
+
+.notiWrap {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  z-index: 880;
+}
+
+.notiWrap .noti {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box !important;
+}
+
+.notiWrap .noti p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.notiWrap .buttonWrap {
+  padding: 0.5rem 1rem 1rem 1rem ;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box !important;
+}

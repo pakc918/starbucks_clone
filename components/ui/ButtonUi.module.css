@@ -1,0 +1,41 @@
+.primary {
+  padding: 0.8rem 0;
+  color: #fff;
+  background-color: #009b39;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+}
+
+.secondary {
+  padding: 0.8rem 0;
+  color: #009b39;
+  background-color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid #009b39;
+  width: 100%;
+  border-radius: 50px;
+}
+
+.large {
+  width: 100%;
+  box-sizing: border-box !important;
+
+}
+
+.medium {
+  width: 48%;
+  box-sizing: border-box !important;
+
+}
+
+.small {
+  width: 30%;
+  box-sizing: border-box !important;
+
+}

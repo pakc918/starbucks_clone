@@ -20,6 +20,10 @@ section#buy .ship-info p{
     height: 50px;
 }
 
+section#buy button {
+    width: 100%;
+}
+
 section#buy .address-box{
     text-align: center;
     height: 130px;
@@ -29,9 +33,21 @@ section#buy .address-box span{
     font-size: 13px;
 }
 
-.item-thum img{
-    width: 20px;
-    height: 20px;
+.item-thum{
+    width: 10%;
+}
+
+.item-span-b{
+    width: 20%;
+}
+
+.info-btn {
+    height : 100px;
+    background-color: rgb(240, 237, 237);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .info-btn img{
@@ -52,21 +68,17 @@ section#buy .address-box .address-btn {
     background: none;
 }
 
-section#buy .item-information-box{
-    background-color: rgb(240, 237, 237);
-    height: 120px;
-}
-
 section#buy .item-information-box button{
     width: 100%;
     font-size: 15px;
     border: none;
 }
 
-section#buy .item-information-box .item-information-btn{
+.item-information-btn{
     display: flex;
     justify-content: space-between;
-    margin: 2%;
+    margin: 0;
+    width: 100%;
 }
 
 section#buy .item-information-box .item-information-btn .down-icon img{
@@ -164,6 +176,10 @@ section#buy2 .item-coupon-box{
     height: 80px;
 }
 
+.item-coupon-box div input {
+    accent-color:#09a963
+}
+
 .buypage-footer {
     display: flex;
     justify-content: space-around;
@@ -200,7 +216,7 @@ section#buy2 .item-coupon-box nav{
 
 section#buy2 .item-coupon-box nav ul{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     padding: 0px;
     margin: 0px;
@@ -215,3 +231,24 @@ section#buy2 .item-coupon-box nav ul img{
     width:20px;
     height: 20px;
 }
+
+.payment-info {
+    margin-bottom: 105px;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-info div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-agree {
+    background-color: #d3d3d3;
+}
+
+.order-agree :first-child {
+    margin-bottom: 0;
+}
+

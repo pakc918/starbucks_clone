@@ -90,7 +90,7 @@ header {
 
 .header-top nav ul {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding: 0px;
   margin: 0px;
@@ -98,7 +98,7 @@ header {
 
 .header-top3 nav ul {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding: 0px;
   margin: 0px;
@@ -222,7 +222,6 @@ section#category {
   border-bottom: 1px;
   border-bottom-style: solid;
   border-bottom-color: lightgray;
-  margin-top: 100px;
   padding: 0px;
 }
 

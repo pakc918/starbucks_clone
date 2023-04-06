@@ -3,17 +3,19 @@ import React, { ChangeEvent, EventHandler, useEffect, useState } from "react";
 import Link from "next/link";
 import { headerNavMenus, headerIcons, categoryList } from "../datas/starbucksStaticDatas";
 import { ProductListCardType } from "@/types/fetchDataType";
+import Config from "@/configs/config.export";
 
-export default function receivegift() {
+export default function Receivegift() {
 
 
     const [itemlist, setitemlist] = useState<ProductListCardType[]>();
-
+    const { baseUrl } = Config();
+    
     useEffect(() => {
-        fetch(`http://10.10.10.196:8080/v1/api/giftbox/1`)
+        fetch(`${baseUrl}/v1/api/giftbox/1`)
             .then(res => res.json())
             .then(data => setitemlist(data))
-    }, [])
+    }, [baseUrl])
     console.log('item',itemlist)
 
     return (
@@ -33,7 +35,12 @@ export default function receivegift() {
                 itemlist && itemlist.map(item => (
                     <>
                     <p>{item.title}</p>
-                    <img src = {item.imgUrl}/>
+                    <Image
+                        src= {item.imgUrl}
+                        width={20}
+                        height={20}
+                        alt= "item"
+                    />
                     </>
                     )
                 )}

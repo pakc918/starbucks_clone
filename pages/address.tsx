@@ -1,10 +1,12 @@
-import ModalHeader from '@/components/header/ModalTopHeader'
+import ModalTopHeader from '@/components/header/ModalTopHeader'
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
-export default function address() {
+export default function Address() {
     return (
         <>
-        <ModalHeader subject='배송지 변경'/>
+        <ModalTopHeader subject='배송지 변경'/>
         <div className="container">
             <section style={{ margin: "12% 0" }}>
                 <div style={{ padding: "10px", margin: "5px;" }}>
@@ -48,8 +50,14 @@ export default function address() {
                         <div className="address-border-color4">
                             <input className="address-checkbox" type="checkbox" />
                             <p style={{ fontSize: "15px", position: "absolute", left: "70px" }}>배송지 정보 수집 및 이용 동의[필수]</p>
-                            <a href="collection.html"><img src="assets/images/icons/next.png"
-                                style={{ width: "20px", height: "20px" }} /></a>
+                            <Link href="/collection">
+                                <Image
+                                    src="/assets/images/icons/next.png"
+                                    width={20}
+                                    height={20}
+                                    alt= "next"
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -57,7 +65,7 @@ export default function address() {
             <section style={{ padding: "0%" }}>
                 <div className="address-bg">
                     <div className="address-mini-bg">
-                        <a href="buypage.html"><input type="button" value="변경하기" /></a>
+                        <Link href="/buypage"><input type="button" value="변경하기" /></Link>
                     </div>
                 </div>
             </section>

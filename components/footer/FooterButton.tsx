@@ -6,7 +6,7 @@ export default function FooterButton(props:{inputvalue:string}) {
         <section id="footer-button">
             <div className="footer-btn-bg">
                 <div className="footer-btn-mini">
-                    <Link href="/"><input type="button" value={props.inputvalue} /></Link>
+                    <input type="button" value={props.inputvalue} />
                 </div>
             </div>
         </section>

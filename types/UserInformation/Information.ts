@@ -20,7 +20,8 @@ export interface privateAgreeType {
     isAgree: boolean;
     isUseConfirm: boolean;
     isAdvertisionConfirm?: boolean;
-
+    isEmail?: boolean;
+    isSns?: boolean;
 }
 
 export interface ReIssueTokenRes extends BaseRes {
